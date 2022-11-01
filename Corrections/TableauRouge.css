@@ -1,0 +1,22 @@
+table
+ {
+    width : 400px;
+    margin-left : auto;
+    margin-right : auto;
+    border : 2px solid black;
+    border-collapse : collapse;
+    text-align : center;
+}
+
+th,td
+{
+    border : 1px solid black;
+    width : 30%;
+    height : 40px;
+}
+
+ tr { background-color : #DC2F2F; }
+
+ tr.impair { background-color :#F16D6D; }
+
+tr.pair { background-color : #CB4040;}

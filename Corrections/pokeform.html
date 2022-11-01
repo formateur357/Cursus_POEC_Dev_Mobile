@@ -1,0 +1,24 @@
+<body>
+    <h1>Dresseur de pokémon</h1>
+    <p>Les champs marqués d'une <strong>*</strong> sont obligatoires.</p>
+    <form>
+        <fieldset>
+        <legend>Nouveau dresseur</legend>
+        <label for="nom">Nom *</label><br />
+        <input type="text" id="nom" name="nom" required="required" /><br />
+        <br />
+        <label for="description">Description</label><br />
+        <textarea id="description" rows="3" name="description"></textarea><br />
+        <br />
+        <label>Équipe</label><br />
+        <input type="radio" name="equipe" value="Rouge" /> Rouge<br/>
+        <input type="radio" name="equipe" value="Jaune" /> Jaune<br />
+        <input type="radio" name="equipe" value="Bleu" /> Bleu<br/>
+        <br/>
+        <label for="anniversaire">Anniversaire *</label><br/>
+        <input type="date" id="anniversaire" name="anniversaire" required="required" /><br />
+        <br />
+        <input type="submit" id="validation" name="validation" value="Envoyer" />
+        </fieldset>
+    </form>
+</body>

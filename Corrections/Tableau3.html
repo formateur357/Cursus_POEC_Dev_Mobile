@@ -1,0 +1,61 @@
+<!-- Objectif
+Utiliser les balises caption, thead tbody et tfoot pour mieux structurer un tableau html.
+
+Travail à faire
+Utiliser les éléments  : caption, thead tbody et tfoot pour afficher les données dans un tableau structuré -->
+
+<html>
+<head>
+	<title>Les tableaux</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<table border="1" cellspacing="0">
+		<caption>Calcul de la moyenne</caption>
+      
+
+		<thead>
+			<tr>
+				<th>Matières</th>
+				<th>Note par matière</th>
+				<th>Coefficient</th>
+				<th>Note*Coefficient</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Mathematique</td>
+				<td>17</td>
+				<td>4</td>
+				<td>68</td>
+			</tr>
+			<tr>
+				<td>Physique</td>
+				<td>15</td>
+				<td>3</td>
+				<td>45</td>
+			</tr>
+			<tr>
+				<td>Informatique</td>
+				<td>16</td>
+				<td>2</td>
+				<td>32</td>
+			</tr>
+			<tr>
+			    	<td colspan="2">Totals</td>
+			    	<td>9</td>
+			    	<td>145</td>
+			</tr>
+
+		</tbody>
+		<tfoot style="color: blue">
+                   <tr>
+                   	<td colspan="3">Moyenne</td>
+                   	<td>16.12</12>
+                   </tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>
