@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+table{
+    width: 50%;
+    margin-left: 200px;
+ border-collapse:collapse;
+    border: 2px solid black;
+}
+
+td, th{
+    border:1px solid grey
+}
+td{
+   
+    justify-content: flex-start;
+}
+
+#total{
+    border-right: none;
+}
+#vide{
+    border-left: none;
+}
+#vide2{
+    border-left: none;
+    border-right: none;
+}
+#vide3{
+    border-left: none;
+}
+
+.blue{
+    font-weight: bold;
+    color: blue;
+    border-collapse:collapse;
+}
+tfoot tr td{
+    border: none;
+ 
+}
+
+caption, tfoot{
+    background-color: rgb(164, 164, 164);
+    color: white;
+}

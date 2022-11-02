@@ -1,0 +1,18 @@
+form{
+    width: 30%;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+select{
+    margin-bottom: 10px;
+}
