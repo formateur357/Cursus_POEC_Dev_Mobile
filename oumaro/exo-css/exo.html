@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="Ultim_ul">
+      <ul>
+        France
+        <li>Bleu</li>
+        <li>Blanc</li>
+        <li>Rouge</li>
+      </ul>
+      <ul>
+        Tunisie
+        <li>Blanc</li>
+        <li>Rouge</li>
+      </ul>
+      <ul>
+        Uruguay
+        <li>Blanc</li>
+        <li>Bleu</li>
+      </ul>
+    </ul>
+
+    <style>
+      body {
+        background-color: black;
+      }
+
+      /*****ul france **************/
+      .Ultim_ul > ul:nth-child(1) > li:nth-child(1) {
+        color: blue;
+      }
+
+      .Ultim_ul > ul:nth-child(1) > li:nth-child(2) {
+        color: white;
+      }
+
+      .Ultim_ul > ul:nth-child(1) > li:nth-child(3) {
+        color: red;
+      }
+
+
+  /*****ul tunisie **************/
+  .Ultim_ul > ul:nth-child(2) > li:nth-child(1) {
+        color: white;
+      }
+
+      .Ultim_ul > ul:nth-child(2) > li:nth-child(2) {
+        color: red;
+      }
+
+      
+  /*****ul uruguay **************/
+  .Ultim_ul > ul:nth-child(3) > li:nth-child(1) {
+        color: white;
+      }
+
+      .Ultim_ul > ul:nth-child(3) > li:nth-child(2) {
+        color: blue;
+      }
+
+
+      li::before{
+        content: '•';
+        color: blue;
+        display: inline-block;
+        margin-left: -1.0em; 
+        width: 1em;
+        
+      }
+
+      li{
+
+        list-style-type: none;
+        
+      }
+
+      ul{
+        color: aliceblue;
+        margin-top: 20px;
+        
+      }
+    </style>
+  </body>
+</html>

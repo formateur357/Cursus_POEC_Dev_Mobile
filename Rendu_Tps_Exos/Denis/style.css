@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(113, 121, 113);
+  text-align: center;
+}
+table,
+th,
+td {
+  border: 1px solid rgb(182, 166, 166);
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 20px;
+}

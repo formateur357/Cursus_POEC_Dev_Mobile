@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EXO</title>
+</head>
+<body>
+
+    <!-------EXERCICES 1-------------->
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>A1</td>
+                <td>100</td>
+                <td>un</td>
+                <td>1000.25</td>
+            </tr>
+            
+            <tr>
+                <td>A2</td>
+                <td>200</td>
+                <td>deux</td>
+                <td>2000.00</td>
+            </tr>
+
+            <tr>
+                <td>A3</td>
+                <td>300</td>
+                <td>trois</td>
+                <td>3000.00</td>
+            </tr>
+        </tbody>
+</table><br>
+    
+
+    <!-------EXERCICES 2-------------->
+
+
+    <table border="1">
+       <tr>
+        <td>Années</td>
+        <td colspan="3">Salaires</td>
+       </tr>
+       <tr>
+        <td></td>
+        <td>NORD</td>
+        <td>SUD</td>
+        <td>TOTAL</td>
+       </tr>
+       <tr>
+        <td>2005</td>
+        <td>10M</td>
+        <td>8M</td>
+        <td>18M</td>
+       </tr>
+       <tr>
+        <td>2006</td>
+        <td>14</td>
+        <td>11</td>
+        <td>25</td>
+       </tr>
+    </table> <br>
+
+
+
+        <!-------EXERCICES 3-------------->
+
+            <ul>
+                <p>Les mois du printemps</p>
+                <li>Avril</li>
+                <li>Mai</li>
+                <li>Juin</li>
+            </ul><br>
+
+            <ol>
+                <p>Les mois d'autonne</p>
+                <li>octobre</li>
+                <li>Novembre</li>
+                <li>Décembre</li>
+            </ol><br>
+
+                    <!-------EXERCICES  4-------------->
+
+                    <table border="1" style="border-collapse: collapse; background-color:red">
+                        <tbody>
+                            <tr>
+                                <th style="background-color:tomato">Col 1</th>
+                                <th  style="background-color:tomato">Col 2</th>
+                                <th  style="background-color:tomato">Col 3</th>
+                            </tr>
+                            <tr>
+                                <td style="background-color:red">Case 1</td>
+                                <td  style="background-color:red">Case 2</td>
+                                <td  style="background-color:red">Case 3</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:tomato">Case 4</td>
+                                <td  style="background-color:tomato">Case 5</td>
+                                <td  style="background-color:tomato">Case 6</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:red">Case 7</td>
+                                <td  style="background-color:red">Case 8</td>
+                                <td  style="background-color:red">Case 9</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:tomato">Case 10</td>
+                                <td  style="background-color:tomato">Case 11</td>
+                                <td  style="background-color:tomato">Case 12</td>
+                            </tr>
+                        </tbody>
+                    </table><br>
+
+
+
+    <form action="" name="formulaire">
+        <legend>Formulaire d'inscription</legend>
+        <div class="identite">
+        <input type="text" name="nom" placeholder="nom">
+        <input type="text" name="prénom" placeholder="prénom">
+        <input type="email" name="email" placeholder="email">
+        </div>
+        <fieldset>
+            <legend>Sexe</legend>
+            <div>
+                <input type="radio" id="male" name="male" value="masculin">
+                <label for="masculin">masculin</label>
+            </div>
+            <div>
+                <input type="radio" id="femele" name="femele" value="feminin">
+                <label for="feminin">feminin</label>
+            </div>
+        </fieldset>
+        <label for="photo">Choisir une photos</label>
+        <input type="file" required accept="image/png, image/jpeg">
+
+        <label for="pays">Votre pays</label>
+            <select name="pays" id="paysChoose">
+                <option value="">--Choisir votre pays---</option>
+                <option value="france">France</option>
+                <option value="espagne">Espagne</option>
+                <option value="italie">Italie</option>
+                <option value="allemagne">Allemagne</option>
+            </select>
+
+            <label for="photo">Choisir une photos</label>
+            <input type="file" required accept="image/png, image/jpeg">
+    
+            <label for="pays">Votre  langues</label>
+                <select name="pays" id="paysChoose">
+                    <option value="">--Choisir votre langues---</option>
+                    <option value="france">Français</option>
+                    <option value="espagne">Espagnol</option>
+                    <option value="italie">Italiens</option>
+                    <option value="allemagne">Allemend</option>
+                </select>
+    
+                <fieldset>
+                <legend>Activités</legend>
+
+                <div>
+                    <input type="checkbox" id="foot" name="foot">
+                    <label for="foot">Football</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="Rugby" name="rub">
+                    <label for="Rugby">Rugby</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="basket" name="bask">
+                    <label for="bask">Basket</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="handball" name="hand">
+                    <label for="hand">Handball</label>
+                </div>
+            </fieldset>
+
+        <button type="submit">Valider</button>
+    </form>
+
+
+
+
+    <style>
+
+        input{
+
+            margin-top: 20px;
+           
+           
+        }
+
+        .identite{
+
+            display: flex;
+            flex-flow: column wrap;
+            margin: 10px 52px;
+        }
+
+        label{
+
+            margin-top: 10px;
+        }
+        fieldset{
+            margin-top: 20px;
+            background-color: aquamarine;
+        }
+
+        form{
+
+         
+            padding: 20px;
+            margin: 0 250px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+
+        select{
+
+            margin: 0 50px;
+            background-color: orange;
+        }
+
+
+        form > button{
+
+            width: 100px;
+            margin: auto;
+            margin-top: 20px;
+            background-color: rgb(98, 98, 255);
+            color: white;
+            padding: 15px;
+            border-radius: 20px;
+        }
+    </style>
+</body>
+</html>
