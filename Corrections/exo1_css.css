@@ -1,0 +1,41 @@
+ul {
+    list-style: none; /* Remove default bullets */
+  }
+  
+ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: blue; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+body > ul > li::before {
+    font-size: 1.5em;
+
+}
+
+ul li:nth-child(1) ul li:nth-child(1) {
+    color: blue;
+}
+
+ul li:nth-child(1) ul li:nth-child(2) {
+    color: yellow;
+}
+
+ul li:nth-child(1) ul li:nth-child(3) {
+    color: red;
+}
+
+ul li:nth-child(2) ul li:nth-child(1), ul li:nth-child(3) ul li:nth-child(1) {
+    color: yellow;
+}
+
+ul li:nth-child(2) ul li:nth-child(2) {
+    color: red;
+}
+
+ul li:nth-child(3) ul li:nth-child(2) {
+    color: blue;
+}
