@@ -1,0 +1,49 @@
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #e67700;
+}
+
+ul {
+  padding-left: 0;
+}
+ul li {
+  list-style-type: none;
+}
+
+button {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+div ul li p {
+  display: inline;
+}
+li > p,
+button {
+  margin-bottom: 10px;
+}
+div ul li > p {
+  color: blue;
+  margin-left: 20px;
+  margin-right: 25px;
+}
+div ul li p {
+  padding-right: 20px;
+}
+div ul li,
+p {
+  margin-bottom: 25px;
+}
+
+img {
+  padding-right: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+div.entete p {
+  display: inline;
+  margin-right: 50px;
+}
