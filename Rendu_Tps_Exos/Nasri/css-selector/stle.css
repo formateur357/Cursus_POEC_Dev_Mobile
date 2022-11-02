@@ -5,10 +5,46 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
   padding: 0;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* (2xi) + 1 = nombres impairs*/
-li > ul > li:nth-child(2n + 1) {
-  list-style-type: decimal;
+/* li > ul > li:nth-child(2n + 1) {
   color: blue;
+} */
+
+/* FRANCE */
+body > ul > li:first-child > ul > li:first-child {
+  color: blue;
+}
+body > ul > li:first-child > ul > li:nth-child(2) {
+  background: #000;
+  display: inline;
+  color: white;
+}
+body > ul > li:first-child > ul > li:nth-child(3) {
+  color: red;
+}
+/* TUNISIE */
+body > ul > li:nth-child(2) > ul > li:first-child {
+  color: red;
+}
+body > ul > li:nth-child(2) > ul > li:nth-child(2) {
+  background: #000;
+  display: inline;
+  color: #fff;
+}
+
+/* ITALY */
+body > ul > li:nth-child(3) > ul > li:first-child {
+  color: red;
+}
+body > ul > li:nth-child(3) > ul > li:nth-child(2) {
+  display: inline;
+  background: #000;
+  color: white;
+}
+body > ul > li:nth-child(3) > ul > li:nth-child(3) {
+  color: green;
 }
