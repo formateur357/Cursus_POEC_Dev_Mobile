@@ -1,0 +1,18 @@
+.str {
+    font-weight: bolder;
+}
+
+.nostr {
+    font-weight: 300;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+p {
+    font-size: 20px;
+}
