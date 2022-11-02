@@ -1,12 +1,16 @@
 form{
     width: 30%;
-    border: 2px solid grey;
+    border: 3   px solid grey;
     border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(65, 61, 61);
+    color: #f1f1f1;
 }
 
 .label{
     display: flex;
     flex-direction: column;
+    margin-bottom: 7px;
 }
 input{
     width: 150px;
@@ -15,4 +19,9 @@ input{
 }
 select{
     margin-bottom: 10px;
+}
+
+.radio{
+    margin-left: 0;
+    padding-left: 0;
 }
