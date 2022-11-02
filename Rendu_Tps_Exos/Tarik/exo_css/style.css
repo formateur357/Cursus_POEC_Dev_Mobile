@@ -9,10 +9,15 @@ ul li:before {
   font-size: 20px;
 }
 
-.blue {
-  color: blue;
+.yellow {
+  color: yellow;
 }
 
-.blue + li {
-  color: yellow;
+.yellow + li {
+  color: red;
+}
+
+body > ul > li > ul > li,
+body > ul > li:last-child > ul > li:last-child {
+  color: blue;
 }
