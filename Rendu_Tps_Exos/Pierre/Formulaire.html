@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Formulaire</title>
+  </head>
+  <body>
+    <form action="#">
+      <fieldset>
+        <legend>Formulaire d'inscription</legend>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" id="prenom" /><br />
+
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" /><br />
+
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" /><br />
+        <br />
+        <div>
+          Sexe :<br />
+          <input
+            type="radio"
+            id="sexe_m"
+            name="sexe"
+            value="masculin"
+            checked
+          />
+          <label for="sexe_m">Homme</label><br />
+          <input type="radio" id="sexe_f" name="sexe" value="feminin" />
+          <label for="sexe_f">Femme</label><br />
+        </div>
+        <br />
+        <div>
+          <label for="monImage"
+            >Votre image
+            <input
+              type="file"
+              id="monImage"
+              name="monImage"
+              accept="image/png, image/jpeg"
+            />
+          </label>
+        </div>
+        <br />
+        <div>
+          <label for="pays">Choisir un pays:</label>
+          <select name="pays" id="pays">
+            <option value="uk">Royaume uni</option>
+            <option value="norway">Norvège</option>
+            <option value="france">France</option>
+            <option value="spain">Espagne</option>
+            <option value="italy">Italie</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="progr">Langage de programmation favori:</label>
+          <select name="progr" id="progr" multiple>
+            <option value="java">Java</option>
+            <option value="js">Javascript</option>
+            <option value="php">Php</option>
+            <option value="csharp">C#</option>
+            <option value="cplusplus">C++</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Activités préférées:</label><br />
+          <input type="checkbox" id="activite1" name="activite1" value="act1" />
+          <label for="activite1"> Activité 1</label><br />
+          <input type="checkbox" id="activite2" name="activite2" value="act2" />
+          <label for="activite2"> Activité 2</label><br />
+          <input type="checkbox" id="activite3" name="activite3" value="act3" />
+          <label for="activite3"> Activité 3</label><br /><br />
+        </div>
+        <br />
+      </fieldset>
+      <label for="monSubmit">Validation:</label><br />
+      <button
+        id="monSubmit"
+        name="monSubmit"
+        type="button"
+        onclick="my_button_click_handler"
+      >
+        Valider le formulaire
+      </button>
+    </form>
+
+    <script>
+      var acceptButton = document.getElementById("monSubmit");
+      acceptButton.onclick = function () {
+        alert("Vous avez cliqué sur le bouton");
+      };
+    </script>
+
+    <!--
+Insérer les différents types  d'input html afin de réaliser un formulaire d'inscription.
+
+Travail à faire
+Créer un formulaire qui contient  les élements suivants :
+
+Champs de saisie de nom, prénom et e-mail.
+Deux boutons radio pour le choix du sexe.
+Un champ destiné au transfert de fichier photo dont le format est restreint aux types JPEG ou PNG.
+Une liste de choix pour les pays .
+Une liste de choix multiple pour les langages préférés.
+Des cases à cocher pour choisir les domaines d'activités
+
+
+  --></body>
+</html>
