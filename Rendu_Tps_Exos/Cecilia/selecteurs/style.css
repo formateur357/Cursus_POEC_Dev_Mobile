@@ -1,0 +1,21 @@
+ul{
+    list-style-type: disc;
+}
+
+li::marker{
+    color: blue;
+}
+
+li.bleu{
+    color: blue !important;
+}
+
+
+li li:last-child{
+    color: red;
+}
+
+body>ul>li>ul>li+li, body>ul>li:nth-child(2) ul>li:nth-child(1), body>ul>li:nth-child(3) ul>li:nth-child(1){
+    color: rgb(202, 202, 111);
+}
+
