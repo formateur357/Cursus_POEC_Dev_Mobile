@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(2, 180, 14);
+  background-color: rgb(113, 121, 113);
   text-align: center;
 }
 table,
 th,
 td {
-  border: 1px solid rgb(159, 20, 20);
+  border: 1px solid rgb(182, 166, 166);
   border-collapse: collapse;
 }
 th,
