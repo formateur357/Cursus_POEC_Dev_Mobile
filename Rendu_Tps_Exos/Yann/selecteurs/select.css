@@ -1,0 +1,26 @@
+ul li{
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "•"; color: rgb(0, 140, 255);
+    font-size: 20px;
+    margin-right: 3px;
+}
+
+li:nth-child(1){
+    margin-left: -25px;
+    font-size: 1.2rem;
+}
+
+ul:nth-child(1) li:nth-child(3), ul:nth-child(2) li:nth-child(2), ul:nth-child(3) li:nth-child(2){
+    color: yellow;
+}
+
+.bleu{
+    color: blue;
+}
+
+ul:nth-child(1) li:nth-child(4), ul:nth-child(2) li:nth-child(3){
+    color: red;
+}
