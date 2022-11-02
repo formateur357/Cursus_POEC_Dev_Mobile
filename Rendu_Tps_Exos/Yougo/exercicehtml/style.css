@@ -1,0 +1,19 @@
+body{
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.formulaire1 {
+    width: 400px;
+    height: 600px;
+    border: solid black 1px;
+    border-radius: 5%;
+    background-color: rgb(215, 215, 215);
+    padding: 50px;
+   
+}
+
+#info p {
+   color: red;
+}
