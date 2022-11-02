@@ -1,1 +1,3 @@
-#StarCraft page
+# StarCraft PAGE
+
+## fonctionnalités
