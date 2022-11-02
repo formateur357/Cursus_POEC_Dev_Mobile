@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Dresseur Pokemon</title>
+    </head>
+    <body>
+        <h1>Dresseur de pokémon</h1>
+
+        <p>Les champs marquées d'une * sont obligatoires.</p>
+
+        <div class="form">
+            <form action="get">
+                <label for="name">Nom *</label> <br>
+                <input type="text">
+
+                <br>
+                <br>
+
+                <label for="description">Description</label> <br>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+
+                <br>
+
+                <p>Equipe</p> 
+                <input type="checkbox" name="Rouge" id="Rouge"> <label for="Rouge">Rouge</label> <br>
+                <input type="checkbox" name="Bleu" id="Bleu"> <label for="Bleu">Bleu</label> <br>
+                <input type="checkbox" name="Jaune" id="Jaune"> <label for="Jaune">Jaune</label> <br>
+
+                <br>
+
+                <label for="bday">Anniversaire *</label> <br>
+                <input type="date" name="bday" id="bday">
+
+                <br>
+                <br>
+
+                <button type="submit">Envoyer</button>
+
+            </form>
+        </div>
+
+
+
+    </body>
+</html>

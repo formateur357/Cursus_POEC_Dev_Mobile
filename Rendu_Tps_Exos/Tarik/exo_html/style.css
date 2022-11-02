@@ -1,0 +1,56 @@
+.newExo {
+  border: 1px black solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+.exo {
+  margin: 50px;
+  border-spacing: 0;
+}
+
+td {
+  padding: 15px;
+  border: 1px solid black;
+}
+
+/* ------------------------------------------------ */
+
+#row1 {
+  background-color: rgb(207, 44, 44);
+  font-weight: bold;
+}
+
+#row2 {
+  background-color: rgb(184, 104, 104);
+}
+
+#row3 {
+  background-color: rgb(172, 60, 60);
+}
+
+#row4 {
+  background-color: rgb(184, 104, 104);
+}
+
+#row5 {
+  background-color: rgb(172, 60, 60);
+}
+
+/* -------------------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form div {
+  margin: 10px;
+}
+
+/* ------------------------------------------------ */
+
+.matiere thead {
+  font-weight: bolder;
+}

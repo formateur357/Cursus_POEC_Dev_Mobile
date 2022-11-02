@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>tableau</title>
+    </head>
+    <body>
+
+        <div class="newExo">
+            <h1>exo1</h1>
+            <table class="exo">
+                <tbody>
+                    <tr>
+                        <td>A1</td>
+                        <td>100</td>
+                        <td>un</td>
+                        <td>1000.25</td>
+                    </tr>
+                    <tr>
+                        <td>B1</td>
+                        <td>200</td>
+                        <td>Deux</td>
+                        <td>2000.00</td>
+                    </tr>
+                    <tr>
+                        <td>C1</td>
+                        <td>300</td>
+                        <td>Trois</td>
+                        <td>3000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="newExo">
+            <h1>exo2</h1>
+            <table class="exo">
+                <thead>
+                    <tr>
+                        <td rowspan="2">Années</td>
+                        <td colspan="3"> Salaires</td>
+                    </tr>
+                    <tr>
+                        <td>Nord</td>
+                        <td>Sud</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2005</td>
+                        <td>10M</td>
+                        <td>8M</td>
+                        <td>18M</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>14M</td>
+                        <td>11M</td>
+                        <td>25M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="newExo">
+            <h1>Les mois du printemps</h1>
+
+            <h2>Les mois du printemps</h2>
+            <ul>
+                <li>avril</li>
+                <li>mai</li>
+                <li>juin</li>
+            </ul>
+
+            <h3>les mois d'automne</h3>
+            <ol>
+                <li>octobre</li>
+                <li>novembre</li>
+                <li>decembre</li>
+            </ol>
+
+        </div>
+
+        <div class="newExo">
+
+            <h1>Tableau rouge</h1>
+            <table class="exo">
+                <thead>
+                    <tr id="row1">
+                        <td>Col 1</td>
+                        <td>Col 2</td>
+                        <td>Col 3</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row2">
+                        <td>Col 1</td>
+                        <td>Col 2</td>
+                        <td>Col 3</td>
+                    </tr>
+                    <tr id="row3">
+                        <td>Col 4</td>
+                        <td>Col 5</td>
+                        <td>Col 6</td>
+                    </tr>
+                    <tr id="row4">
+                        <td>Col 7</td>
+                        <td>Col 8</td>
+                        <td>Col 9</td>
+                    </tr>
+                    <tr id="row5">
+                        <td>Col 10</td>
+                        <td>Col 11</td>
+                        <td>Col 12</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="newExo form">
+
+            <div class="usename">
+                <label for="username">prénom : </label>
+                <input type="text" name="username">
+            </div>
+
+            <div class="name">
+                <label for="name">nom : </label>
+                <input type="text" name="name"> <br>
+            </div>
+
+            <div class="email">
+                <label for="email">email : </label>
+                <input type="text" name="email"> <br>
+            </div>
+
+            <div class="sexe">
+                <h3>sexe : </h3>
+                <input type="radio" name="masculin" id="masculin">
+                <label for="masculin">masculin</label>
+                <input type="radio" name="feminin" id="feminin">
+                <label for="feminin">feminin</label>
+            </div>
+
+            <div class="fichierPhoto">
+                <h3>upload une image (png et jpeg accepté) : </h3>
+                <input type="file" name="phoro" id="photo" accept="image/png, image/jpeg">
+            </div>
+
+            <div class="pays">
+                <label for="pays">Pays : </label>
+                <select name="pays" id="pays">
+                    <option value="france">france</option>
+                    <option value="belgique">belgique</option>
+                    <option value="allemangne">allemagne</option>
+                    <option value="espagne">espagne</option>
+                </select>
+            </div>
+
+            <div class="langages">
+                <label for="langages">langages préférés : </label> <br>
+                <select name="langages" id="langages" multiple="yes">
+                    <option value="javascript">Javacript</option>
+                    <option value="Html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+
+            <div class="domaine">
+                <h3>domaine d'activuté : </h3>
+
+                <input type="checkbox" name="front" id="front">
+                <label for="front">front</label>
+
+                <input type="checkbox" name="back" id="back">
+                <label for="back">back</label>
+
+                <input type="checkbox" name="fullstack" id="fullstack">
+                <label for="fullstack">fullstack</label>
+            </div>
+        </div>
+
+
+        <div class="newExo">
+            <ol class="doubleList" type="I">
+                <li> <h1>HTML</h1> <br>
+                    <ol>
+                        <li>Historique</li>
+                        <li>Structure</li>
+                        <li>Validation</li>
+                        <li>Nouveauté HTML5</li>
+                    </ol>
+                </li>
+                <li><h1> CSS</h1> <br>
+                    <ul>
+                        <li>Introduction</li>
+                        <li>Les propriétés css</li>
+                        <li>Nouveautés CSS3</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="newExo">
+            
+            <table class="exo matiere">
+                <caption>Calcul de la moyenne</caption>
+                <thead>
+                    <tr>
+                        <td>Matiére</td>
+                        <td>Note par matiére</td>
+                        <td>Coefficient</td>
+                        <td>Note*Coefficient</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathématique</td>
+                        <td>17</td>
+                        <td>4</td>
+                        <td>68</td>
+                    </tr>
+                    <tr>
+                        <td>Physique</td>
+                        <td>15</td>
+                        <td>3</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>Informatique</td>
+                        <td>16</td>
+                        <td>2</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Totals</td>
+                        <td>9</td>
+                        <td>145</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Moyenne</td>
+                        <td>16.12</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>
