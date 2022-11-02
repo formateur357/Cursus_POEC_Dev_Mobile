@@ -1,0 +1,58 @@
+Créer un formulaire qui contient  les élements suivants :
+
+Champs de saisie de nom, prénom et e-mail.
+Deux boutons radio pour le choix du sexe.
+Un champ destiné au transfert de fichier photo dont le format est restreint aux types JPEG ou PNG.
+Une liste de choix pour les pays .
+Une liste de choix multiple pour les langages préférés.
+Des cases à cocher pour choisir les domaines d'activités
+
+<!doctype html>
+
+<html lang="fr">
+
+    
+        <head>
+            <meta charset="utf-8" />
+            <meta name="description" content="Formation
+            POEC Dev" />
+            <title>Formulaire</title>
+        </head>
+
+        <body>
+            
+<h1>Formulaire pour la saisie du nom</h1>
+
+<form action="input_text_tableau.htm">
+<table border="0" cellpadding="0" cellspacing="4">
+ <tr>
+  <td align="right">Prénom:</td>
+  <td><input name="prenom" type="text" size="30" maxlength="30"></td>
+ </tr>
+ <tr>
+  <td align="right">Nom de famille:</td>
+  <td><input name="nom" type="text" size="30" maxlength="40"></td>
+ </tr>
+ <tr>
+    <td align="right">e-mail:</td>
+    <td><input name="nom" type="email" size="30" maxlength="40"></td>
+   </tr>
+</table>
+<INPUT type= "radio" name="sexe" value="masculin"> sexe masculin
+    <INPUT type= "radio" name="sexe" value="féminin"> sexe féminin <br>
+
+        <label for="avatar">Photo de profil:</label>
+
+<input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg"><br>
+       <SELECT name="nom" size="1">
+        <OPTION>france
+        <OPTION>italie
+        <OPTION>allemagne
+        <OPTION>belgique
+        <OPTION>espagne
+        </SELECT>
+</form>
+        </body>
+</html>
