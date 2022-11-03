@@ -1,0 +1,24 @@
+.component1 {
+    background-color: red;
+   
+   
+  }
+  .component2 {
+    float: right;
+    background-color: green;
+  }
+  .component3{
+  float: left;
+  background-color: blue;
+  }
+  .component4{
+    clear: both;
+    background-color: yellow;
+  }
+   
+   
+  .container > div{
+    text-align: center;
+   
+   
+  }
