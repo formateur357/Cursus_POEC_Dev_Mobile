@@ -1,0 +1,31 @@
+/*p  Liens par défaut (non survolés) 
+{
+   text-decoration: none;
+   color: red;
+   font-style: italic;
+}*/
+.container:hover p {
+
+    text-decoration: underline;
+
+}
+.container p:hover /* Apparence au survol des liens */
+{
+    
+   text-decoration: none;
+  /* color: green;*/
+   font-style: italic
+}
+
+/*p:active  Quand le visiteur clique sur le lien 
+{
+    background-color: #FFCC66;
+}*/
+
+
+
+.container p:hover ~ p{
+    font-weight: bold;
+    text-decoration: none;
+
+}
