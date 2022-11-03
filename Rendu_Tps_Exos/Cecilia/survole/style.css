@@ -1,0 +1,24 @@
+.container:hover p {
+    text-decoration: underline;
+}
+
+
+.container p:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container p:hover~p {
+    text-decoration: none;
+    font-style: italic;
+}
+
+p {
+    margin: 0px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.container{
+    width: fit-content;
+}
