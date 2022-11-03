@@ -1,0 +1,23 @@
+
+.container:hover :not(p:hover, p:hover ~ p) {
+    text-decoration: underline;
+    
+}
+
+p:hover {
+    font-weight: bold;
+    
+    
+}
+
+p:hover ~ p {
+    font-style: italic;
+   
+}
+
+
+
+p {
+ margin:0px;
+ padding:10px;
+}
