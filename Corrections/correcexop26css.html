@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Exo p.26</title>
+        <style>
+            .container:hover p {
+                text-decoration: underline;
+            }
+            .container p:hover {
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .container p:hover ~ p {
+                text-decoration: none;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <p>paragraph 1</p>
+            <p>paragraph 2</p>
+            <p>paragraph 3</p>
+            <p>paragraph 4</p>
+            <p>paragraph 5</p>
+        </div>
+    </body>
+    
+</html>
