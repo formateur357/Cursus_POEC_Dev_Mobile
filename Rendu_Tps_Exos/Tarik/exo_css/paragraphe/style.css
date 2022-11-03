@@ -1,0 +1,15 @@
+.container:hover p {
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.container p:hover {
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.container p:hover ~ p {
+  font-style: italic;
+  text-decoration: none;
+}
