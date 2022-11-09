@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>styles</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p id="parag1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+        </p>
+        <button onclick="changer_style()">Changer Style</button>
+
+        <table>
+            <tr>
+                <td>couleur de fond(rgb)</td>
+                <td><input type="range" name="color" id="color" min="0" max="255" onchange="changeTitre()"></td>
+                <td id="tabRight" rowspan="6"><p id="titre">Titre de test</p></td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td><input type="range" name="padding" id="padding" min="0" max="30" onchange="changeTitre()"></td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td><input type="range" name="height" id="height" min="0" max="200" onchange="changeTitre()"></td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td><input type="range" name="width" id="width" min="0" max="200" onchange="changeTitre()"></td>
+            </tr>
+            <tr>
+                <td>arrondi</td>
+                <td><input type="range" name="arrondi" id="arrondi" min="0" max="30" onchange="changeTitre()"></td>
+            </tr>
+            <tr>
+                <td>rotation</td>
+                <td><input type="range" name="rotation" id="rotation" min="0" max="180" onchange="changeTitre()"></td>
+            </tr>
+        </table>
+
+
+
+
+
+        <script src="./script.js"></script>
+
+    </body>
+</html>
