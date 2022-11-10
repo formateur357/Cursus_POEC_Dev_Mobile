@@ -1,0 +1,15 @@
+.disable {
+  display: none;
+}
+
+.enable {
+}
+
+td {
+  border: 1px black solid;
+  padding: 70px;
+}
+
+table {
+  border-spacing: 0;
+}
