@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Actions utilisateur et JavaScript</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="idemm.css" />
+  <script>
+      var onscreen = 'chat2.jpeg';
+      var mypictures = ["chat2.jpeg", "chien.jpeg", "sanglier.jpeg", "lapin.jpeg"];
+
+      function randomImage(array, exclusion) {
+        while (1) {
+          var arrayLength = array.length;
+          var index = Math.floor((Math.random() * arrayLength) + 0);
+          var image = array[index];
+          if (image != exclusion)
+            return image
+        }
+      }
+
+      function diaporama() {
+        var imagetodisplay = randomImage(mypictures, onscreen);
+        onscreen = imagetodisplay;
+        document.getElementById('diapo').setAttribute('src', 'ressources/' + imagetodisplay);
+      }
+  </script>
+</head>
+
+<body onload="chienchat = setInterval('diaporama();',2000);">
+
+  <h1>Actions utilisateur et JavaScript</h1>
+
+  <h2>Diaporama automatique</h2>
+
+  <div class="illustration">
+    <img id="diapo" src="ressources/chat2.jpeg" alt="un chat" height="200" />
+  </div>
+
+  <button onclick="clearInterval(chienchat);">stop!</button>
+
+  <button onclick="chienchat = setInterval('diaporama();',2000);">on y retourne!</button>
+
+</body>
+</html>

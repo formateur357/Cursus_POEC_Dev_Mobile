@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Actions utilisateur et JavaScript</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="idemm.css" />
+    <script>
+        var position = 1;
+        var nb_images = 4;
+        function descend() {
+            var idchat = 'img' + position;
+            position = position + 1;
+            if (position > nb_images) {
+                position = 1;
+            }
+            var idsuiv = 'img' + position;
+            document.getElementById(idchat).src = document.getElementById(idsuiv).src;
+            document.getElementById(idsuiv).src = 'ressources/chat2.jpeg';
+        }
+        function monte() {
+            var idchat = 'img' + position;
+            position = position - 1;
+            if (position < 1) {
+                position = nb_images;
+            }
+            var idprec = 'img' + position;
+            document.getElementById(idchat).src = document.getElementById(idprec).src;
+            document.getElementById(idprec).src = 'ressources/chat2.jpeg';
+        }
+    </script>
+</head>
+
+<body onkeyup="if (event.key=='ArrowDown') {descend();} else { if (event.key=='ArrowUp') {monte();} }">
+
+    <h1>Actions utilisateur et JavaScript</h1>
+
+    <h2>Déplacement d'images</h2>
+
+    <div class="illustration">
+        <img id="img1" src="ressources/chat2.jpeg" width="100" /><br />
+        <img id="img2" src="ressources/chien.jpeg" width="100" /><br />
+        <img id="img3" src="ressources/sanglier.jpeg" width="100" /><br />
+        <img id="img4" src="ressources/lapin.jpeg" width="100" /><br />
+    </div>
+
+    <button onclick="monte();">^en haut ^</button>
+    <button onclick="descend();">v en bas v</button>
+
+</body>
+
+</html>
