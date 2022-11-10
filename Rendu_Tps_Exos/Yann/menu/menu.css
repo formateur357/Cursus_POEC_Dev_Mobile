@@ -1,0 +1,36 @@
+/*menu vertical*/
+
+/* #menu{
+    width: 200px;
+}
+
+.sousmenu{
+    display: none;
+}
+
+li a[title="1"]:hover ~ .sousmenu {
+    display: block;
+}
+
+li a[title="4"]:hover ~ .sousmenu {
+    display: block;
+} */
+
+/*menu horizontal*/
+#menu{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.sousmenu{
+    display: none;
+}
+
+a[title="1"]:hover + .sousmenu{
+    display: block;
+}
+
+a[title="4"]:hover + .sousmenu{
+    display: block;
+}

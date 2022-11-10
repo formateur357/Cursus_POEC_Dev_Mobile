@@ -1,0 +1,17 @@
+Slide Puzzle ou taquin
+Premières étapes :
+
+Créer l'apparence du jeu : trois cases par trois cases, chaque case étant un bouton HTML.
+Associer des styles CSS à ces boutons.
+Écrire le code JavaScript qui, lorsque l'on clique sur un bouton, l'échange avec la case vide.
+
+Étapes suivantes :
+
+N'autoriser que les déplacements valides.
+Compter et afficher le nombre de déplacements effectués.
+
+Travail restant :
+
+Mélanger aléatoirement les cases au début du jeu.
+Détecter la fin de partie.
+Adapter le jeu à une version avec les morceaux d'une photo, plutôt qu'avec des boutons.

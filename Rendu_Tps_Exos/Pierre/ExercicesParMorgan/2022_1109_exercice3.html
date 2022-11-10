@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercice 3- Ecouteurs d'évenements</title>
+    <meta charset="utf-8" />
+    <script src="js/fonctions3.js"></script>
+  </head>
+  <body onload="pageChargee()">
+    <div id="mapage">
+      <p>
+        Premier paragraphe<br />
+        <img id="img_cat1" src="img/cat_01.jpg" /><br />
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p>
+        Autre paragraphe<br />
+        <img id="img_cat2" src="img/cat_02.jpg" /><br />
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p>
+        <button
+          onclick="remplacer_image_chat('img_replace_cat','img/cat_best_joke.jpg')"
+        >
+          Image initiale</button
+        ><br />
+        <img id="img_replace_cat" src="img/cat_best_joke.jpg" /><br />
+      </p>
+      <button onclick="evenement('button::onclick 1')">Alert1</button>
+      <br /><button onclick="onClickDocumentWrite()">
+        Bouton pour document.write
+      </button>
+      <br />
+      <br />
+      <button id="btn_green" onclick="change_fond('green', this)">
+        Change couleur fond vert</button
+      >&nbsp;|&nbsp;
+      <button id="btn_red" onclick="change_fond('red',this)">
+        Change couleur fond rouge</button
+      >&nbsp;|&nbsp;
+      <button id="btn_white" onclick="change_fond('white',this)">
+        Retour couleur fond blanc</button
+      >&nbsp;
+      <br />
+    </div>
+  </body>
+</html>

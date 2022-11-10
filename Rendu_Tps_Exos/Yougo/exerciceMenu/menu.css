@@ -1,0 +1,36 @@
+.sousmenu {
+    display: none;
+    
+   
+}
+
+li:hover .sousmenu {
+   position: absolute;
+   display: block;
+   width:5%;
+   height:10%;
+   
+   background-color: rgb(56, 56, 56);
+   
+}
+
+li {
+height:40px;
+list-style: none;
+}
+
+.space {
+    padding:10px;
+}
+
+#menu {
+    width: 6%;
+    height:40%;
+    background-color: rgb(0, 0, 0);
+   
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

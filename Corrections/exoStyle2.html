@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<title>Manipuler Styles</title>
+	<meta charset="utf-8">
+
+</head>
+<body>      
+    <div >
+        <table border="1">
+            <tr>
+                <td>couleur de fond (rgb)</td>
+                <td>
+                    0<input type="range" min="0" max="255" step=5 name='color' oninput='update(this)' value="0">255
+                </td>
+                <td rowspan="6" width="400" align="center">
+                    <h1 id="p1">Titre de test</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>
+        0<input type="range" name="padding" min="0" max="30" step=5 oninput='update(this)' value="0">30
+        </td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>
+                    0<input type="range" min="5" max="200" name="height" step=50 value="0" oninput='update(this)'>200
+                </td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>
+                    0<input type="range" min="5" max="200" name="width" step=50 value="0" oninput='update(this)'>200
+                </td>
+            </tr>
+            <tr>
+                <td>arrondi</td>
+                <td>
+                    0<input type="range" min="5" max="30" name="radius" step=5 value="0" oninput='update(this)'>30
+                </td>
+            </tr>
+            <tr>
+                <td>rotation</td>
+                <td>
+                    0<input type="range" min="5" max="180" name="rotation" step=5 value="0" oninput='update(this)'>180
+                </td>
+            </tr>
+        </table>
+    </div>	
+    <script type="text/javascript">
+        /*on a attribué des noms pour chaque input en html , pour qu'on puisse tester sur  elem.getAttribute("name") et faire le traitement approprié. */
+        function update(elem){
+            var p1=document.getElementById("p1");
+            if(elem.getAttribute("name")=="color"){
+                p1.style.background="rgb("+elem.value+","+elem.value+","+elem.value+")";
+                var c= 255-elem.value;
+                p1.style.color="rgb("+c+","+c+","+c+")";
+            }
+            else if(elem.getAttribute("name")=="padding"){
+                p1.style.padding=elem.value+"px";	
+            }
+            else if(elem.getAttribute("name")=="height"){
+                p1.style.height=elem.value+"px";	
+            }
+            else if(elem.getAttribute("name")=="width"){
+                p1.style.width=elem.value+"px";	
+            }
+            else if(elem.getAttribute("name")=="radius"){
+                p1.style.borderRadius=elem.value+"px";	
+            }
+            else if(elem.getAttribute("name")=="rotation"){
+                p1.style.transform="rotate("+elem.value+"deg)";	
+            }  
+        }
+    </script>
+</body>
+</html>

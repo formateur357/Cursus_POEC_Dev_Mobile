@@ -1,0 +1,22 @@
+ul {list-style: none}
+li::before {content: "•"; }
+
+li::before {content: "•"; color: blue;
+    display: inline-block; width: 1em;
+    margin-left: -1em}
+
+.couleur {
+    color:black;
+}
+
+li {
+    color: blue;
+}
+
+div > li {
+    color: rgb(255, 255, 0);
+}
+
+li:last-child {
+    color: rgb(255, 0, 0);
+  }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercice 1- styles par CSS et par JS</title>
+    <meta charset="utf-8" />
+    <script src="js/fonctions1.js"></script>
+    <style>
+      .active {
+        color: "green";
+        border-color: aquamarine;
+      }
+    </style>
+    <style type="text/css">
+      .default {
+        background-color: red;
+      }
+      .changedClass {
+        background-color: green;
+      }
+      #myPara {
+        margin-top: 20px;
+      }
+      #myButton {
+        padding: 10px;
+      }
+      body {
+        text-align: center;
+      }
+      h1 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="parag1">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+    <p>Autre paragraphe</p>
+    <button onclick="changer_style()">Changer Style</button>
+    <br />
+    <button onclick="changer_classe_active()">
+      Appliquer la classe active
+    </button>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+À un document HTML, ajouter des alertes :
+
+OK: au chargement de la page,
+quand on passe sur une image,
+quand on clique sur un bouton,
+quand on appuie sur une touche.
+Ajouter un bouton qui, quand on clique dessus, fait appel à document.write() pour produire un affichage. Que se passe-t-il ?
+Avec des boutons :
+
+changer la couleur de fond du document quand on clique sur un bouton,
+changer aussi l'apparence du bouton,
+ajouter un bouton qui permette de revenir à la normale.
+Sur des images :
+
+changer une image par une autre quand la souris passe dessus,
+remettre l'image d'origine quand la souris quitte l'image.

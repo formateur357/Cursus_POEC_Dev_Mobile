@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="deplacement.css">
+    <title>Déplacment</title>
+</head>
+<body onkeyup="if(event.key=='ArrowDown') {descend();} else {if(event.key=='ArrowUp') {monte()}}">
+    <div class="container-images">
+        <img id="img1" src="./pics/captain_america.jpeg" width="230px" height="130px" >
+        <img id="img2" src="./pics/doctor-strange.jpeg" width="230px" height="130px" >
+        <img id="img3" src="./pics/hulk.avif" width="230px" height="130px" >
+        <img id="img4" src="./pics/IronMan.jpg" width="230px" height="130px" >
+        <img id="img5" src="./pics/spiderman.avif" width="230px" height="130px" >
+    </div>
+
+    <button onclick="monte()">Vers le haut</button>
+    <button onclick="descend()">Vers le bas</button>
+
+
+    <script src="deplacement.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.container-slides{
+    width:200px;
+    height:200px;
+    position:relative;
+}
+
+.container-slides img{
+    position: absolute;
+    opacity: 0;
+    display: block;
+}
+
+img.active{
+    opacity: 1;
+}
+
+.container-btn{
+    display: flex;
+    margin-top: 10px;
+}
+
+.nav-suivant{
+    margin-left: 60px;
+}

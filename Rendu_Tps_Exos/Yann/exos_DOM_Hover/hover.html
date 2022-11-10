@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hover.css">
+    <title>Hover</title>
+</head>
+<body onload="alert('Coucou Les étoiles');">
+
+    <h1>Changement au click et Hover</h1>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ad totam reiciendis nesciunt repudiandae vel nulla asperiores laborum illo, facilis sapiente odit, ea dolorum! Aliquid aut laboriosam laborum sint cupiditate? Eos provident iure aspernatur, illum quae, repellat nisi commodi adipisci sequi quas ipsa iste reiciendis at possimus rem est asperiores.</p>
+
+    <img src="./pics/etoiles-soleil.jpg" width="100px" height="100px"
+     id="etoile1"
+    onmouseover="alert('je suis une étoile')">
+
+    <img src="./pics/helix_vista.jpg.crdownload" width="100px" height="100px"
+    id="etoile2"
+    onmouseover="changeImage()"
+    onmouseout="retourImage()">
+
+    <div>
+        <button onclick="alert('je suis le bouton clické !!')">action</button>
+        <button id="jour" onclick="faitjour()">Jour</button>
+        <button id="nuit" onclick="faitnuit()">Nuit</button>
+    </div>
+    <img src="./pics/on-troisieme-mort-des-etoiles-1-363x410.jpg" width="100px" height="100px" id="cache" alt="" style="display:none;">
+    <script src="hover.js"></script>
+</body>
+</html>

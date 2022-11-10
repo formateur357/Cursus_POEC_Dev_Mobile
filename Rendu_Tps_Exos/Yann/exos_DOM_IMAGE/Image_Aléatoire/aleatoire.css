@@ -1,0 +1,14 @@
+.container-img{
+    width:600px;
+    height:350px;
+
+}
+
+.container-img img{
+    opacity: 0;
+    display: block;
+}
+
+img.active{
+    opacity: 1;
+}

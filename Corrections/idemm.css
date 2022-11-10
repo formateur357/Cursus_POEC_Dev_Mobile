@@ -1,0 +1,29 @@
+nav, article {
+    display: block;
+    border: 1pt solid #FF0000;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+article {
+    margin-left: 21%;
+    padding: 2em;
+}
+
+P:first-letter {
+    float: left;
+    font-size: 300%;
+}
+
+table, th, td {
+    border: 1px dotted #0000FF;
+    padding: 2px;
+}
+
+th {
+    color: red;
+    background-color: yellow;
+}

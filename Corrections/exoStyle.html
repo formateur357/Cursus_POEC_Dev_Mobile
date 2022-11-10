@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>styles</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .active{
+                color: #fff;
+                background: #000;
+                border: 1px solid grey;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="parag1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+        </p>
+        <button onclick="changer_style()">Changer Style</button>
+        
+        <script type="text/javascript">
+            function changer_style(){
+                var p = document.getElementById('parag1');
+                p.classList.add("active");
+                // p.style.color="white";
+                // p.style.backgroundColor="black";
+                // p.style.border="1px solid gray";
+                // p.style.padding="5px";
+            }
+        </script>
+    </body>
+</html>
