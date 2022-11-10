@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercice 4- Diaporama images+javascript</title>
+    <meta charset="utf-8" />
+    <script src="js/fonctions4.js"></script>
+    <style>
+      img{
+        min-height: 100px;
+        min-width: 100px;
+      }
+    </style>
+  </head>
+  <body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p>
+        <button id="btn_run_stop_diapo" onclick="onClickRunDiaporama('img_replace')">
+          Début diaporama automatique</button
+        ><br />
+        <img id="img_replace" src="img/cat_best_joke.jpg" /><br />
+      </p>
+      <br />
+      <button id="btn_previous" onclick="onClickPrevious('img_replace')">
+       Image précédente</button
+      >&nbsp;|&nbsp;
+      <button id="btn_next" onclick="onClickNext('img_replace')">
+        Image suivante</button
+      >&nbsp;
+     
+      <br />
+    </div>
+  </body>
+</html>

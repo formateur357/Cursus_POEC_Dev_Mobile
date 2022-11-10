@@ -1,0 +1,15 @@
+/*
+style2.css
+*/
+
+table,
+th,
+td {
+  border: 1px solid blue;
+}
+
+#div_valeur {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

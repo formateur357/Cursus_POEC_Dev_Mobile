@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercice 2- styles changés par javascript</title>
+    <meta charset="utf-8" />
+    <link href="css/style2.css" rel="stylesheet" />
+    <script src="js/fonctions2.js"></script>
+  </head>
+  <body>
+    <table>
+      <thread>
+        <caption>
+          Changez les valeurs et observez le résultat
+        </caption>
+      </thread>
+      <tbody>
+        <tr>
+          <td colspan="4"><div id="div_valeur">&nbsp;</div></td>
+        </tr>
+        <tr>
+          <td>Couleur de fond (rgb)</td>
+          <td>
+            <input
+              id="colors"
+              type="range"
+              min="0"
+              max="255"
+              step="1"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+          <td rowspan="6">
+            <div id="titre_a_modifier">Titre de test</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>padding</td>
+          <td>
+            <input
+              id="padding"
+              type="range"
+              min="0"
+              max="10"
+              step="1"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>height</td>
+          <td>
+            <input
+              id="height"
+              type="range"
+              min="0"
+              max="200"
+              step="1"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>width</td>
+          <td>
+            <input
+              id="width"
+              type="range"
+              min="0"
+              max="200"
+              step="1"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>arrondi</td>
+          <td>
+            <input
+              id="arrondi"
+              type="range"
+              min="0"
+              max="30"
+              step="1"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>rotation</td>
+          <td>
+            <input
+              id="rotation"
+              type="range"
+              min="0"
+              max="180"
+              step="10"
+              value="5"
+              oninput="changer_style2(this)"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
