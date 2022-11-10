@@ -8,5 +8,11 @@ td {
 }
 
 #tabRight {
-  padding: 200px;
+  height: 400px;
+  width: 400px;
+}
+
+#tabRight p {
+  margin: auto;
+  text-align: center;
 }
