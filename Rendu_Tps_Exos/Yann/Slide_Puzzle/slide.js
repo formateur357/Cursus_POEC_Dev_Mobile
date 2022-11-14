@@ -1,13 +1,3 @@
-//Mélange aléatoire
-function melange(){
-var alea = document.querySelectorAll('#case');
-for (var i = alea.children.length; i>=0; i--){
-    alea.appendChild(alea.children[Math.random() * i | 0]);
-}
-}
-
-
-
 //mémoriser l'emplacement de la case vide
 var emptyLign= 4;
 var emptyCol=4;
@@ -66,3 +56,15 @@ function move(lign, col){
     emptyCol = col;
 }
 }
+
+//Mélange aléatoire
+function melange(){
+    var alea = document.querySelector('.jeu');
+    console.log(alea)
+    for (var i = alea.children.length; i >= 0; i--) {
+        alea.appendChild(alea.children[Math.random() * i | 0]);
+        emptyLign = lign,
+        emptyCol = col;
+    }
+
+    }
