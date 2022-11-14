@@ -23,29 +23,56 @@ function changePlace(btn) {
   console.log(orderEmpty);
   console.log(orderBtn);
 
-    if (
-        orderBtn == orderEmpty - 1 || orderBtn == orderEmpty + 1 ||
-        orderBtn == orderEmpty - 3 ||orderBtn == orderEmpty + 3 )
-    {
+    if (orderBtn == 1 || orderBtn == 4 || orderBtn == 7) {
+      if (
+        orderBtn == orderEmpty - 1 ||
+        orderBtn == orderEmpty - 3 ||
+        orderBtn == orderEmpty + 3
+      ) {
         document.getElementById(btn).style.order = orderEmpty;
         empty.style.order = orderBtn;
-
         count++;
         nbrTour.innerHTML = count;
-    } else {
+      } else {
         console.log("Déplacement interdit");
+      }
+    } else if (orderBtn == 3 || orderBtn == 6 || orderBtn == 9) {
+      if (
+        orderBtn == orderEmpty + 1 ||
+        orderBtn == orderEmpty - 3 ||
+        orderBtn == orderEmpty + 3
+      ) {
+        document.getElementById(btn).style.order = orderEmpty;
+        empty.style.order = orderBtn;
+        count++;
+        nbrTour.innerHTML = count;
+      } else {
+        console.log("Déplacement interdit");
+      }
+    } else if (
+      orderBtn == orderEmpty - 1 ||
+      orderBtn == orderEmpty + 1 ||
+      orderBtn == orderEmpty - 3 ||
+      orderBtn == orderEmpty + 3
+    ) {
+      document.getElementById(btn).style.order = orderEmpty;
+      empty.style.order = orderBtn;
+      count++;
+      nbrTour.innerHTML = count;
+    } else {
+      console.log("Déplacement interdit");
     }
     checkFinish()
 }
 
-// function randomStart() {
-//     arrayOfBtn.sort(() => Math.random() - 0.5);
-//     console.log(arrayOfBtn)
-//     for (let i = 0; i < arrayOfBtn.length ; i++) {
-//         arrayOfBtn[i].style.order = i+1;
-//     }
-// }
-// randomStart();
+function randomStart() {
+    arrayOfBtn.sort(() => Math.random() - 0.5);
+    console.log(arrayOfBtn)
+    for (let i = 0; i < arrayOfBtn.length ; i++) {
+        arrayOfBtn[i].style.order = i+1;
+    }
+}
+randomStart();
 
 function checkFinish() {
     for (let i = 1; i < 9; i++) {
