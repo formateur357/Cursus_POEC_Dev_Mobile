@@ -9,76 +9,52 @@ button {
   width: 840px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, 210px);
-  grid-template-rows: repeat(4, 210px);
+  grid-template-columns: repeat(3, 210px);
+  grid-template-rows: repeat(3, 210px);
 }
 
 #empty {
   width: 200px;
   height: 200px;
-  order: 16;
-}
-
-#btnUn {
-  order: 1;
-}
-
-#btnDeux {
-  order: 2;
-}
-
-#btnTrois {
-  order: 3;
-}
-
-#btnQuatre {
-  order: 4;
-}
-
-#btnCinq {
-  order: 5;
-}
-
-#btnSix {
-  order: 6;
-}
-
-#btnSept {
-  order: 7;
-}
-
-#btnHuit {
-  order: 8;
-}
-
-#btnNeuf {
   order: 9;
 }
 
-#btnDix {
-  order: 10;
+#btn1 {
+  order: 1;
 }
 
-#btnOnze {
-  order: 11;
+#btn2 {
+  order: 2;
 }
 
-#btnDouze {
-  order: 12;
+#btn3 {
+  order: 3;
 }
 
-#btnTreize {
-  order: 13;
+#btn4 {
+  order: 4;
 }
 
-#btnQuatorze {
-  order: 14;
+#btn5 {
+  order: 5;
 }
 
-#btnQuinze {
-  order: 15;
+#btn6 {
+  order: 6;
+}
+
+#btn7 {
+  order: 7;
+}
+
+#btn8 {
+  order: 8;
 }
 
 h1 {
   text-align: center;
+}
+
+#gameFinish {
+  color: red;
 }
