@@ -8,10 +8,15 @@
       img{
         min-height: 100px;
         min-width: 100px;
+        max-height: 400px;
+        max-width: 400px;
       }
     </style>
   </head>
-  <body">
+  <body onload="pageChargee()">
+    <div id="photo_list">
+
+    </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -19,20 +24,26 @@
         commodo consequat.
       </p>
       <p>
-        <button id="btn_run_stop_diapo" onclick="onClickRunDiaporama('img_replace')">
-          Début diaporama automatique</button
+        <button id="btn_run_stop_diapo" onclick="onClickRunDiaporama('img_replace', false)">
+          Début diaporama automatique (sans hasard</button
+        >
+        <button id="btn_run_stop_random" onclick="onClickRunDiaporama('img_replace', true)">
+          Début diaporama automatique (hasard)</button
         ><br />
         <img id="img_replace" src="img/cat_best_joke.jpg" /><br />
       </p>
       <br />
-      <button id="btn_previous" onclick="onClickPrevious('img_replace')">
-       Image précédente</button
-      >&nbsp;|&nbsp;
-      <button id="btn_next" onclick="onClickNext('img_replace')">
-        Image suivante</button
-      >&nbsp;
-     
+      <div id="buttons">
+        <button id="btn_previous" onclick="onClickPrevious('img_replace')">
+          Image précédente</button>&nbsp;|&nbsp;
+          <button id="btn_next" onclick="onClickNext('img_replace')">
+            Image suivante</button
+            >&nbsp;
+          </div>
       <br />
     </div>
+    <script>
+      // add_pictures();
+    </script>
   </body>
 </html>
