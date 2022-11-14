@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+
+}
+
+
+h1, p{
+    margin-right: 100px;
+    margin-left: -100px;
+}
+
+#jeu{
+    /* margin: 0 auto; */
+    width: 24%;
+    height: 24%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+button.case, button.emptyCase{
+    width: 100px!important;
+    height: 100px!important;
+   
+}
+
+button.emptyCase{
+    background-color: inherit;
+    border: none;
+    
+}
+
+button.case{
+    background-color: blue;
+    border: 3px solid black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+hr{
+    clear: both;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#random{
+    margin-left: 50px;
+    font-size: 2em;
+    background-color: red;
+    border: 3px solid black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
