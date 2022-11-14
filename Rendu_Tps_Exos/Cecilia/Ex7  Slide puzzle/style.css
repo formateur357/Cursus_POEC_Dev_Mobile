@@ -1,0 +1,43 @@
+.container {
+    width: fit-content;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+    margin: 0 auto;
+}
+
+button {
+    margin: 3px;
+}
+
+.empty{
+    background-color: white;
+    border: none;
+    display: hide;
+}
+
+.exist{
+    border-radius: 5%;
+    border: 1px solid gray;
+    background-color: rgb(242, 249, 255);
+    color: rgb(81, 81, 122);
+    font-size: 16px;
+}
+
+.exist:hover{
+    background-color: rgb(124, 150, 174);
+}
+
+span{
+    color:red;
+    font-weight: bold;
+}
+
+#fini{
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    
+}
