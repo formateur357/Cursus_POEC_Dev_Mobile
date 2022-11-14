@@ -1,29 +1,24 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid red;
+/* body{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+} */
 
+.text{
+    float:inline-start;
 }
 
 
-h1, p{
-    margin-right: 100px;
-    margin-left: -100px;
-}
-
-#jeu{
-    /* margin: 0 auto; */
-    width: 24%;
-    height: 24%;
-    display: flex;
-    flex-wrap: wrap;
-
+div.jeu{
+    margin: 0 auto 0 auto;
+    width: 416px;
 }
 
 button.case, button.emptyCase{
     width: 100px!important;
     height: 100px!important;
+    float: left;
+    margin: 1px 2px 1px 2px;
    
 }
 

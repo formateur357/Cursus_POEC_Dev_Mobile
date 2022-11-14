@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <body>
 <div class="text">
     <h1>Slide Puzzle</h1>
-    <p>Pas de coups joués !</p>
+    <p id="compteurClick">Pas de coups joués !</p>
 </div>
 
     <div class="jeu">
@@ -18,22 +18,22 @@
         <button id="case12" class="case" onclick="move(1,2);">11</button>
         <button id="case13" class="case" onclick="move(1,3);">8</button>
         <button id="case14" class="case" onclick="move(1,4);">5</button>
-       
+      <hr> 
         <button id="case21" class="case" onclick="move(2,1);">7</button>
         <button id="case22" class="case" onclick="move(2,2);">10</button>
         <button id="case23" class="case" onclick="move(2,3);">4</button>
         <button id="case24" class="case" onclick="move(2,4);">6</button>
-     
+     <hr>
         <button id="case31" class="case" onclick="move(3,1);">13</button>
         <button id="case32" class="case" onclick="move(3,2);">9</button>
         <button id="case33" class="case" onclick="move(3,3);">2</button>
         <button id="case34" class="case" onclick="move(3,4);">14</button>
-      
+      <hr>
         <button id="case41" class="case" onclick="move(4,1);">15</button>
         <button id="case42" class="case" onclick="move(4,2);">12</button>
         <button id="case43" class="case" onclick="move(4,3);">3</button>
         <button id="case44" class="emptyCase" onclick="move(4,4);">&nbsp</button>
-      
+      <hr>
     </div>
 
     <button id="random" onclick="melange()">Mélange aléatoire</button>
