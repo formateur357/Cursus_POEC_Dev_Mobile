@@ -4,14 +4,24 @@
     grid-template-rows: repeat(3, 100px);
     grid-template-columns: repeat(3, 100px);
     margin: 0 auto;
+    background-image: url(archibald.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 button {
     margin: 3px;
 }
 
+.container>div{
+    border: 1px solid gray;
+    border-radius: 5%;
+}
+
 .empty{
     background-color: white;
+    /* opacity: 0; */
     border: none;
     display: hide;
 }
@@ -19,18 +29,15 @@ button {
 .exist{
     border-radius: 5%;
     border: 1px solid gray;
-    background-color: rgb(242, 249, 255);
+    background-color: rgb(75, 214, 175);
     color: rgb(81, 81, 122);
     font-size: 16px;
 }
 
+/* rgb(242, 249, 255) */
+
 .exist:hover{
     background-color: rgb(124, 150, 174);
-}
-
-span{
-    color:red;
-    font-weight: bold;
 }
 
 #fini{

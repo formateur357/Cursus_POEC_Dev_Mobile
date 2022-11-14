@@ -115,7 +115,6 @@ function swap(ele) {
     let n = (id_click.charAt(id_click.length - 1)) - 1;
     let n_empty = (case_vide.getAttribute('id').charAt(id_click.length - 1)) - 1;
     let fin = document.getElementById('fini');
-    console.log(fin);
 
     if (verify_cases(n)) {
 
