@@ -1,0 +1,84 @@
+button {
+  background-color: rgb(209, 209, 209);
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.container {
+  width: 840px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 210px);
+  grid-template-rows: repeat(4, 210px);
+}
+
+#empty {
+  width: 200px;
+  height: 200px;
+  order: 16;
+}
+
+#btnUn {
+  order: 1;
+}
+
+#btnDeux {
+  order: 2;
+}
+
+#btnTrois {
+  order: 3;
+}
+
+#btnQuatre {
+  order: 4;
+}
+
+#btnCinq {
+  order: 5;
+}
+
+#btnSix {
+  order: 6;
+}
+
+#btnSept {
+  order: 7;
+}
+
+#btnHuit {
+  order: 8;
+}
+
+#btnNeuf {
+  order: 9;
+}
+
+#btnDix {
+  order: 10;
+}
+
+#btnOnze {
+  order: 11;
+}
+
+#btnDouze {
+  order: 12;
+}
+
+#btnTreize {
+  order: 13;
+}
+
+#btnQuatorze {
+  order: 14;
+}
+
+#btnQuinze {
+  order: 15;
+}
+
+h1 {
+  text-align: center;
+}
