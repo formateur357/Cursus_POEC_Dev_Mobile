@@ -14,7 +14,9 @@ let maxi; // Taille maxi pour x et y d'après la première ligne du tableau
 let lig_empty; // position verticale de la case vide
 let col_empty; // position horizontal de la case vide
 let compteur = 0; // Nombre mouvements va
-
+let withImage = false; // false= version texte true= version avec images
+let image_name = "img/cat_best_joke.jpg";
+let largeur_cellule = 70;
 /*
  * Recopier le compteur sur la page
  */
@@ -24,7 +26,8 @@ function show_counter() {
 }
 
 /*
- * Détecter la fin de partie.
+ * Détecter la fin de partie
+ *
  * retourner true si fin de partie ( c'est a dire le tableau est classé) sinon renvoie false
  */
 function detecterFinDePartie() {
@@ -37,12 +40,13 @@ function detecterFinDePartie() {
       }
     }
   }
+  // S'il n'y pas eu d'erreur de classement, c'est que la partie est terminée
   return true;
 }
 
 /*
  * Vérifier si on peut faire un permutation, et la faire si c'est possible puis incrémenter le compteur de mouvements corrects
- * Retourner true si mpermuation faite, false si non faite
+ * Retourner true si permutation faite, false si non faite
  */
 function move2(lig, col) {
   let name_btn = "btn-" + lig + "-" + col;
@@ -54,14 +58,14 @@ function move2(lig, col) {
   }
 
   if (!isMovable(col, lig)) {
-    // Mouvement pas autorisé par la reègle du jeu
+    // Mouvement non autorisé par la règle du jeu
     return false;
   }
 
   console.log("move2 col=" + col, "lig=" + lig);
   ////
   ////
-  //// Maintenant on va permuter tout ce qui est indispensable
+  //// Maintenant on va permuter tout ce qui est indispensable : les éléments HTML, les classes CSS, et les valeurs dans le tableau javascript
   ////
   ////
   let element_btn = document.getElementById(name_btn);
@@ -84,11 +88,13 @@ function move2(lig, col) {
   // Déplacer la position de la case vide
   lig_empty = lig;
   col_empty = col;
-  // Tester fin du jeu
+  // Tester si c'est la fin du jeu
   let fin = detecterFinDePartie();
   if (fin) {
-    alert("La partie est terminée");
-    shuffle_and_refresh();
+    let answer = confirm("La partie est terminée\nNouvelle partie ?");
+    if (answer) {
+      shuffle_and_refresh(); // On relance automatiquement une partie
+    }
   } else {
     // Incrémenter le compteur de parties
     compteur++;
@@ -139,6 +145,25 @@ function isMovable(x, y) {
   }
   return ret;
 }
+
+function add_tag_image_v0(btn, lig, col) {
+  let x = col * largeur_cellule;
+  let y = lig * largeur_cellule;
+  let backgr_pos = `background-position: ${x}px ${y}px;`;
+  let imgtag = '<div class="img_taquin" style="' + backgr_pos + '" />';
+  btn.innerHTML = imgtag;
+  return btn;
+}
+
+function add_tag_image(btn, lig, col) {
+  let x = 100 * (col / maxi);
+  let y = 100 * (lig / maxi);
+  let backgr_pos = `background-position: ${x}% ${y}%  background-size:${maxi}00%;`;
+  let imgtag = '<div class="img_taquin" style="' + backgr_pos + '" />';
+  btn.innerHTML = imgtag;
+  return btn;
+}
+
 /*
  * Recopier le tableau javascript vers le HTML
  */
@@ -157,11 +182,19 @@ function show_gameboard() {
     //
     if (val == 0) {
       // Case vide
-      btn.innerText = " ";
+      if (withImage) {
+        btn = add_tag_image(btn, lig, col);
+      } else {
+        btn.innerText = " ";
+      }
       btn.setAttribute("class", "no-taquin");
     } else {
       // Toutes les autres valeurs
-      btn.innerText = "" + val;
+      if (withImage) {
+        btn = add_tag_image(btn, lig, col);
+      } else {
+        btn.innerText = "" + val;
+      }
       btn.setAttribute("class", "taquin");
     }
     console.log(index_btn, lig, col, val, chunks);
@@ -238,11 +271,39 @@ function cherchecaseVideDansTableau() {
     }
   }
 }
+
+function radioSelected(e) {
+  console.log(e);
+  if (this.checked) {
+    let choix = this.value;
+    // alert("En mode " + choix);
+    switch (choix) {
+      case "txt":
+        withImage = false;
+        show_gameboard();
+        break;
+
+      case "img":
+        withImage = true;
+        show_gameboard();
+        break;
+    }
+  }
+}
+
+function gestion_radio_button() {
+  const radioButtons = document.querySelectorAll('input[name="taquin_radio"]');
+  for (const radioButton of radioButtons) {
+    radioButton.addEventListener("change", radioSelected);
+  }
+}
 /**
  * Démarage du jeu de Taquin
  */
-function init_taquin() {
+function init_taquin(withImageBoolean) {
+  withImage = withImageBoolean;
   maxi = tab.length;
+  gestion_radio_button();
   shuffle_and_refresh();
   //
 }

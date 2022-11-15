@@ -17,6 +17,15 @@ button.no-taquin {
   margin: 1px 2px 1px 2px;
 }
 
+.img_taquin {
+  background-image: url(../img/cat_best_joke.jpg);
+  background-size: 150px;
+  width: 70px;
+  height: 70px;
+  border: 2px solid;
+  color: green;
+}
+
 button.no-taquin {
   background-color: inherit;
   border: none;
