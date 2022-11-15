@@ -1,13 +1,13 @@
 .container {
-    width: fit-content;
+    width: 500px;;
+    height: 500px;
     display: grid;
-    grid-template-rows: repeat(3, 100px);
-    grid-template-columns: repeat(3, 100px);
     margin: 0 auto;
-    background-image: url(archibald.jpg);
-    background-repeat: no-repeat;
+    /* background-image: url(archibald.jpg); */
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    justify-content: center;
 }
 
 button {
@@ -15,7 +15,7 @@ button {
 }
 
 .container>div{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 5%;
 }
 
@@ -29,16 +29,16 @@ button {
 .exist{
     border-radius: 5%;
     border: 1px solid gray;
-    background-color: rgb(75, 214, 175);
+    /* background-color: rgb(242, 249, 255); */
     color: rgb(81, 81, 122);
     font-size: 16px;
 }
 
 /* rgb(242, 249, 255) */
 
-.exist:hover{
+/* .exist:hover{
     background-color: rgb(124, 150, 174);
-}
+} */
 
 #fini{
     font-size: 40px;
@@ -48,3 +48,25 @@ button {
     margin: 0 auto;
     
 }
+
+/* #case1{
+    background-image: url(archi.jpg);
+    background-repeat: no-repeat;
+    background-size: 300%;
+    background-position-x: 0%;
+}
+
+#case2{
+    background-image: url(archi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 300%;
+    background-position-x: 32%;
+}
+#case3{
+    background-image: url(archi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 300%;
+    background-position-x: 64%;
+} */
