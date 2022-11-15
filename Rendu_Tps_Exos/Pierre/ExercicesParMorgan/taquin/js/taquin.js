@@ -155,12 +155,21 @@ function add_tag_image_v0(btn, lig, col) {
   return btn;
 }
 
-function add_tag_image(btn, lig, col) {
-  let x = 100 * (col / maxi);
-  let y = 100 * (lig / maxi);
+function add_tag_image_v1_ok(btn, lig, col) {
+  let x = (100 / maxi) * col;
+  let y = (100 / maxi) * lig;
   let backgr_pos = `background-position: ${x}% ${y}%  background-size:${maxi}00%;`;
   let imgtag = '<div class="img_taquin" style="' + backgr_pos + '" />';
   btn.innerHTML = imgtag;
+  return btn;
+}
+
+function add_tag_image(btn, lig, col) {
+  let x = (100 / maxi) * col;
+  let y = (100 / maxi) * lig;
+  btn.style.backgroundPosition = `${x}% ${y}%`;
+  btn.style.backgroundSize = `${maxi}00%;`;
+  btn.classList.add("img_taquin");
   return btn;
 }
 
@@ -169,9 +178,7 @@ function add_tag_image(btn, lig, col) {
  */
 function show_gameboard() {
   let gameboard = document.getElementById("gameboard");
-  // let buttonVide = document.getElementsByClassName("no-taquin");
   let buttons = gameboard.getElementsByTagName("button");
-  // console.log(buttons);
   for (let index_btn = 0; index_btn < buttons.length; index_btn++) {
     let btn = buttons[index_btn];
     let idstr = btn.id;
@@ -186,16 +193,16 @@ function show_gameboard() {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = " ";
+        btn.setAttribute("class", "no-taquin");
       }
-      btn.setAttribute("class", "no-taquin");
     } else {
       // Toutes les autres valeurs
       if (withImage) {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = "" + val;
+        btn.setAttribute("class", "taquin");
       }
-      btn.setAttribute("class", "taquin");
     }
     console.log(index_btn, lig, col, val, chunks);
   }
