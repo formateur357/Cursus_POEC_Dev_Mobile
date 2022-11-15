@@ -8,7 +8,7 @@ function move(lig, col) {
   var bname = "case" + lig + col;
   var ename = "case" + elig + ecol;
   
-  /* on récupère les noeuds correspondant à ces boutons */
+  /* on récupère les noeuds du DOM correspondant à ces boutons */
   var bnode = document.getElementById(bname);
   var enode = document.getElementById(ename);
   
