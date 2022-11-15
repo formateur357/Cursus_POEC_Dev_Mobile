@@ -24,6 +24,23 @@ function show_counter() {
 }
 
 /*
+ * Détecter la fin de partie.
+ * retourner true si fin de partie ( c'est a dire le tableau est classé) sinon renvoie false
+ */
+function detecterFinDePartie() {
+  for (let y = 0; y < maxi; y++) {
+    for (let x = 0; x < maxi; x++) {
+      let valeur = y * maxi + x;
+      if (tab[y][x] != valeur) {
+        // Pas bien classé, donc le joueur n'a pas fini
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+/*
  * Vérifier si on peut faire un permutation, et la faire si c'est possible puis incrémenter le compteur de mouvements corrects
  * Retourner true si mpermuation faite, false si non faite
  */
@@ -67,8 +84,15 @@ function move2(lig, col) {
   // Déplacer la position de la case vide
   lig_empty = lig;
   col_empty = col;
-  // Incrémenter le compteur de parties
-  compteur++;
+  // Tester fin du jeu
+  let fin = detecterFinDePartie();
+  if (fin) {
+    alert("La partie est terminée");
+    shuffle_and_refresh();
+  } else {
+    // Incrémenter le compteur de parties
+    compteur++;
+  }
   // Retourner qu'on a pu faire le déplacement
   return true;
 }
@@ -170,17 +194,30 @@ function shuffle() {
   }
 }
 
+function sorted_and_refresh() {
+  for (let y = 0; y < maxi; y++) {
+    for (let x = 0; x < maxi; x++) {
+      let valeur = y * maxi + x;
+      tab[y][x] = valeur;
+    }
+  }
+  compteur = 0;
+  cherchecaseVideDansTableau();
+  show_gameboard();
+}
+
 /**
  * Permutation dans le tableau javascript et affichage dans la grille de jeu
  */
 function shuffle_and_refresh() {
   shuffle();
   compteur = 0;
+  cherchecaseVideDansTableau();
   show_gameboard();
 }
 
 /*
- * Chercher le zero dans le tableau
+ * Chercher la case vide ( valeur zero ) dans le tableau javascript
  */
 function cherchecaseVideDansTableau() {
   for (let y = 0; y < maxi; y++) {
@@ -207,6 +244,5 @@ function cherchecaseVideDansTableau() {
 function init_taquin() {
   maxi = tab.length;
   shuffle_and_refresh();
-  cherchecaseVideDansTableau();
   //
 }
