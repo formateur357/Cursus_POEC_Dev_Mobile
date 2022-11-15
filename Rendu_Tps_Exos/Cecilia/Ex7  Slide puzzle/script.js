@@ -45,12 +45,15 @@ function niveau(n = facile) {
 
 
 function cut_image() {
+    let n = 30;
     let bgImg =  "url('archi.jpg')";
     let cases = Array.from(divs).map(divs => divs);
-    cases[0].style.backgroundImage = bgImg;
-    // console.log(divs);
-    // console.log(cases);
+    for (let i = 0; i < cases.length; i++) {
+        cases[i].style.backgroundImage = bgImg;
+        cases[i].style.backgroundPosition = i*n + "%";
 
+        
+    }
 }
 
 
