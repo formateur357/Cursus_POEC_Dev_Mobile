@@ -22,7 +22,7 @@ function move(lig, col) {
         //     compteur_txt = document.createTextNode('un seul coup joué');
         // } else {
         //     compteur_txt = document.createTextNode(nbclicks + ' coups joués');
-        }
+        // }
 
         // noeud_compteur.innerHTML = "";
 
