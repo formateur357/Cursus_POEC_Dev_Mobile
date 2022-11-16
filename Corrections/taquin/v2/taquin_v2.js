@@ -14,10 +14,20 @@ function move(lig, col) {
 
         /* on récupère l'élément compteur */
         var noeud_compteur = document.getElementById('compteur');
-        noeud_compteur.innerHTML = nbclicks + " coups!!"
+        noeud_compteur.innerHTML = nbclicks == 1 ? nbclicks + " coup!!" : nbclicks + " coups!!"
 
-        // /* ajouter ce noeud textuel comme fils de l'élément compteur */
-        noeud_compteur.appendChild(compteur_txt);
+        // // // /* créer un nouveau noeud textuel avec la valeur nbclicks */
+        // var compteur_txt;
+        // if (nbclicks == 1) {
+        //     compteur_txt = document.createTextNode('un seul coup joué');
+        // } else {
+        //     compteur_txt = document.createTextNode(nbclicks + ' coups joués');
+        }
+
+        // noeud_compteur.innerHTML = "";
+
+        // // /* ajouter ce noeud textuel comme fils de l'élément compteur */
+        // noeud_compteur.appendChild(compteur_txt);
         
         /* on récupère les identifiants des deux boutons concernés */
         var bname = 'case' + lig + col;
@@ -31,7 +41,7 @@ function move(lig, col) {
 
         /* on peut directement utiliser un tampon afin de switcher les deux texte */
         var tmp = bnode.innerHTML;
-        bnode.innerHTML = enode;
+        bnode.innerHTML = enode.innerHTML;
         enode.innerHTML = tmp;
         
         /* on récupère les fils textuels des deux boutons */
