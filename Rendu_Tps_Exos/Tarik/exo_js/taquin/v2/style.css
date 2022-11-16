@@ -3,8 +3,6 @@
     width: 840px;
     margin: 50px;
     display: grid;
-    /* grid-template-columns: repeat(3, 251px);
-    grid-template-rows: repeat(3, 251px);*/
   } 
   
   h1 {
