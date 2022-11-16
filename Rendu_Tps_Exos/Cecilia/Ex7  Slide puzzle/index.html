@@ -7,24 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="aleatoire();
-" >
+<body onload="niveau();">
 
-    <div class="container">
-        <button id="piece1" class="" onclick="swap(this)"></button> <button id="piece2" class="" onclick="swap(this)"></button> <button id="piece3" class="" onclick="swap(this)"></button>
-        <button id="piece4" class="" onclick="swap(this)"></button> <button id="piece5" class="" onclick="swap(this)"></button> <button id="piece6" class="" onclick="swap(this)"></button>
-        <button id="piece7" class="" onclick="swap(this)"></button> <button id="piece8" class="" onclick="swap(this)"></button> <button id="piece9" class="" onclick="swap(this)"></button>
-        <!-- <div id="case1" class="exist"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div> -->
+    <div class="container" >
+
     </div>
 
+    <div>
+        <button onclick="niveau(facile)">facile</button>
+        <button onclick="niveau(intermedaire)">Intermediaire</button>
+        <button onclick="niveau(expert)">Expert</button>
+    </div>
     <div>
         <p>Nombre de déplacement : <strong></strong></p>
 

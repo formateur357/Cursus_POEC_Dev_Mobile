@@ -1,0 +1,31 @@
+/*
+taquin.css
+*/
+
+div#gameboard {
+  margin: 0 auto 0 auto;
+  width: 296px;
+}
+
+button.taquin,
+button.no-taquin {
+  width: 70px;
+  height: 70px;
+  font-size: 150%;
+  float: left;
+  border: solid 1pt blue;
+  margin: 1px 2px 1px 2px;
+}
+
+.img_taquin {
+  background-image: url(../img/cat_best_joke.jpg);
+  width: 70px;
+  height: 70px;
+  border: 2px solid;
+  color: green;
+}
+
+button.no-taquin {
+  background-color: inherit;
+  border: none;
+}
