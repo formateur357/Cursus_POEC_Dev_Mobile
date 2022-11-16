@@ -1,9 +1,12 @@
 let etat = [];
 let coordonées = [];
 let nb_deplacement = 0;
-let container = document.getElementsByClassName('container')[0];
+let board = document.getElementsByClassName('board')[0];
 let strong = document.getElementsByTagName('strong')[0];
-let divs = container.getElementsByTagName('div');
+let divs = board.getElementsByTagName('div');
+let imgjeux = "url('archi.jpg')";
+let but = document.getElementsByClassName('imageJeux')[0];
+
 // let cases = Array.from(divs).map(divs => divs);
 
 
@@ -12,13 +15,14 @@ let intermedaire = "4, 25%";
 let expert = "5, 20%";
 
 function niveau(n = facile) {
-    container.innerHTML = "";
-
+    board.innerHTML = "";
+    console.log("niveau img jeu = " + imgjeux);
+    but.style.backgroundImage = imgjeux;
     let nb_cases = n[0]*n[0];
-    let lvl = n[0] == 3 ? "container facile" : n[0] == 4 ? "container intermediaire": "container expert";
-    container.className = lvl;
+    let lvl = n[0] == 3 ? "board facile" : n[0] == 4 ? "board intermediaire": "board expert";
+    board.className = lvl;
 
-    container.style.gridTemplate = "repeat("+n+")/repeat("+n+")";
+    board.style.gridTemplate = "repeat("+n+")/repeat("+n+")";
 
     
     
@@ -31,7 +35,7 @@ function niveau(n = facile) {
 
         div.appendChild(content);
 
-        container.appendChild(div);
+        board.appendChild(div);
 
     }
     aleatoire(nb_cases);
@@ -41,8 +45,8 @@ function niveau(n = facile) {
 
 function cut_image(nb_cases) {
     let lmax = Math.sqrt(nb_cases);
-    let n = Math.floor(100/lmax)+3.5;
-    let bgImg =  "url('archi.jpg')";
+    let n = Math.floor(100/(lmax))+3.5;//3.5
+    let bgImg =  imgjeux;
     let cases = Array.from(divs).map(divs => divs);
         // Récupéré un tableau trié des cases 
         let tab_tmp = Array(nb_cases-1) // array avec le bon nombre de cases 
@@ -58,7 +62,11 @@ function cut_image(nb_cases) {
             for (let lig = 0; lig < lmax ; lig++) {
                 for (let col = 0; col <lmax; col++) {
                     if( index < tab_tmp.length){
-                    let pos= ""+ col*n+"% "+lig*n+"%"; // col % lig %
+                    let pos= ""+col*n+"% "+ lig*n +"%"; // col % lig %
+                    // tab_tmp[index].style.backgroundSize = (100*lmax)+"% "+(100*lmax) +"%";//100*lmax+"%";
+                    //tab_tmp[index].style.backgroundSize = (100*lmax)+"%";//100*lmax+"%";
+
+                    // tab_tmp[index].style.backgroundRepeat = "no-repeat";
                     tab_tmp[index].style.backgroundImage = bgImg;
                     tab_tmp[index].style.backgroundPosition = pos;
                     index++;
@@ -68,6 +76,12 @@ function cut_image(nb_cases) {
             }
 }
 
+function newImage() {
+    let images = [ "url('archi.jpg')", "url('barbi.jpg')", "url('cassie.jpg')", "url('leo.jpg')"];
+    let image = images[randomInt(images.length)];
+    console.log(image);
+    imgjeux = image;
+}
 
 
 
@@ -78,7 +92,7 @@ function generate_table(n) {
     for (let x = 0; x < n; x++) {
         array.push([]);
         for (let y = 0; y < n; y++) {
-            array[x].push(container.getElementsByTagName('div')[i].getAttribute('class'));
+            array[x].push(board.getElementsByTagName('div')[i].getAttribute('class'));
             coordonées.push([x, y]);
             i++
         }
@@ -174,7 +188,7 @@ function update_etat(n1, n2) {// n1 =  n click, n2 empty
 
 
 function swap(ele) {
-    let lvl = container.getAttribute('class').slice(10);
+    let lvl = board.getAttribute('class').slice(10);
     let limite =  lvl == "facile" ? 3 : lvl == "intermediaire" ? 4 : 5;
     let contenue = ele.textContent;
     let imgPosClick = ele.style.backgroundPosition;
