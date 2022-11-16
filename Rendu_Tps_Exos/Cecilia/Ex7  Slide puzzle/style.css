@@ -17,6 +17,8 @@ button {
 .container>div{
     /* border: 1px solid gray; */
     border-radius: 5%;
+    color: rgb(91, 81, 81);
+    font-weight: bold;
 }
 
 .empty{
