@@ -1,4 +1,27 @@
-.container {
+.container{
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+}
+
+.imageJeux{
+    width: 200px;
+    height: 200px;
+    /* background-image: url('archi.jpg'); */
+    background-size:cover ;
+}
+
+.droite{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.droite>div{
+    margin-bottom: 10%;
+}
+
+.board {
     width: 500px;;
     height: 500px;
     display: grid;

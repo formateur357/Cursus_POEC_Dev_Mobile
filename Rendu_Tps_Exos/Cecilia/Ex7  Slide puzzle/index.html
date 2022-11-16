@@ -9,19 +9,28 @@
 
 <body onload="niveau();">
 
-    <div class="container" >
+    <div class="container">
 
-    </div>
+        <div class="board">
 
-    <div>
-        <button onclick="niveau(facile)">facile</button>
-        <button onclick="niveau(intermedaire)">Intermediaire</button>
-        <button onclick="niveau(expert)">Expert</button>
-    </div>
-    <div>
-        <p>Nombre de déplacement : <strong></strong></p>
+        </div>
+        <div class="droite">
+            <div class="imageJeux"></div>
+            <div>
+                <div>
+                    <button onclick="niveau(facile)">facile</button>
+                    <button onclick="niveau(intermedaire)">Intermediaire</button>
+                    <button onclick="niveau(expert)">Expert</button>
+                    <button onclick="newImage()">Changer image</button>
+                </div>
+                <div>
+                    <p>Nombre de déplacement : <strong></strong></p>
+                    <p id="fini"></p>
+                </div>
+            </div>
 
-        <p id="fini"></p>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
