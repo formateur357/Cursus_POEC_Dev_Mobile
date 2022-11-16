@@ -20,13 +20,13 @@ function switchCase(evt) {
     id = evt.currentTarget.id;
     //  button remplit
     let caseremplit = document.getElementById(id);
-    //  button vide
+    //  button video
     let casevide = document.getElementById(vide);
 
     // console.log("mes balises selectionées à partir des id", caseremplit, casevide)
     // switch l'id et la classe des deux buttons.
     //innerHTML permet de remplacer facilement le contenu
-    // existant d'un élément par un nouveau contenu.
+    // existant d'un élément par un nouveau contenu seulement ce qu'i y'a entre deux balises.
 
     // interchange casevide et caseremplit(le contenue chiffre ou espace vide)
     // console.log("contenu de la balise vide", casevide.innerHTML)
