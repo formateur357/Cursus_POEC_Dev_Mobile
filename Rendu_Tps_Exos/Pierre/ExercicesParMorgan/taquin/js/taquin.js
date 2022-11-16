@@ -112,6 +112,10 @@ function move(y, x) {
   show_counter();
 }
 
+/*
+ * Retourne 0 si la case x,y est la case vide,
+ * Sinon retourne la valeur dans la case
+ */
 function isEmpty(x, y) {
   let ret;
   if (tab[y][x] == 0) {
@@ -124,6 +128,9 @@ function isEmpty(x, y) {
   return ret;
 }
 
+/*
+ * Retourne vrai si la case x,y est suffisamment proche de la case vide
+ */
 function isMovable(x, y) {
   let ret = false;
   if (tab[y][x] == 0) {
@@ -146,6 +153,9 @@ function isMovable(x, y) {
   return ret;
 }
 
+/*
+ * Ancienne fonction inutile
+ */
 function add_tag_image_v0(btn, lig, col) {
   let x = col * largeur_cellule;
   let y = lig * largeur_cellule;
@@ -155,6 +165,9 @@ function add_tag_image_v0(btn, lig, col) {
   return btn;
 }
 
+/*
+ * Ancienne fonction inutile
+ */
 function add_tag_image_v1_ok(btn, lig, col) {
   let x = (100 / maxi) * col;
   let y = (100 / maxi) * lig;
@@ -164,11 +177,27 @@ function add_tag_image_v1_ok(btn, lig, col) {
   return btn;
 }
 
+/*
+ * Retourne un nouveau tableau sans la valeur présente dans le tableau passé en paramètre
+ */
+function enleve_valeur(arr, valeur) {
+  if (!Array.isArray(arr)) {
+    return [];
+  }
+  return arr.filter(function (val) {
+    return val != valeur;
+  });
+}
+
+/*
+ * Modifie les classes CSS du bouton passé en paramètre
+ */
 function add_tag_image(btn, lig, col) {
   let x = (100 / maxi) * col;
   let y = (100 / maxi) * lig;
   btn.style.backgroundPosition = `${x}% ${y}%`;
   btn.style.backgroundSize = `${maxi}00%;`;
+  btn.classList.remove("taquin");
   btn.classList.add("img_taquin");
   return btn;
 }
@@ -176,7 +205,8 @@ function add_tag_image(btn, lig, col) {
 /*
  * Recopier le tableau javascript vers le HTML
  */
-function show_gameboard() {
+function show_gameboard(texte) {
+  console.info("show_gameboard " + texte);
   let gameboard = document.getElementById("gameboard");
   let buttons = gameboard.getElementsByTagName("button");
   for (let index_btn = 0; index_btn < buttons.length; index_btn++) {
@@ -187,24 +217,35 @@ function show_gameboard() {
     let col = chunks[2];
     let val = tab[lig][col];
     //
+    if (index_btn >= buttons.length - 1) {
+      console.log("dernier bouton col=", col, "lig=" + lig);
+    }
+
+    //
     if (val == 0) {
       // Case vide
       if (withImage) {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = " ";
-        btn.setAttribute("class", "no-taquin");
+        btn.classList.add("no-taquin");
       }
     } else {
       // Toutes les autres valeurs
+      btn.classList.remove("no-taquin");
       if (withImage) {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = "" + val;
-        btn.setAttribute("class", "taquin");
+        btn.classList.add("taquin");
       }
     }
-    console.log(index_btn, lig, col, val, chunks);
+    //
+    if (!withImage) {
+      btn.classList.remove("img_taquin");
+      //  btn.classList.add("taquin");
+    }
+    console.log(index_btn, lig, col, val, chunks, btn.classList);
   }
   show_counter();
 }
@@ -234,6 +275,10 @@ function shuffle() {
   }
 }
 
+/*
+ * Crée un tableau bien classé afin de pouvoir tester la fonction qui détermine si la partie gagnante
+ * et affichage dans la grille de jeu
+ */
 function sorted_and_refresh() {
   for (let y = 0; y < maxi; y++) {
     for (let x = 0; x < maxi; x++) {
@@ -243,7 +288,7 @@ function sorted_and_refresh() {
   }
   compteur = 0;
   cherchecaseVideDansTableau();
-  show_gameboard();
+  show_gameboard("sorted_and_refresh");
 }
 
 /**
@@ -253,22 +298,25 @@ function shuffle_and_refresh() {
   shuffle();
   compteur = 0;
   cherchecaseVideDansTableau();
-  show_gameboard();
+  show_gameboard("shuffle_and_refresh");
 }
 
 /*
  * Chercher la case vide ( valeur zero ) dans le tableau javascript
  */
 function cherchecaseVideDansTableau() {
+  console.info("cherchecaseVideDansTableau");
+  console.table(tab);
   for (let y = 0; y < maxi; y++) {
     for (let x = 0; x < maxi; x++) {
       if (isEmpty(x, y) == 0) {
-        console.info("case vide", "x=" + x, "y=" + y);
+        console.log("case vide", "x=" + x, "y=" + y);
         col_empty = x;
         lig_empty = y;
       } else {
         let b = isMovable(x, y);
-        console.info("x=" + x, "y=" + y, "b=" + b);
+        let val = tab[y][x];
+        console.log("x=" + x, "y=" + y, "b=" + b, "valeur=", val);
         if (b) {
           //
         } else {
@@ -287,12 +335,12 @@ function radioSelected(e) {
     switch (choix) {
       case "txt":
         withImage = false;
-        show_gameboard();
+        show_gameboard("radioSelected::txt");
         break;
 
       case "img":
         withImage = true;
-        show_gameboard();
+        show_gameboard("radioSelected::img");
         break;
     }
   }
@@ -303,6 +351,8 @@ function gestion_radio_button() {
   for (const radioButton of radioButtons) {
     radioButton.addEventListener("change", radioSelected);
   }
+  let w = document.getElementById("radio_taquin_img").checked;
+  withImage = w;
 }
 /**
  * Démarage du jeu de Taquin
