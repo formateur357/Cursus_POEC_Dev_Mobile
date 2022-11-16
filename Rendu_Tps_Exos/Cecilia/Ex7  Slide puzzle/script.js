@@ -81,6 +81,7 @@ function newImage() {
     let image = images[randomInt(images.length)];
     console.log(image);
     imgjeux = image;
+    niveau();
 }
 
 
