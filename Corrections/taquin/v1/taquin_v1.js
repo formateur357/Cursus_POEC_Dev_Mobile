@@ -8,15 +8,19 @@ function move(lig, col) {
   var bname = "case" + lig + col;
   var ename = "case" + elig + ecol;
   
+  // var tmp = document.getElementById(bname).innerHTML;
+  // document.getElementById(bname).innerHTML = document.getElementById(ename).innerHTML;
+  // document.getElementById(ename).innerHTML = tmp;  
+
   /* on récupère les noeuds du DOM correspondant à ces boutons */
   var bnode = document.getElementById(bname);
   var enode = document.getElementById(ename);
   
-  /* on récupère les fils textuels des deux boutons */
+  // /* on récupère les fils textuels des deux boutons */
   var bvalue = bnode.removeChild(bnode.childNodes[0]);
   var evalue = enode.removeChild(enode.childNodes[0]);
   
-  /* on échange ces fils */
+  // /* on échange ces fils */
   bnode.appendChild(evalue);
   enode.appendChild(bvalue);
   
