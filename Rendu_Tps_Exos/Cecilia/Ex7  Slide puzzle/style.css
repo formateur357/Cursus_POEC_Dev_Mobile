@@ -3,72 +3,25 @@
     height: 500px;
     display: grid;
     margin: 0 auto;
-    /* background-image: url(archibald.jpg); */
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     justify-content: center;
-}
-
-button {
-    margin: 3px;
-}
-
-.container>div{
-    /* border: 1px solid gray; */
-    border-radius: 5%;
-    color: rgb(91, 81, 81);
-    font-weight: bold;
 }
 
 .empty{
     background-color: white;
-    /* opacity: 0; */
     border: none;
     display: hide;
 }
 
 .exist{
-    border-radius: 5%;
     border: 1px solid gray;
-    /* background-color: rgb(242, 249, 255); */
-    color: rgb(81, 81, 122);
+    color: rgba(255, 255, 255, 0);
     font-size: 16px;
 }
-
-/* rgb(242, 249, 255) */
-
-/* .exist:hover{
-    background-color: rgb(124, 150, 174);
-} */
 
 #fini{
     font-size: 40px;
     color: red;
     font-weight: bold;
     width: fit-content;
-    margin: 0 auto;
-    
+    margin: 0 auto; 
 }
-
-/* #case1{
-    background-image: url(archi.jpg);
-    background-repeat: no-repeat;
-    background-size: 300%;
-    background-position-x: 0%;
-}
-
-#case2{
-    background-image: url(archi.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 300%;
-    background-position-x: 32%;
-}
-#case3{
-    background-image: url(archi.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 300%;
-    background-position-x: 64%;
-} */
