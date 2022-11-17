@@ -182,5 +182,9 @@ function setNewInterval() {
 function resetGame() {
     countTime = 0;
     time.innerHTML = countTime;
+
+    count=0
+    nbrTour.innerHTML = count;
+
     gameFinish.innerHTML = ""
 }
