@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // on récupére le modéle gagnant
 let lst = Array.from(document.querySelector(".bloc").children).map(child => child.innerHTML);
 console.log(lst);
+=======
+>>>>>>> bd32a63de40c805523530f988c5beb01c08e671f
 // lorsque l'on clique sur un bouton, l'échange avec la case vide.
 
 var videLigne = 4;
@@ -13,13 +16,21 @@ var nbrclicks = 0;
 //let array_swapp;
 
 function swap(ligne, col) {
+  console.log("avant");
+  console.log(ligne);
+  console.log(col);
+  console.log(videLigne);
+  console.log(videCol);
+  console.log(ligne == videLigne ? "true" : "false");
+  console.log((col == videCol - 1) ? "true" : "false");
+  console.log((col == videCol + 1) ? "true" : "false");
+  console.log(col == videCol ? "true" : "false");
+  console.log((ligne == videLigne - 1) ? "true" : "false");
+  console.log((ligne == videLigne + 1) ? "true" : "false");
   if (
-    (ligne == videLigne && (videCol - 1 == col || videCol + 1 == col))
-    || (col == videCol && (videLigne - 1 == ligne || videLigne + 1 == ligne))
+    (ligne == videLigne && ((col == videCol - 1) ||  (col == videCol + 1)))
+    || (col == videCol && ((ligne == videLigne - 1) || (ligne == videLigne + 1)))
   ) {
-
-
-
     nbrclicks = nbrclicks + 1; // nbrclicks +=1;
     //console.log(nbrclicks);
 
@@ -85,11 +96,9 @@ function swap(ligne, col) {
      
 
   }
-
-
 }
 
-function shuffle() {
+function shuffle() {g
   var array = document.querySelector(".bloc").children;
   let currentIndex = array.length, randomIndex;
   console.log(array);

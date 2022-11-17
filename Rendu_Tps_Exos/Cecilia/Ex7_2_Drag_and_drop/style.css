@@ -1,0 +1,50 @@
+.container{
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+}
+
+.imageJeux{
+    width: 200px;
+    height: 200px;
+    /* background-image: url('archi.jpg'); */
+    background-size:cover ;
+}
+
+.droite{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.droite>div{
+    margin-bottom: 10%;
+}
+
+.board {
+    width: 500px;;
+    height: 500px;
+    display: grid;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.empty{
+    background-color: white;
+    border: none;
+    display: hide;
+}
+
+.exist{
+    border: 1px solid gray;
+    color: rgba(255, 255, 255, 0);
+    font-size: 16px;
+}
+
+#fini{
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto; 
+}

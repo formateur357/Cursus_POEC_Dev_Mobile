@@ -1,12 +1,27 @@
-let taquin = document.getElementById("taquin")
+let listImg = {
+    "img0" : "./img/chat_taquin.png",
+    "img1" : "./img/chat2.jpg",
+    "img2" : "./img/chat3.jpg",
+    "img3" : "./img/chat4.jpeg",
+    "img4" : "./img/raton.jpg"
+}
 
+let randomImg = document.getElementById("randomImg");
+let imgFinish = document.getElementById("imgFinish")
+
+function chooseImg() {
+    let nbrRandom = Math.floor(Math.random() * 5);
+    return listImg[`img${nbrRandom}`];
+}
+
+let taquin = document.getElementById("taquin");
 
 let nbrTour = document.getElementById("nbrTour");
 let count = 0;
 let gameFinish = document.getElementById("gameFinish");
 
 let arrayOfBtn = [];
-let objectOfBtn = {};
+let objectOfBtn = [];
 
 let taquinSize = 750;
 
@@ -27,8 +42,10 @@ function SetbackgroundPosition(btn, size, nbr) {
 
 function createBtn(x) {
     arrayOfBtn = [];
-    objectOfBtn = {};
+    objectOfBtn = [];
     let child = taquin.lastElementChild;
+    let urlImg = chooseImg();
+    console.log(urlImg);
     while (child) {
         taquin.removeChild(child);
         child = taquin.lastElementChild;
@@ -41,12 +58,15 @@ function createBtn(x) {
             "onclick" : `changePlace("btn${i+1}")`
         });
         newBtn.style.order = i+1;
-        newBtn.style.backgroundImage = "url(./img/chat_taquin.png)"
+        newBtn.style.backgroundImage = `url(${urlImg})`
+        newBtn.style.backgroundSize = "760px 760px"
+        newBtn.style.objectFit = "cover"
+        imgFinish.src = urlImg,
         SetbackgroundPosition(newBtn ,Math.sqrt(x), i)
         arrayOfBtn.push(newBtn);
-        objectOfBtn[`btn${i+1}`] = [i % Math.sqrt(x), Math.floor(i / Math.sqrt(x) )]
+        objectOfBtn.push([`btn${i+1}`,[i % Math.sqrt(x), Math.floor(i / Math.sqrt(x) )]])
     }
-    objectOfBtn['empty'] = [(Math.sqrt(x))-1, (Math.sqrt(x))-1]
+    objectOfBtn.push(['empty',[(Math.sqrt(x))-1, (Math.sqrt(x))-1]])
 }
 
 function createEmptyDiv(x) {
@@ -65,21 +85,30 @@ function modifSizeTaquin(nbr, pixel) {
 
 function setDifficult(lvl) {
     if(lvl == "easy") {
+        clearInterval(setTime)
         createBtn(9);
         createEmptyDiv(9);
         modifSizeTaquin(3, `${taquinSize / 3}px`);
         randomStart();
+        resetGame();
+        setNewInterval()
+        console.log(objectOfBtn);
     } else if(lvl == "medium") {
+        clearInterval(setTime)
         createBtn(16);
         createEmptyDiv(16);
         modifSizeTaquin(4, `${taquinSize / 4}px`);
         randomStart();
-
+        resetGame();
+        setNewInterval()
     } else if(lvl == "hard") {
+        clearInterval(setTime)
         createBtn(25);
         createEmptyDiv(25);
         modifSizeTaquin(5, `${taquinSize / 5}px`);
         randomStart();
+        resetGame();
+        setNewInterval()
     }
 
 };
@@ -87,21 +116,35 @@ function setDifficult(lvl) {
 function checkFinish(x) {
     for (let i = 1; i < x; i++) {
         if (getComputedStyle(document.getElementById(`btn${i}`)).order == i) {
-            console.log(`btn${i} checked`);
         } else {
           return false;
         }
     }
     console.log("fini!!!!!!");
     gameFinish.innerHTML = "Partie terminée !!"
+    clearInterval(setTime);
 
 }
 
 function randomStart() {
     arrayOfBtn.sort(() => Math.random() - 0.5);
-    for (let i = 0; i < arrayOfBtn.length ; i++) {
-        arrayOfBtn[i].style.order = i+1;
+    let newObjectOfBtn = []
+
+    for (let i =0; i< arrayOfBtn.length; i++) {
+        newObjectOfBtn.push([arrayOfBtn[i].id])
     }
+
+    for (let i=0; i < newObjectOfBtn.length; i++) {
+        if (newObjectOfBtn[i][0]) {
+            newObjectOfBtn[i].push(objectOfBtn[i][1])
+        }
+    }
+    newObjectOfBtn.push(objectOfBtn[objectOfBtn.length-1])
+    objectOfBtn = newObjectOfBtn;
+    for (let i = 0; i < objectOfBtn.length ; i++) {
+        document.getElementById(objectOfBtn[i][0]).style.order = i+1;
+    }
+
 }
 
 
@@ -109,26 +152,61 @@ function changePlace(btn) {
     let empty = document.getElementById("empty");
     let orderEmpty = parseInt(empty.style.order) ;
     let orderBtn = parseInt(document.getElementById(btn).style.order);
+    let positionEmpty;
+    let positionBtn;
 
-    let positionEmpty = objectOfBtn["empty"];
-    let positionBtn = objectOfBtn[btn];
-    console.log(positionEmpty);
-    console.log(positionBtn);
+    for (let i = 0; i < objectOfBtn.length; i++) {
+        if (objectOfBtn[i][0] == "empty") {
+            positionEmpty = objectOfBtn[i][1];
+        }
+        if (btn == objectOfBtn[i][0]) {
+            positionBtn = objectOfBtn[i][1];
+        }
+    }
 
     if (
-        positionBtn[0] == positionEmpty[0] - 1 ||
-        positionBtn[0] == positionEmpty[0] + 1 ||
-        positionBtn[1] == positionEmpty[1] - 1 ||
-        positionBtn[1] == positionEmpty[1] + 1
+        positionBtn[0] == positionEmpty[0] - 1 && positionBtn[1] == positionEmpty[1] ||
+        positionBtn[0] == positionEmpty[0] + 1 && positionBtn[1] == positionEmpty[1]  ||
+        positionBtn[1] == positionEmpty[1] - 1 && positionBtn[0] == positionEmpty[0]  ||
+        positionBtn[1] == positionEmpty[1] + 1 && positionBtn[0] == positionEmpty[0] 
     ) {
         document.getElementById(btn).style.order = orderEmpty;
         empty.style.order = orderBtn;
         count++;
         nbrTour.innerHTML = count;
-        objectOfBtn["empty"] = positionBtn;
-        objectOfBtn[btn] = positionEmpty;
+        for (let i = 0; i < objectOfBtn.length; i++) {
+            if (objectOfBtn[i][0] == "empty") {
+                 objectOfBtn[i][1] = positionBtn ;
+            }
+            if (btn == objectOfBtn[i][0]) {
+                objectOfBtn[i][1] = positionEmpty ;
+            }
+        }
     } else {
         console.log("Déplacement interdit");
     }
-    checkFinish(Object.values(objectOfBtn).length);
+    checkFinish(objectOfBtn.length);
+}
+
+
+let time =  document.getElementById("time");
+let countTime = 0;
+let setTime;
+function setNewInterval() {
+
+   setTime =  setInterval(() => { 
+        time.innerHTML = countTime
+        countTime++;
+    }
+    ,1000)
+} 
+
+function resetGame() {
+    countTime = 0;
+    time.innerHTML = countTime;
+
+    count=0
+    nbrTour.innerHTML = count;
+
+    gameFinish.innerHTML = ""
 }
