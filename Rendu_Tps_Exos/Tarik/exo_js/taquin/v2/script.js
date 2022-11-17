@@ -1,4 +1,20 @@
-let taquin = document.getElementById("taquin")
+let listImg = {
+    "img0" : "./img/chat_taquin.png",
+    "img1" : "./img/chat2.jpg",
+    "img2" : "./img/chat3.jpg",
+    "img3" : "./img/chat4.jpeg",
+    "img4" : "./img/raton.jpg"
+}
+
+let randomImg = document.getElementById("randomImg");
+let imgFinish = document.getElementById("imgFinish")
+
+function chooseImg() {
+    let nbrRandom = Math.floor(Math.random() * 5);
+    return listImg[`img${nbrRandom}`];
+}
+
+let taquin = document.getElementById("taquin");
 
 let nbrTour = document.getElementById("nbrTour");
 let count = 0;
@@ -28,6 +44,8 @@ function createBtn(x) {
     arrayOfBtn = [];
     objectOfBtn = [];
     let child = taquin.lastElementChild;
+    let urlImg = chooseImg();
+    console.log(urlImg);
     while (child) {
         taquin.removeChild(child);
         child = taquin.lastElementChild;
@@ -40,7 +58,10 @@ function createBtn(x) {
             "onclick" : `changePlace("btn${i+1}")`
         });
         newBtn.style.order = i+1;
-        newBtn.style.backgroundImage = "url(./img/chat_taquin.png)"
+        newBtn.style.backgroundImage = `url(${urlImg})`
+        newBtn.style.backgroundSize = "760px 760px"
+        newBtn.style.objectFit = "cover"
+        imgFinish.src = urlImg,
         SetbackgroundPosition(newBtn ,Math.sqrt(x), i)
         arrayOfBtn.push(newBtn);
         objectOfBtn.push([`btn${i+1}`,[i % Math.sqrt(x), Math.floor(i / Math.sqrt(x) )]])
@@ -71,6 +92,7 @@ function setDifficult(lvl) {
         randomStart();
         resetGame();
         setNewInterval()
+        console.log(objectOfBtn);
     } else if(lvl == "medium") {
         clearInterval(setTime)
         createBtn(16);
