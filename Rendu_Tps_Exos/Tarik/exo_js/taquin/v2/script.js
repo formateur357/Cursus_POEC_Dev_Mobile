@@ -1,6 +1,5 @@
 let taquin = document.getElementById("taquin")
 
-
 let nbrTour = document.getElementById("nbrTour");
 let count = 0;
 let gameFinish = document.getElementById("gameFinish");
@@ -65,21 +64,29 @@ function modifSizeTaquin(nbr, pixel) {
 
 function setDifficult(lvl) {
     if(lvl == "easy") {
+        clearInterval(setTime)
         createBtn(9);
         createEmptyDiv(9);
         modifSizeTaquin(3, `${taquinSize / 3}px`);
         randomStart();
+        resetGame();
+        setNewInterval()
     } else if(lvl == "medium") {
+        clearInterval(setTime)
         createBtn(16);
         createEmptyDiv(16);
         modifSizeTaquin(4, `${taquinSize / 4}px`);
         randomStart();
-
+        resetGame();
+        setNewInterval()
     } else if(lvl == "hard") {
+        clearInterval(setTime)
         createBtn(25);
         createEmptyDiv(25);
         modifSizeTaquin(5, `${taquinSize / 5}px`);
         randomStart();
+        resetGame();
+        setNewInterval()
     }
 
 };
@@ -93,6 +100,7 @@ function checkFinish(x) {
     }
     console.log("fini!!!!!!");
     gameFinish.innerHTML = "Partie terminée !!"
+    clearInterval(setTime);
 
 }
 
@@ -156,4 +164,23 @@ function changePlace(btn) {
         console.log("Déplacement interdit");
     }
     checkFinish(objectOfBtn.length);
+}
+
+
+let time =  document.getElementById("time");
+let countTime = 0;
+let setTime;
+function setNewInterval() {
+
+   setTime =  setInterval(() => { 
+        time.innerHTML = countTime
+        countTime++;
+    }
+    ,1000)
+} 
+
+function resetGame() {
+    countTime = 0;
+    time.innerHTML = countTime;
+    gameFinish.innerHTML = ""
 }
