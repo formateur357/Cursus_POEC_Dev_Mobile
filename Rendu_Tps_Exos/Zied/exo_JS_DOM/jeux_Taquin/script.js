@@ -1,10 +1,13 @@
-
-
+// on récupére le modéle gagnant
+let lst = Array.from(document.querySelector(".bloc").children).map(child => child.innerHTML);
+console.log(lst);
 // lorsque l'on clique sur un bouton, l'échange avec la case vide.
 
 var videLigne = 4;
 var videCol = 4;
 var nbrclicks = 0;
+//var win_array = document.querySelector(".bloc").children;
+//console.log(win_array);
 
 
 //let array_swapp;
@@ -64,20 +67,28 @@ function swap(ligne, col) {
     videCol = col;
     //win();
     //classList.replace( grille , vide )
-    //var array_swapp = document.querySelector(".bloc").children;
+
+    // mémoriser le modéle de base = tabWinner
+
+    // comaprer le modéle winner et le newModel aprés chaque coup valide
+
+    // condition et boucle for si tabWinner = newModel  est pareil  donc gagnant sinon continue le jeux
+   /* var array_swapp = document.querySelector(".bloc").children;
+    console.log(array_swapp);
+    console.log(JSON.stringify(array_swapp));*/
+    let lst_swap = Array.from(document.querySelector(".bloc").children).map(child => child.innerHTML);
+    console.log(lst_swap);
+    if(JSON.stringify(lst) == JSON.stringify(lst_swap) )
+    {
+      document.getElementById("win").innerHTML='YOU WIN';
+    }
+     
+
   }
 
 
 }
 
-
-//Array.from(array);
-/*
-function win() {
-  var array = document.querySelector(".bloc").children;
-console.log(array);
-}
-*/
 function shuffle() {
   var array = document.querySelector(".bloc").children;
   let currentIndex = array.length, randomIndex;
@@ -104,5 +115,8 @@ function shuffle() {
 }
 
 
-// modéle de base = winner
+
+
+
+
 
