@@ -82,7 +82,7 @@ function shuffle() {
   var array = document.querySelector(".bloc").children;
   let currentIndex = array.length, randomIndex;
   console.log(array);
-  
+
 
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
@@ -99,9 +99,10 @@ function shuffle() {
       array[randomIndex].className, array[currentIndex].className];
   }
 
-  videLigne = document.getElementsByClassName("vide")[0].id[4];
-  videCol = document.getElementsByClassName("vide")[0].id[5];
+  videLigne = parseInt(document.getElementsByClassName("vide")[0].id[4]);
+  videCol = parseInt(document.getElementsByClassName("vide")[0].id[5]);
 }
+
 
 
 
