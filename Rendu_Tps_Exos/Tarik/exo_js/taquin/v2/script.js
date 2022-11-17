@@ -68,6 +68,7 @@ function setDifficult(lvl) {
         createBtn(9);
         createEmptyDiv(9);
         modifSizeTaquin(3, `${taquinSize / 3}px`);
+        randomStart();
     } else if(lvl == "medium") {
         createBtn(16);
         createEmptyDiv(16);
@@ -97,9 +98,6 @@ function checkFinish(x) {
 
 function randomStart() {
     arrayOfBtn.sort(() => Math.random() - 0.5);
-    // for (let i = 0; i < arrayOfBtn.length ; i++) {
-    //     arrayOfBtn[i].style.order = i+1;
-    // }
     let newObjectOfBtn = []
 
     for (let i =0; i< arrayOfBtn.length; i++) {
@@ -111,11 +109,12 @@ function randomStart() {
             newObjectOfBtn[i].push(objectOfBtn[i][1])
         }
     }
+    newObjectOfBtn.push(objectOfBtn[objectOfBtn.length-1])
     objectOfBtn = newObjectOfBtn;
-    console.log(objectOfBtn);
+    for (let i = 0; i < objectOfBtn.length ; i++) {
+        document.getElementById(objectOfBtn[i][0]).style.order = i+1;
+    }
 
-    for
-    
 }
 
 
