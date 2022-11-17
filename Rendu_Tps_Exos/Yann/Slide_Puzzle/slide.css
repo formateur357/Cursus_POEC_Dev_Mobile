@@ -25,8 +25,8 @@ button.emptyCase{
 
 button.case{
     background-color: blue;
-    border: 3px solid black;
-    color: white;
+    border: none;
+    color:white;
     font-weight: bold;
     font-size: 1.5em;
 
@@ -43,8 +43,108 @@ hr{
     margin-left: 50px;
     font-size: 2em;
     background-color: red;
-    border: 3px solid black;
+    border: none;
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
+
+#victoire{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    background-color: greenyellow;
+}
+
+ /* #case11, #case12, #case13, #case14,
+#case21, #case22, #case23, #case24,
+#case31, #case32, #case33, #case34,
+#case41, #case42, #case43{
+   background-image: url(./dubai-g6868ac222_1280.jpg);
+   background-size: 400%; 
+  
+   background-repeat: no-repeat;  
+}
+  
+#case11{
+    background-position-x: 0%;
+    background-position-y: 0%;
+  
+}
+#case12{
+    background-position-x: 25%;
+    background-position-y: 0%;
+    
+}
+#case13{
+    background-position-x: 75%;
+    background-position-y: 0%;
+    
+}
+#case14{
+    background-position-x:100%;
+    background-position-y: 0%;
+    
+}
+#case21{
+    background-position-x: 00%;
+    background-position-y: 25%;
+    
+}
+#case22{
+    background-position-x: 25%;
+    background-position-y: 25%;
+    
+}
+#case23{
+    background-position-x:75%;
+    background-position-y: 25%;
+    
+}
+#case24{
+    background-position-x: 100%;
+    background-position-y: 25%;
+    
+}
+#case31{
+    background-position-x: 0%;
+    background-position-y: 50%;
+    
+    
+}
+#case32{
+    background-position-x: 25%;
+    background-position-y: 50%;
+    
+}
+#case33{
+    background-position-x: 75%;
+    background-position-y: 50%;
+    
+}
+#case34{
+    background-position-x: 100%;
+    background-position-y: 50%;
+    
+}
+#case41{
+    background-position-x: 0%;
+    background-position-y: 100%;
+    
+}
+#case42{
+    background-position-x: 25%;
+    background-position-y: 100%;
+    
+}
+#case43{
+    background-position-x: 75%;
+    background-position-y: 100%;
+    
+}  */
+ /* #case44{
+    background-position-x: 100%;
+    background-position-y: 100%;
+} */
