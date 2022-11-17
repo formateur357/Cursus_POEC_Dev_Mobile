@@ -104,5 +104,5 @@ function shuffle() {
 }
 
 
-
+// modéle de base = winner
 
