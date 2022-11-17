@@ -6,7 +6,7 @@ let count = 0;
 let gameFinish = document.getElementById("gameFinish");
 
 let arrayOfBtn = [];
-let objectOfBtn = {};
+let objectOfBtn = [];
 
 let taquinSize = 750;
 
@@ -27,7 +27,7 @@ function SetbackgroundPosition(btn, size, nbr) {
 
 function createBtn(x) {
     arrayOfBtn = [];
-    objectOfBtn = {};
+    objectOfBtn = [];
     let child = taquin.lastElementChild;
     while (child) {
         taquin.removeChild(child);
@@ -44,9 +44,9 @@ function createBtn(x) {
         newBtn.style.backgroundImage = "url(./img/chat_taquin.png)"
         SetbackgroundPosition(newBtn ,Math.sqrt(x), i)
         arrayOfBtn.push(newBtn);
-        objectOfBtn[`btn${i+1}`] = [i % Math.sqrt(x), Math.floor(i / Math.sqrt(x) )]
+        objectOfBtn.push([`btn${i+1}`,[i % Math.sqrt(x), Math.floor(i / Math.sqrt(x) )]])
     }
-    objectOfBtn['empty'] = [(Math.sqrt(x))-1, (Math.sqrt(x))-1]
+    objectOfBtn.push(['empty',[(Math.sqrt(x))-1, (Math.sqrt(x))-1]])
 }
 
 function createEmptyDiv(x) {
@@ -68,7 +68,6 @@ function setDifficult(lvl) {
         createBtn(9);
         createEmptyDiv(9);
         modifSizeTaquin(3, `${taquinSize / 3}px`);
-        randomStart();
     } else if(lvl == "medium") {
         createBtn(16);
         createEmptyDiv(16);
@@ -87,7 +86,6 @@ function setDifficult(lvl) {
 function checkFinish(x) {
     for (let i = 1; i < x; i++) {
         if (getComputedStyle(document.getElementById(`btn${i}`)).order == i) {
-            console.log(`btn${i} checked`);
         } else {
           return false;
         }
@@ -99,9 +97,25 @@ function checkFinish(x) {
 
 function randomStart() {
     arrayOfBtn.sort(() => Math.random() - 0.5);
-    for (let i = 0; i < arrayOfBtn.length ; i++) {
-        arrayOfBtn[i].style.order = i+1;
+    // for (let i = 0; i < arrayOfBtn.length ; i++) {
+    //     arrayOfBtn[i].style.order = i+1;
+    // }
+    let newObjectOfBtn = []
+
+    for (let i =0; i< arrayOfBtn.length; i++) {
+        newObjectOfBtn.push([arrayOfBtn[i].id])
     }
+
+    for (let i=0; i < newObjectOfBtn.length; i++) {
+        if (newObjectOfBtn[i][0]) {
+            newObjectOfBtn[i].push(objectOfBtn[i][1])
+        }
+    }
+    objectOfBtn = newObjectOfBtn;
+    console.log(objectOfBtn);
+
+    for
+    
 }
 
 
@@ -109,26 +123,38 @@ function changePlace(btn) {
     let empty = document.getElementById("empty");
     let orderEmpty = parseInt(empty.style.order) ;
     let orderBtn = parseInt(document.getElementById(btn).style.order);
+    let positionEmpty;
+    let positionBtn;
 
-    let positionEmpty = objectOfBtn["empty"];
-    let positionBtn = objectOfBtn[btn];
-    console.log(positionEmpty);
-    console.log(positionBtn);
+    for (let i = 0; i < objectOfBtn.length; i++) {
+        if (objectOfBtn[i][0] == "empty") {
+            positionEmpty = objectOfBtn[i][1];
+        }
+        if (btn == objectOfBtn[i][0]) {
+            positionBtn = objectOfBtn[i][1];
+        }
+    }
 
     if (
-        positionBtn[0] == positionEmpty[0] - 1 ||
-        positionBtn[0] == positionEmpty[0] + 1 ||
-        positionBtn[1] == positionEmpty[1] - 1 ||
-        positionBtn[1] == positionEmpty[1] + 1
+        positionBtn[0] == positionEmpty[0] - 1 && positionBtn[1] == positionEmpty[1] ||
+        positionBtn[0] == positionEmpty[0] + 1 && positionBtn[1] == positionEmpty[1]  ||
+        positionBtn[1] == positionEmpty[1] - 1 && positionBtn[0] == positionEmpty[0]  ||
+        positionBtn[1] == positionEmpty[1] + 1 && positionBtn[0] == positionEmpty[0] 
     ) {
         document.getElementById(btn).style.order = orderEmpty;
         empty.style.order = orderBtn;
         count++;
         nbrTour.innerHTML = count;
-        objectOfBtn["empty"] = positionBtn;
-        objectOfBtn[btn] = positionEmpty;
+        for (let i = 0; i < objectOfBtn.length; i++) {
+            if (objectOfBtn[i][0] == "empty") {
+                 objectOfBtn[i][1] = positionBtn ;
+            }
+            if (btn == objectOfBtn[i][0]) {
+                objectOfBtn[i][1] = positionEmpty ;
+            }
+        }
     } else {
         console.log("Déplacement interdit");
     }
-    checkFinish(Object.values(objectOfBtn).length);
+    checkFinish(objectOfBtn.length);
 }
