@@ -1,0 +1,16 @@
+.p1 {
+  text-decoration: underline;
+}
+.p2 {
+  text-decoration: underline;
+}
+.p3 {
+  font-weight: bold;
+}
+.p4 {
+  font-size: italic;
+}
+.p5 {
+  text-decoration: none;
+  font-style: italic;
+}

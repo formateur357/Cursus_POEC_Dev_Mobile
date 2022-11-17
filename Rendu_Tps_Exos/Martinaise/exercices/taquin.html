@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Taquin</title>
+    <link rel="stylesheet" href="taquin.css">
+    <script type="text/javascript" src="taquin.js"></script>
+</head>
+
+<body>
+    <h1>Taquin</h1>
+    <p id="compteur">Aucun coup joué</p>
+    <!-- melange jeu -->
+    <button onclick="melangejeu()">Melange le jeu</button>
+
+ 
+    <div id="jeu">
+        <button id="case11" class="case" onclick="move(1,1);">1</button>
+        <button id="case12" class="case" onclick="move(1,2);">2</button>
+        <button id="case13" class="case" onclick="move(1,3);">3</button>
+        <button id="case14" class="case" onclick="move(1,4);">4</button>
+        <hr>
+        <button id="case21" class="case" onclick="move(2,1);">5</button>
+        <button id="case22" class="case" onclick="move(2,2);">6</button>
+        <button id="case23" class="case" onclick="move(2,3);">7</button>
+        <button id="case24" class="case" onclick="move(2,4);">8</button>
+        <hr>
+        <button id="case31" class="case" onclick="move(3,1);">9</button>
+        <button id="case32" class="case" onclick="move(3,2);">10</button>
+        <button id="case33" class="case" onclick="move(3,3);">11</button>
+        <button id="case34" class="case" onclick="move(3,4);">12</button>
+        <hr>
+        <button id="case41" class="case" onclick="move(4,1);">13</button>
+        <button id="case42" class="case" onclick="move(4,2);">14</button>
+        <button id="case43" class="case" onclick="move(4,3);">15</button>
+        <button id="case44" class="emptycase" onclick="move(4,4);">&nbsp;</button>
+        <hr>
+    </div>
+
+    
+</body>
+
+</html>
+
+ <!-- Puzzle ou taquin
+Premières étapes :
+
+Créer l'apparence du jeu : trois cases par trois cases, chaque case étant un bouton HTML.
+Associer des styles CSS à ces boutons.
+Écrire le code JavaScript qui, lorsque l'on clique sur un bouton, l'échange avec la case vide.
+
+Étapes suivantes :
+
+N'autoriser que les déplacements valides.
+Compter et afficher le nombre de déplacements effectués.
+
+Travail restant :
+
+Mélanger aléatoirement les cases au début du jeu.
+Détecter la fin de partie.
+Adapter le jeu à une version avec les morceaux d'une photo, plutôt qu'avec des boutons.Slide -->
+
+
