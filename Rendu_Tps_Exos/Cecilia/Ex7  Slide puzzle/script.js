@@ -15,6 +15,8 @@ let intermedaire = "4, 25%";
 let expert = "5, 20%";
 
 function niveau(n = facile) {
+    timerStart();
+
     board.innerHTML = "";
     console.log("niveau img jeu = " + imgjeux);
     but.style.backgroundImage = imgjeux;
@@ -223,3 +225,4 @@ function swap(ele) {
         fin.textContent = fini() == true ? " C'est  fini" : "";
     }
 }
+// drag and drop
