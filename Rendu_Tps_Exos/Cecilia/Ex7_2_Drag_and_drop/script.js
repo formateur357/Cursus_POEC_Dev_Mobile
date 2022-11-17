@@ -15,7 +15,7 @@ let intermedaire = "4, 25%";
 let expert = "5, 20%";
 
 function niveau(n = facile) {
-    timerStart();
+    // timerStart();
 
     board.innerHTML = "";
     console.log("niveau img jeu = " + imgjeux);
@@ -33,7 +33,13 @@ function niveau(n = facile) {
         let content = document.createTextNode("");
         
         div.setAttribute("id", "case"+i);
-        div.setAttribute("onclick","swap(this)");
+        div.setAttribute("draggable","true");
+        // div.setAttribute("onclick","swap(this)");        
+        // // div.setAttribute("ondrag","drag(this)");
+        div.setAttribute("ondragstart","dragStart(this)");
+        // div.setAttribute("ondragend","dragEnd(this)");
+        div.setAttribute("ondragover","dragOver(this)");
+        div.setAttribute("ondrop","drop(this)");
 
         div.appendChild(content);
 
@@ -44,10 +50,9 @@ function niveau(n = facile) {
     cut_image(nb_cases);
 }
 
-
 function cut_image(nb_cases) {
     let lmax = Math.sqrt(nb_cases);
-    let n = Math.floor(100/(lmax-1));//3.5
+    let n = Math.floor(100/(lmax))+3.5;//3.5
     let bgImg =  imgjeux;
     let cases = Array.from(divs).map(divs => divs);
         // Récupéré un tableau trié des cases 
@@ -65,8 +70,7 @@ function cut_image(nb_cases) {
                 for (let col = 0; col <lmax; col++) {
                     if( index < tab_tmp.length){
                     let pos= ""+col*n+"% "+ lig*n +"%"; // col % lig %
-                    tab_tmp[index].style.backgroundSize = "500px 500px";//(100*lmax)+"% "+(100*lmax) +"%";//100*lmax+"%";
-                    tab_tmp[index].style.objectFit = "cover";
+                    // tab_tmp[index].style.backgroundSize = (100*lmax)+"% "+(100*lmax) +"%";//100*lmax+"%";
                     //tab_tmp[index].style.backgroundSize = (100*lmax)+"%";//100*lmax+"%";
 
                     // tab_tmp[index].style.backgroundRepeat = "no-repeat";
@@ -226,4 +230,3 @@ function swap(ele) {
         fin.textContent = fini() == true ? " C'est  fini" : "";
     }
 }
-// drag and drop
