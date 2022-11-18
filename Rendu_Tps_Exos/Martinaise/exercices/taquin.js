@@ -3,6 +3,24 @@ let elig = 4;
 let ecol = 4;
 let nbclicks = 0;
 
+function addCss() {
+  let divjeu = document.querySelectorAll("#jeu .case");
+  console.log(divjeu);
+  for (i = 0; i < divjeu.length; i++) {
+    // une ligne(x) = 100% et une cologne = 100%(y)  puis on fait le modulo % 
+    x = (((100 / 4) | 0) * (i % 4)) + "%";
+    y = (((100 / 4) | 0) * ((i / 4) | 0)) + "%";
+    // console.log(divjeu[i]);
+    divjeu[i].style.backgroundImage = "url(img2/MAISON.jpeg)";
+    divjeu[i].style.backgroundSize = "400%"
+    // pour que l'image se deplavce ne x et y 
+    divjeu[i].style.backgroundPosition = x + " " + y;
+  }
+}
+
+addCss();
+
+
 /* Fonction qui échange la case (lig,col) avec la case vide */
 function move(lig, col) {
   if (
@@ -139,10 +157,12 @@ function game_win() {
   for (let i = 0; i < divjeu.length - 1; i++) {
     // une condition pour dire que si la case est inferieur a celle suivante on retourne le nombre
     if (divjeu[i] > divjeu[i + 1])
-      return ;
+      return;
   }
   // dire au joueur que c'est gagné
 }
+
+
 
 
 

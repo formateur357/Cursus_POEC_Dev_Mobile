@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Taquin</title>
     <link rel="stylesheet" href="taquin.css" />
-    <script type="text/javascript" src="taquin.js"></script>
   </head>
 
   <body>
@@ -12,8 +11,8 @@
     <p id="compteur">Aucun coup joué</p>
     <!-- melange jeu -->
     <button onclick="shuffle()">Melange le jeu</button>
-    <button onclick="classer_cases()"> classer les cases</button>
-
+    <button onclick="classer_cases()">classer les cases</button>
+    <div onclick="game_win()">YOU WIN</div>
 
     <div id="jeu">
       <button id="case11" class="case" onclick="move(1,1);">1</button>
@@ -37,6 +36,7 @@
       <button id="case44" class="emptycase" onclick="move(4,4);">&nbsp;</button>
       <hr />
     </div>
+    <script type="text/javascript" src="taquin.js"></script>
   </body>
 </html>
 
