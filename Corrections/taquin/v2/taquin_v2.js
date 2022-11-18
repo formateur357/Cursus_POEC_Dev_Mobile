@@ -26,7 +26,7 @@ function move(lig, col) {
 
         // noeud_compteur.innerHTML = "";
 
-        // // /* ajouter ce noeud textuel comme fils de l'élément compteur */
+        // /* ajouter ce noeud textuel comme fils de l'élément compteur */
         // noeud_compteur.appendChild(compteur_txt);
         
         /* on récupère les identifiants des deux boutons concernés */
