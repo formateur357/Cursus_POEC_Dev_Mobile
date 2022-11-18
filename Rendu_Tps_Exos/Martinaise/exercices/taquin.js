@@ -67,7 +67,6 @@ function move(lig, col) {
     }
 }
 
-// étape pour melanger le jeu aléatoirement
 /* 0)determiner le nommbre de case à faire
   prendre en compte si on change de ligne à 3 ou 4 ...
 1) choisit de 1ere  case ici case 11
@@ -78,75 +77,62 @@ function move(lig, col) {
 4)passer à la case suivante
 5)tant qu'il y'a des cases a faire
 
-*/
-function melangejeu() {
+*/ 
+// étape pour melanger le jeu aléatoirement avec la fontion shuffle
+function shuffle() {
+    // on selectionnent tous les elelement,puis elements de jeu(button)on met les buttons dans la variable jeu
+    let divjeu = document.querySelectorAll("#jeu button");
+    // on décremente le tableau. Ici on commence par  16 ensuite 15 ,14 ...
+    for (let i = divjeu.length; i > 0; i--) {
+    /* On prend un nombre de la fin du tableau en locurence 16 ici
+    on le multiplit par le nombre aléatoire de Math.random ex 15 * 0,5= 7,5 soit 7
+    14 * 0,2= 2,8 soit 2
+    on met le | 0 pour garder que le nombre entier 7.
+    maths random ne peux prendre que 2 valeurs 0 et  une valeur < 1.
+    puis on remplit le tableau au fur et a mesure jusqu'au 15
+    */
+        let randomChild = divjeu[Math.random() * i | 0];
+        // voir feuille mis dans html
+        let lastChild = divjeu[i - 1];
+
+        //pour echanger les class et innerhtml
+        [randomChild.innerHTML, lastChild.innerHTML] = [lastChild.innerHTML, randomChild.innerHTML];
+        [randomChild.className, lastChild.className] = [lastChild.className, randomChild.className];
+     }
+    
+
+    // tranformer une  chaine de caractère  en entier
+    elig = parseInt(document.getElementsByClassName("emptycase")[0].id[4]);
+    ecol = parseInt(document.getElementsByClassName("emptycase")[0].id[5]);
+}
+
+/*
+ * Classement de tous les boutons HTML par ordre croissant
+ */
+function classer_cases() {
     // recupère ma liste jeu
     let divjeu = document.getElementById("jeu");
     //recupère ma liste de button
-    let tableaubutton = divjeu.getElementsByTagName("button")
-    console.log(tableaubutton)
-
+    let tableaubutton = divjeu.getElementsByTagName("button");
+    console.log(tableaubutton);
+  
     // boucle pour parcourir tout le tableau
     for (let i = 0; i < tableaubutton.length; i++) {
-        //choix case de depart
-        let casedepart = tableaubutton[i]
-        //on genère les nombre aléatoire de 11 à 44
-        let nomaleatoire = "case" + getRandomArbitrary(1, 4) + getRandomArbitrary(1, 4)
-        console.log(nomaleatoire)
-
-        let casealeatoire = document.getElementById(nomaleatoire)
-
-
-        //permutation de text
-        // on garde la valeur de depart dans la variable temporaire(tmp) 
-        let tmp = casedepart.innerHTML;
-        casedepart.innerHTML = casealeatoire.innerHTML;
-        casealeatoire.innerHTML = tmp;
-
-        //permutation de class get je vais chercher set je mets
-        let tmp2 = casedepart.getAttribute("class")
-        let tmp3 =  casealeatoire.getAttribute('class')
-        casedepart.setAttribute('class', tmp3);
-        casealeatoire.setAttribute('class', tmp2);
-        
-
-
-
-        /* on fait une condition pour savoir quel case est vide et quel est aléatoire pour pouvoir 
-        changer les positions de depart(elig = 4;
-            let ecol = 4;) qui ont changé avec le mode aléatoire*/
-        if (tmp2 == "emptycase") {
-            let number = casedepart.id.substring(4, 6);
-            let tabnumber = number.split('');
-
-            elig =tabnumber[0];
-            ecol = tabnumber[1];
-            
-            console.log( tabnumber,elig,ecol)
-            
-
-
-            // "je suis vide"
-        } 
-        if (tmp3 == "emptycase") {
-            let number = casedepart.id.substring(4, 6);
-            let tabnumber = number.split('');
-
-            elig =tabnumber[0];
-            ecol = tabnumber[1];
-            console.log( tabnumber,elig,ecol)
-            
-
-
-
-            // "je suis vide"
-        }
-
+      // choix case de depart
+      let casedepart = tableaubutton[i];
+      if (i == 0) {
+        casedepart.setAttribute("class", "emptycase");
+        casedepart.innerHTML = "&nbsp;";
+      } else {
+        casedepart.setAttribute("class", "case");
+        casedepart.innerHTML = "" + i;
+      }
     }
-}
-//function melange aléatoire
-function getRandomArbitrary(min, max) {
-    // pour avoir que des nombres entier on utilise math.floor
-    return Math.floor(Math.random() * (max - min) + min);
-}
+  }
+  
+
+
+
+
+
 
