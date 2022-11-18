@@ -13,6 +13,7 @@
   }
   .vide { background-color: rgb(255, 255, 255);}
   .grille { background-color: rgb(187, 187, 102);}  
+  
 /* placement de chaque bouton
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 1 / 2 / 2 / 3; }
