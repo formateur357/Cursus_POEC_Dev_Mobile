@@ -3,7 +3,7 @@ var emptyLign = 4;
 var emptyCol = 4;
 var nbClick = 0;
 //photo instantanée au début du jeu qui serira plus tard à déterminer si jeu gagné
-let lst = Array.from(document.querySelector(".jeu").children).map(child => child.innerHTML);
+let lst = Array.from(document.querySelector(".jeu").children).map(child => child.value);
 console.log(lst);
 
 //fonction qui échange la case cliquée avec la case vide
@@ -36,20 +36,27 @@ function move(lign, col) {
 
     //on récupère les noeuds des boutons
     var clickNode = document.getElementById(clickName);
-    var emptyNode = document.getElementById(emptyName);
+    var emptyNode = document.querySelector(".emptyCase");
 
     //on récupère la valeur textuelle des boutons
-    var clickValue = clickNode.removeChild(clickNode.childNodes[0]);
-    var emptyValue = emptyNode.removeChild(emptyNode.childNodes[0]);
+     var clickValue = clickNode.getAttribute('value');
+    var emptyValue = emptyNode.getAttribute('value');
 
     //on interchange ces valeurs
-    clickNode.appendChild(emptyValue);
-    emptyNode.appendChild(clickValue);
+    clickNode.setAttribute("value", emptyValue);
+    emptyNode.setAttribute("value", clickValue);
 
     //on interchange les classes des boutons
     clickNode.setAttribute("class", "emptyCase");
     emptyNode.setAttribute("class", "case");
 
+    //on interchange les id
+    let temp;
+    temp=clickNode.id;
+    clickNode.id=emptyNode.id;
+    emptyNode.id=temp;
+  
+console.log(Array.from(document.querySelector(".jeu").children))
     //on elève le focus sur la case cliquée
     clickNode.blur();
 
@@ -57,7 +64,7 @@ function move(lign, col) {
     (emptyLign = lign), (emptyCol = col);
 
     //por vérifier si jeu gagné
-    let lst_move = Array.from(document.querySelector(".jeu").children).map(child => child.innerHTML);
+    let lst_move = Array.from(document.querySelector(".jeu").children).map(child => child.value);
     console.log(lst_move);
     //"JSON.stingify()" permet de comparer deux valeur de même format et nature
     if(JSON.stringify(lst) == JSON.stringify(lst_move)){
@@ -79,6 +86,7 @@ function melange() {
     emptyLign = lign;
     emptyCol = col;
   }
+ 
 }
 
 //AUTRE METHODE POUR MELANGE ALEATOIRE
