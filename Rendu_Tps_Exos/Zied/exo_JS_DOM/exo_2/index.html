@@ -1,0 +1,45 @@
+<!-- au chargement de la page,
+quand on passe sur une image,
+quand on clique sur un bouton,
+quand on appuie sur une touche.
+Ajouter un bouton qui, quand on clique dessus, fait appel à document.write() pour produire un affichage. 
+Que se passe-t-il ?
+Avec des boutons :
+
+changer la couleur de fond du document quand on clique sur un bouton,
+changer aussi l'apparence du bouton,
+ajouter un bouton qui permette de revenir à la normale.
+Sur des images :
+
+changer une image par une autre quand la souris passe dessus,
+remettre l'image d'origine quand la souris quitte l'image -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body id="couleur">
+    <div id= alerte onmouseover=alarma(this);>
+    <h1>Changement photo et alerte</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+    </p><br>
+        <img src="pic1.jpg"><br>
+        <button onclick="changer_image()">changer</button><br>
+    </div>
+
+        <button onclick="changer_jour()">jour</button>
+        <button onclick="changer_nuit()">nuit</button><br>
+        <img id=my-img src="pic1.jpg" onmouseover=passageDeLaSouris(this); onmouseout=departDeLaSouris(this); />
+
+
+</body>
+</html>

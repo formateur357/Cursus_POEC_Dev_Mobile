@@ -3,59 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <title>Slide Puzzle</title>
-    <style>
-      div#jeu {
-        margin: 0 auto 0 auto;
-        width: 416px;
-      }
-      button.case,
-      button.emptycase {
-        width: 100px;
-        height: 100px;
-        font-size: 200%;
-        float: left;
-        border: solid 1pt rgb(66, 206, 66);
-        margin: 1px 2px 1px 2px;
-      }
-      button.emptycase {
-        background-color: inherit;
-        border: none;
-      }
-      hr {
-        clear: both;
-        visibility: hidden;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" />
+
     <script>
-      var elig = 4;
-      var ecol = 4;
+    
 
-      function move(lig, col) {
-        var bname = "case" + lig + col;
-        var ename = "case" + elig + ecol;
 
-        var bnode = document.getElementById(bname);
-        var enode = document.getElementById(ename);
-        var bvalue = bnode.removeChild(bnode.childNodes[0]);
-        var evalue = enode.removeChild(enode.childNodes[0]);
 
-        bnode.appendChild(evalue);
-        enode.appendChild(bvalue);
 
-        bnode.setAttribute("class", "emptycase");
-        enode.setAttribute("class", "case");
 
-        bnode.blur();
 
-        elig = lig;
-        ecol = col;
-      }
+
     </script>
   </head>
   <body>
-    <h1>Slide Puzzle</h1>
+    <h1>Takinou</h1>
     <div id="jeu">
       <button id="case11" class="case" onclick="move(1,1);">1</button>
       <button id="case12" class="case" onclick="move(1,2);">11</button>
@@ -76,7 +38,28 @@
       <button id="case42" class="case" onclick="move(4,2);">12</button>
       <button id="case43" class="case" onclick="move(4,3);">3</button>
       <button id="case44" class="emptycase" onclick="move(4,4);">&nbsp;</button>
+
       <hr />
+      
+     
+
+      <p>
+        Takinou-moi la photo <span 
+        id="display">0</span> Times
+        
+      </p>
+
+     
+	  </section>
+
+    
+
+		
+	</figure>
+
     </div>
+    
+
+<script src="takinou.js"></script>
   </body>
 </html>
