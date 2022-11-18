@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="taquin.css" />
+    <title>Taquin Images</title>
+  </head>
+  <body>
+    <div id="jeu">
+      <canvas id="taquin" width="420" height="420"></canvas>
+
+      <form> <!--un form pour contenir les boutons radios -->
+       
+        <input
+          type="radio"
+          name="img"
+          id="img1"
+          value="bart_simpson.jpg"
+          checked
+        />
+        <img
+          src="./bart_simpson.jpg"
+          height="100px"
+        />
+
+        <input
+          type="radio"
+          name="img"
+          id="img2"
+          value="donut.jpg"
+        />
+        <img src="./donut.jpg" height="100px" />
+      </form>
+     
+      <!-- <button id="bouton" onclick="shuffle()">Mélange Aléatoire</button> -->
+    </div>
+
+    <script src="taquin.js"></script>
+  </body>
+</html>
