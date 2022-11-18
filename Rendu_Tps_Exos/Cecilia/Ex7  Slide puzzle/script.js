@@ -15,6 +15,7 @@ let intermedaire = "4, 25%";
 let expert = "5, 20%";
 
 function niveau(n = facile) {
+    clock = new Clock(0, 0, 0);
     timerStart();
 
     board.innerHTML = "";
