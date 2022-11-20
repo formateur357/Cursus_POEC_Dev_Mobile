@@ -20,7 +20,7 @@ var imagePuzzle = {
     setImage: function (images, gridSize = 4) {
         var percentage = 100 / (gridSize - 1);
         var image = images[Math.floor(Math.random() * images.length)];
-        helper.doc('imgTitle').innerHTML = image.title;
+        helper.doc('imageTitle').innerHTML = image.title;
         helper.doc('actualImage').setAttribute('src', image.src);
         helper.doc('sortable').innerHTML = '';
         for (var i = 0; i < gridSize * gridSize; i++) {

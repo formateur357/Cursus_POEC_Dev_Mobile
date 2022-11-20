@@ -4,7 +4,7 @@ var ecol = 4;
 var nbclicks = 0;
 
 /* Fonction qui échange la case (lig,col) avec la case vide */
-function move(lig, col) {
+function move(e,lig, col) {
     if (
         (elig == lig && (col == ecol - 1 || col == ecol + 1))
         || (ecol == col && (lig == elig - 1 || lig == elig + 1))
