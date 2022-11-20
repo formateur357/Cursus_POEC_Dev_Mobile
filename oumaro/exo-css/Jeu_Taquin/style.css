@@ -1,0 +1,77 @@
+*{
+
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+
+    text-align: center;
+    background-color: white;
+}
+
+
+.tableau{
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap ;
+    height: 100px;
+    width: 100px;
+    margin: 100px 600px;
+}
+
+
+.tableau > div{
+
+    
+    background-color: rgb(14, 106, 137);
+    border: 2px solid lightblue;
+    cursor: pointer;
+    width: 33.33%;
+    height: 33.33%;
+}
+
+
+.tableau > div >p{
+
+    margin: 50px;
+    background-color: rgb(14, 106, 137);
+    text-align: center;
+    font-size: 2em;
+    color:white;
+}
+
+.tableau > div:hover{
+
+    transform: scale(1.1);
+}
+
+.tableau > div > img {
+
+    object-fit: cover;
+    background: url('./bleach.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+   /* background-position: 00% 00%;*/
+}
+
+div[class~="empty_block"]{
+
+        
+    visibility: hidden;
+}
+
+
+#compteur{
+
+    text-align: center;
+    font-size: 2em;
+}

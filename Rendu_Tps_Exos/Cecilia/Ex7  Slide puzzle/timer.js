@@ -26,8 +26,8 @@ function Clock(heure, minute, seconde) {
     }
 }
 
-clock = new Clock(0, 0, 0);
-clock.display();
+// clock = new Clock(0, 0, 0);
+// clock.display();
 
 function timerStart  (){
     setInterval(async function tick() {

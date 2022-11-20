@@ -18,7 +18,7 @@ function niveau(n = facile) {
     // timerStart();
 
     board.innerHTML = "";
-    console.log("niveau img jeu = " + imgjeux);
+    // console.log("niveau img jeu = " + imgjeux);
     but.style.backgroundImage = imgjeux;
     let nb_cases = n[0]*n[0];
     let lvl = n[0] == 3 ? "board facile" : n[0] == 4 ? "board intermediaire": "board expert";
@@ -35,11 +35,11 @@ function niveau(n = facile) {
         div.setAttribute("id", "case"+i);
         div.setAttribute("draggable","true");
         // div.setAttribute("onclick","swap(this)");        
-        // // div.setAttribute("ondrag","drag(this)");
-        div.setAttribute("ondragstart","dragStart(this)");
+        // div.setAttribute("ondrag","drag(this)");
+        div.setAttribute("ondragstart","start(event)");
         // div.setAttribute("ondragend","dragEnd(this)");
-        div.setAttribute("ondragover","dragOver(this)");
-        div.setAttribute("ondrop","drop(this)");
+        div.setAttribute("ondragover"," return over(event)");
+        div.setAttribute("ondrop","return drop(event)");
 
         div.appendChild(content);
 
@@ -52,7 +52,7 @@ function niveau(n = facile) {
 
 function cut_image(nb_cases) {
     let lmax = Math.sqrt(nb_cases);
-    let n = Math.floor(100/(lmax))+3.5;//3.5
+    let n = Math.floor(100/(lmax-1));//3.5
     let bgImg =  imgjeux;
     let cases = Array.from(divs).map(divs => divs);
         // Récupéré un tableau trié des cases 
@@ -70,6 +70,9 @@ function cut_image(nb_cases) {
                 for (let col = 0; col <lmax; col++) {
                     if( index < tab_tmp.length){
                     let pos= ""+col*n+"% "+ lig*n +"%"; // col % lig %
+                    tab_tmp[index].style.backgroundSize = "500px 500px";//(100*lmax)+"% "+(100*lmax) +"%";//100*lmax+"%";
+                    tab_tmp[index].style.objectFit = "cover";
+
                     // tab_tmp[index].style.backgroundSize = (100*lmax)+"% "+(100*lmax) +"%";//100*lmax+"%";
                     //tab_tmp[index].style.backgroundSize = (100*lmax)+"%";//100*lmax+"%";
 
@@ -86,7 +89,10 @@ function cut_image(nb_cases) {
 function newImage() {
     let images = [ "url('archi.jpg')", "url('barbi.jpg')", "url('cassie.jpg')", "url('leo.jpg')"];
     let image = images[randomInt(images.length)];
-    console.log(image);
+    // console.log(image);
+    do{
+        image = images[randomInt(images.length)];
+    }while(imgjeux == image )
     imgjeux = image;
     niveau();
 }
@@ -126,21 +132,22 @@ function present(n) {
 
 function aleatoire(nb_cases) {
     let cases = Array.from(divs).map(divs => divs);
-    let empty = randomInt(nb_cases-1);
-    cases[empty].className = "empty"
-    cases[empty].textContent = "";
+    console.log(nb_cases);
+    // let empty = randomInt(nb_cases-1);
+    // cases[empty].className = "empty"
+    // cases[empty].textContent = "";
 
-    for (let i = 0; i < nb_cases; i++) {
-        let n = randomInt(nb_cases);
-        while (cases[i].textContent == "" && cases[i].className != "empty") {
-            if (present(n)) {
-                cases[i].textContent = n;
-                cases[i].className = "exist";
-            }
-            n = randomInt(nb_cases);
-        }
-    }
-    etat = generate_table(Math.sqrt(nb_cases));
+    // for (let i = 0; i < nb_cases; i++) {
+    //     let n = randomInt(nb_cases);
+    //     while (cases[i].textContent == ""){ //&& cases[i].className != "empty") {
+    //         if (present(n)) {
+    //             cases[i].textContent = n;
+    //             cases[i].className = "exist";
+    //         }
+    //         n = randomInt(nb_cases);
+    //     }
+    // }
+    // etat = generate_table(Math.sqrt(nb_cases));
 }
 
 function verify_cases(n, limite) {
