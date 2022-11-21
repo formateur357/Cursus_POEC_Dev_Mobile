@@ -1,0 +1,20 @@
+div#puzzle {
+  background-color: white;
+  color: white;
+  margin: 0 auto 0 auto;
+  padding: 100px;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: grey;
+}
+
+.empty {
+  width: 100px;
+  height: 100px;
+  color: grey;
+  background-color: white;
+}

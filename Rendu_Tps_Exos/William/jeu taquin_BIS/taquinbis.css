@@ -1,0 +1,26 @@
+div#jeu {
+    margin: 0 auto 0 auto;
+    width: 416px;
+}
+
+button.case,
+button.emptycase {
+    width: 100px;
+    height: 100px;
+    font-size: 200%;
+    float: left;
+    border: solid 1pt black;
+    margin: 1px 2px 1px 2px;
+}
+
+button.emptycase {
+    background-color: inherit;
+    border: none;
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
