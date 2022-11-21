@@ -1,0 +1,15 @@
+
+
+#menu { /* Pour le menu principal */
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; 
+} 
+#menu ul { /* Pour les sous-menus */
+     list-style-type: none; 
+     margin: 0px;
+     padding: 0px;
+}
+#menu ul {
+    display: none;
+}

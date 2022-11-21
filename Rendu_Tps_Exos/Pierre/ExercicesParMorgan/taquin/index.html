@@ -35,6 +35,9 @@
             Nombre de clics <span id="compteur">...</span>
             <button onclick="shuffle_and_refresh();">Mélanger au hasard</button>
             <button onclick="sorted_and_refresh();">Mélanger rangé</button>
+            <button onclick="melange_special_debug()">
+              Mélange spécial pour debug
+            </button>
             <span>
               <input
                 checked
@@ -127,7 +130,7 @@
       </tdbody>
     </table>
     <script>
-      init_taquin(true);
+      init_taquin(false);
     </script>
   </body>
 </html>

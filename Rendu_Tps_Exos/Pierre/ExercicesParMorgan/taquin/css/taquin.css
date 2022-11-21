@@ -7,14 +7,19 @@ div#gameboard {
   width: 296px;
 }
 
-button.taquin,
-button.no-taquin {
+.taquin,
+.no-taquin {
   width: 70px;
   height: 70px;
   font-size: 150%;
   float: left;
   border: solid 1pt blue;
   margin: 1px 2px 1px 2px;
+}
+
+.no-taquin {
+  background-color: inherit;
+  border: none;
 }
 
 .img_taquin {
@@ -25,7 +30,7 @@ button.no-taquin {
   color: green;
 }
 
-button.no-taquin {
+.img_no-taquin {
   background-color: inherit;
   border: none;
 }

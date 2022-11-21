@@ -17,6 +17,11 @@ let compteur = 0; // Nombre mouvements va
 let withImage = false; // false= version texte true= version avec images
 let image_name = "img/cat_best_joke.jpg";
 let largeur_cellule = 70;
+
+let css_casevide = ""; // Nom de la classe CSS pour la case vide
+let css_bouton = ""; // Nom de la classe CSS pour les boutons
+let old_css_casevide = ""; // Ancien nom de la classe CSS pour la case vide
+let old_css_bouton = ""; // Ancien nom de la classe CSS pour les boutons
 /*
  * Recopier le compteur sur la page
  */
@@ -76,8 +81,8 @@ function move2(lig, col) {
   element_btn.appendChild(child_empty);
   element_empty.appendChild(child_btn);
   // Permuter le style CSS
-  element_btn.setAttribute("class", "no-taquin");
-  element_empty.setAttribute("class", "taquin");
+  element_btn.setAttribute("class", css_casevide);
+  element_empty.setAttribute("class", css_bouton);
   // Valider le focus pour gestion clavier ultérieure
   element_btn.blur(); // Enlever le focus
   element_empty.focus(); // Mettre le focus
@@ -112,6 +117,10 @@ function move(y, x) {
   show_counter();
 }
 
+/*
+ * Retourne 0 si la case x,y est la case vide,
+ * Sinon retourne la valeur dans la case
+ */
 function isEmpty(x, y) {
   let ret;
   if (tab[y][x] == 0) {
@@ -124,6 +133,9 @@ function isEmpty(x, y) {
   return ret;
 }
 
+/*
+ * Retourne vrai si la case x,y est suffisamment proche de la case vide
+ */
 function isMovable(x, y) {
   let ret = false;
   if (tab[y][x] == 0) {
@@ -146,37 +158,38 @@ function isMovable(x, y) {
   return ret;
 }
 
-function add_tag_image_v0(btn, lig, col) {
-  let x = col * largeur_cellule;
-  let y = lig * largeur_cellule;
-  let backgr_pos = `background-position: ${x}px ${y}px;`;
-  let imgtag = '<div class="img_taquin" style="' + backgr_pos + '" />';
-  btn.innerHTML = imgtag;
-  return btn;
+/*
+ * Retourne un nouveau tableau sans la valeur présente dans le tableau passé en paramètre
+ */
+function enleve_valeur(arr, valeur) {
+  if (!Array.isArray(arr)) {
+    return [];
+  }
+  return arr.filter(function (val) {
+    return val != valeur;
+  });
 }
 
-function add_tag_image_v1_ok(btn, lig, col) {
-  let x = (100 / maxi) * col;
-  let y = (100 / maxi) * lig;
-  let backgr_pos = `background-position: ${x}% ${y}%  background-size:${maxi}00%;`;
-  let imgtag = '<div class="img_taquin" style="' + backgr_pos + '" />';
-  btn.innerHTML = imgtag;
-  return btn;
-}
-
+/*
+ * Modifie les classes CSS du bouton passé en paramètre
+ */
 function add_tag_image(btn, lig, col) {
   let x = (100 / maxi) * col;
   let y = (100 / maxi) * lig;
   btn.style.backgroundPosition = `${x}% ${y}%`;
   btn.style.backgroundSize = `${maxi}00%;`;
-  btn.classList.add("img_taquin");
+  btn.classList.remove(old_css_casevide);
+  btn.classList.remove(old_css_bouton);
+  btn.classList.add(css_bouton);
   return btn;
 }
 
 /*
  * Recopier le tableau javascript vers le HTML
  */
-function show_gameboard() {
+
+function show_gameboard(texte) {
+  console.info("show_gameboard " + texte);
   let gameboard = document.getElementById("gameboard");
   let buttons = gameboard.getElementsByTagName("button");
   for (let index_btn = 0; index_btn < buttons.length; index_btn++) {
@@ -187,24 +200,35 @@ function show_gameboard() {
     let col = chunks[2];
     let val = tab[lig][col];
     //
+    if (index_btn >= buttons.length - 1) {
+      console.log("dernier bouton col=", col, "lig=" + lig);
+    }
+
+    //
     if (val == 0) {
       // Case vide
       if (withImage) {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = " ";
-        btn.setAttribute("class", "no-taquin");
+        btn.classList.add(css_casevide);
       }
     } else {
       // Toutes les autres valeurs
+      btn.classList.remove(old_css_casevide);
       if (withImage) {
         btn = add_tag_image(btn, lig, col);
       } else {
         btn.innerText = "" + val;
-        btn.setAttribute("class", "taquin");
+        btn.classList.remove(old_css_bouton);
+        btn.classList.add(css_bouton);
       }
     }
-    console.log(index_btn, lig, col, val, chunks);
+    //
+    if (!withImage) {
+      // btn.classList.remove(css_bouton);
+    }
+    console.log(index_btn, lig, col, val, chunks, btn.classList);
   }
   show_counter();
 }
@@ -234,6 +258,10 @@ function shuffle() {
   }
 }
 
+/*
+ * Crée un tableau bien classé afin de pouvoir tester la fonction qui détermine si la partie gagnante
+ * puis affichage dans la grille de jeu
+ */
 function sorted_and_refresh() {
   for (let y = 0; y < maxi; y++) {
     for (let x = 0; x < maxi; x++) {
@@ -243,7 +271,7 @@ function sorted_and_refresh() {
   }
   compteur = 0;
   cherchecaseVideDansTableau();
-  show_gameboard();
+  show_gameboard("sorted_and_refresh");
 }
 
 /**
@@ -253,22 +281,25 @@ function shuffle_and_refresh() {
   shuffle();
   compteur = 0;
   cherchecaseVideDansTableau();
-  show_gameboard();
+  show_gameboard("shuffle_and_refresh");
 }
 
 /*
  * Chercher la case vide ( valeur zero ) dans le tableau javascript
  */
 function cherchecaseVideDansTableau() {
+  console.info("cherchecaseVideDansTableau");
+  console.table(tab);
   for (let y = 0; y < maxi; y++) {
     for (let x = 0; x < maxi; x++) {
       if (isEmpty(x, y) == 0) {
-        console.info("case vide", "x=" + x, "y=" + y);
+        console.log("case vide", "x=" + x, "y=" + y);
         col_empty = x;
         lig_empty = y;
       } else {
         let b = isMovable(x, y);
-        console.info("x=" + x, "y=" + y, "b=" + b);
+        let val = tab[y][x];
+        console.log("x=" + x, "y=" + y, "b=" + b, "valeur=", val);
         if (b) {
           //
         } else {
@@ -279,20 +310,46 @@ function cherchecaseVideDansTableau() {
   }
 }
 
+/*
+ * Gestion du changement de CSS entre mode texte et mode image
+ */
+function changeCSS(with_image) {
+  old_css_casevide = css_casevide;
+  old_css_bouton = css_bouton;
+  switch (with_image) {
+    case false:
+      css_casevide = "no-taquin"; // Nom de la classe CSS pour la case vide
+      css_bouton = "taquin"; // Nom de la classe CSS pour les boutons
+      break;
+    case true:
+      css_casevide = "img_no-taquin"; // Nom de la classe CSS pour la case vide
+      css_bouton = "img_taquin"; // Nom de la classe CSS pour les boutons
+      break;
+  }
+}
+
+/*
+ * Gestion du changement de radiobutton
+ */
 function radioSelected(e) {
   console.log(e);
   if (this.checked) {
     let choix = this.value;
-    // alert("En mode " + choix);
     switch (choix) {
       case "txt":
         withImage = false;
-        show_gameboard();
+        changeCSS(withImage);
+        show_gameboard("radioSelected::txt");
         break;
 
       case "img":
         withImage = true;
-        show_gameboard();
+        changeCSS(withImage);
+        show_gameboard("radioSelected::img");
+        break;
+      default:
+        css_casevide = "";
+        css_bouton = "";
         break;
     }
   }
@@ -303,13 +360,64 @@ function gestion_radio_button() {
   for (const radioButton of radioButtons) {
     radioButton.addEventListener("change", radioSelected);
   }
+  let w = document.getElementById("radio_taquin_img").checked;
+  withImage = w;
+  changeCSS(withImage);
 }
+
+/*
+ * Classement de tous les boutons HTML par ordre croissant
+ */
+function classer_cases() {
+  // récupère ma liste jeu
+  let divjeu = document.getElementById("jeu");
+  // récupère ma liste de boutons
+  let tableaubutton = divjeu.getElementsByTagName("button");
+  console.log(tableaubutton);
+
+  // boucle pour parcourir tout le tableau
+  for (let i = 0; i < tableaubutton.length; i++) {
+    // choix case de depart
+    let casedepart = tableaubutton[i];
+    if (i == 0) {
+      casedepart.setAttribute("class", "emptycase");
+      casedepart.innerHTML = "&nbsp;";
+    } else {
+      casedepart.setAttribute("class", "case");
+      casedepart.innerHTML = "" + i;
+    }
+  }
+}
+
+function melange_special_debug() {
+  let tab_hasard = [14, 0, 3, 7, 15, 12, 13, 2, 8, 4, 10, 5, 6, 11, 1, 9];
+  // récupère ma liste jeu
+  let divjeu = document.getElementById("jeu");
+  // récupère ma liste de boutons
+  let tableaubutton = divjeu.getElementsByTagName("button");
+  console.log(tableaubutton);
+  let valeur;
+  // boucle pour parcourir tout le tableau
+  for (let i = 0; i < tableaubutton.length; i++) {
+    // choix case de depart
+    let casedepart = tableaubutton[i];
+    valeur = tab_hasard[i];
+    if (valeur == 0) {
+      casedepart.setAttribute("class", "emptycase");
+      casedepart.innerHTML = "&nbsp;";
+    } else {
+      casedepart.setAttribute("class", "case");
+      casedepart.innerHTML = "" + valeur;
+    }
+  }
+}
+
 /**
  * Démarage du jeu de Taquin
  */
 function init_taquin(withImageBoolean) {
-  withImage = withImageBoolean;
   maxi = tab.length;
+  withImage = withImageBoolean;
   gestion_radio_button();
   shuffle_and_refresh();
   //

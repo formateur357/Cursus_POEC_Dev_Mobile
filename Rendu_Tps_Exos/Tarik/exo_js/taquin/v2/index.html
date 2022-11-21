@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>taquin</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="setDifficult('easy')">
+        <div class="container">
+            <div id="taquin">
+
+            </div>
+
+            <div class="info">
+                <h1> Temps : <span id="time"> </span></h1>
+                <h1 id="gameFinish"></h1>
+                <h1>Nombre de déplacement : <span id="nbrTour"></span></h1>
+                <div class="lvl">
+                    <label for="selectLvl">Niveau : </label>
+                    <select name="selectLvl" id="selectLvl" onchange="setDifficult(this.value)">
+                        <option value="easy" selected >easy</option>
+                        <option value="medium">medium</option>
+                        <option value="hard">hard</option>
+                    </select>
+                </div>
+                
+                <div class="img">
+                    <img id="imgFinish" src="./img/chat_taquin.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
