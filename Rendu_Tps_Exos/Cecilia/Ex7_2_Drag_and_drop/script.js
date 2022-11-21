@@ -33,7 +33,7 @@ function niveau(n = facile) {
         let content = document.createTextNode("");
         
         div.setAttribute("id", "case"+i);
-        div.setAttribute("draggable","true");
+        div.setAttribute("draggable","true");       
         // div.setAttribute("onclick","swap(this)");        
         // div.setAttribute("ondrag","drag(this)");
         div.setAttribute("ondragstart","start(event)");
@@ -46,8 +46,8 @@ function niveau(n = facile) {
         board.appendChild(div);
 
     }
-    aleatoire(nb_cases);
-    cut_image(nb_cases);
+    // aleatoire(nb_cases);
+    // cut_image(nb_cases);
 }
 
 function cut_image(nb_cases) {
@@ -132,21 +132,24 @@ function present(n) {
 
 function aleatoire(nb_cases) {
     let cases = Array.from(divs).map(divs => divs);
-    console.log(nb_cases);
+    // console.log(nb_cases);
     // let empty = randomInt(nb_cases-1);
-    // cases[empty].className = "empty"
+    // cases[empty].className = "empty";
     // cases[empty].textContent = "";
 
-    // for (let i = 0; i < nb_cases; i++) {
-    //     let n = randomInt(nb_cases);
-    //     while (cases[i].textContent == ""){ //&& cases[i].className != "empty") {
-    //         if (present(n)) {
-    //             cases[i].textContent = n;
-    //             cases[i].className = "exist";
-    //         }
-    //         n = randomInt(nb_cases);
-    //     }
-    // }
+    for (let i = 0; i < nb_cases; i++) {
+        let n = randomInt(nb_cases-1)+1;
+        // console.log(cases[i]);
+        // console.log(n);
+        while (cases[i].textContent == ""){ //&& cases[i].className != "empty") {
+            if (present(n)) {
+                cases[i].textContent = n;
+                // cases[i].className = "exist";
+                console.log(cases[i]);
+            }
+            n = randomInt(nb_cases-1)+1;
+        }
+    }
     // etat = generate_table(Math.sqrt(nb_cases));
 }
 
