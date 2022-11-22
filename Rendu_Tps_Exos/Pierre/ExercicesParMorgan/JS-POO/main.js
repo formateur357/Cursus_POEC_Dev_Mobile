@@ -42,3 +42,11 @@ for (let i = 0; i < tab_personnes.length; i++) {
     "Biographie=" + b + "<br>" + "Salutations=" + s + "<hr>"
   );
 }
+////
+////
+let resultat;
+////
+let ex01dc = new Ex01_DiviCalc(100, 25, "Bonjour");
+console.log("addition", ex01dc.addition());
+resultat = ex01dc.division();
+console.log("division", resultat);
