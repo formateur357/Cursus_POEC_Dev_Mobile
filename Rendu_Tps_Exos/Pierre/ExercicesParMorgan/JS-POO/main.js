@@ -3,7 +3,7 @@
  * programme principal
  */
 let personne1 = new Personne("Marilyn", "Monroe", 25, "femme", [
-  "faire du cinema",
+  "faire du cinéma",
   "chanter",
   "poser dans les revues",
 ]);
@@ -50,3 +50,14 @@ let ex01dc = new Ex01_DiviCalc(100, 25, "Bonjour");
 console.log("addition", ex01dc.addition());
 resultat = ex01dc.division();
 console.log("division", resultat);
+////
+////
+var etudiant = {
+  nom: "Jacques Michel",
+  level: "8",
+  numero: 07,
+};
+////
+////
+resultat = ex02_Lister(etudiant);
+console.log("ex02_Lister()", resultat);

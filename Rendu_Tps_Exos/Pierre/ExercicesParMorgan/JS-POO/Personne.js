@@ -20,7 +20,7 @@ function Personne(prenom, nom, age, genre, interets) {
       passions += interets[i];
     }
 
-    let il_ou_elle = genre == "femme" ? "elle" : "il";
+    let il_ou_elle = genre == "femme" ? "Elle" : "Il";
 
     return (
       this.nom.prenom +
@@ -39,7 +39,9 @@ function Personne(prenom, nom, age, genre, interets) {
     return (
       "Bonjour ! Je m'appelle " +
       this.nom.prenom +
-      " et mon genre " +
+      " " +
+      this.nom.nom +
+      " et mon genre est " +
       genre +
       "."
     );
