@@ -10,8 +10,9 @@
     text-decoration: none;
     font-weight: bold;
     }
+    
 /*element en italic */
-/*le sign e"~" permet de sélectionner tous les éléments <p> après l'élément survolés*/
+/*le signe "~" permet de sélectionner tous les éléments <p> après l'élément survolés*/
     .container p:hover ~ p {
     text-decoration: none;
     font-style: italic;

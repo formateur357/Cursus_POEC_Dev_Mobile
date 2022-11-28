@@ -8,9 +8,9 @@ function descend(){
         position = 1;
     }
 
-    var idSuivant = 'img' + position;
-    document.getElementById(captain).src = document.getElementById(idSuivant).src;
-    document.getElementById(idSuivant).src = './pics/captain_america.jpeg';
+    var suivant = 'img' + position;
+    document.getElementById(captain).src = document.getElementById(suivant).src;
+    document.getElementById(suivant).src = './pics/captain_america.jpeg';
 }
 
 function monte(){
@@ -19,8 +19,8 @@ function monte(){
     if(position < 1){
         position = nbImg;
     }
-    var idPrecedent = 'img'+position;
-    document.getElementById(captain).src = document.getElementById(idPrecedent).src;
-    document.getElementById(idPrecedent).src = './pics/captain_america.jpeg';
+    var precedent = 'img'+position;
+    document.getElementById(captain).src = document.getElementById(precedent).src;
+    document.getElementById(precedent).src = './pics/captain_america.jpeg';
 
 }

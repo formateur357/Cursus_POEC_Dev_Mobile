@@ -16,7 +16,7 @@
     display: block;
     margin:auto;
     background-color:Thistle ;
-    cursor: move;
+    cursor: pointer;
   }
 
   /*conteneur avec bouton radio et images*/
@@ -25,4 +25,6 @@
     margin:1em auto;
     text-align:center;
   }
+
+  /*format des 2 images dans le bas de l'écran*/
   
