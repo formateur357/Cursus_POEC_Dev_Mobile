@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeux de photos</title>
+
+    <link rel="stylesheet" href="exoimage.css">
+    <script src="exoimage.js"></script>
+  </head>
+
+  <body> 
+ <h1>Jeu d'images</h1>
+ <p>Voici les images</p>
+
+<div class="container">
+    <img src="image 1.jpg" alt="Image" style="width: 200px; height: 200px click= alert('Wouah!');"/>
+    <br>
+    <button onclick="alert('Wouah!');">cliquez</button>
+    <br>
+    <button> <id="nuit" onclick="var black = documentElement.style.backgroundColor ('black');
+            var white = documentElement.style.backgroundColor ('white');
+            var nuit = document.getElementById('nuit').style.color='black';">nuit</button>
+ <button onclick="documentwrite();">jour</button>
+  </div>
+
+  <br>
+  <div class="container">
+    <img id="screen" src="image 1.jpg" 
+    alt="Image" style="width: 200px; height: 200px" 
+    onmouseover="document.getElementById('screen').src='image2.jpg'" 
+    onmouseout="document.getElementById('screen').setAttribute('src','image 1.jpg');">
+  
+    </div>
+  </body>
+  </html>
+
+  

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img class="tap-image " id="my-image" src="https://thumbs.dreamstime.com/b/%C3%A9cureuil-de-brown-mangeant-une-arachide-12961270.jpg"style="height: 200px" ><br>
+    <div class="tap-control-buttons">
+        <button id="previous" onclick="lightsequence(-1)"> image précédente</button>
+        <button id="next" onclick="lightsequence(1)"> image suivante
+      </div>
+      
+      <script>   
+    
+    var trafficlights = [
+  'https://www.pourquoidocteur.fr/media/article/thunbs/uploded_istock-106519096-1601647739.jpg',
+  'http://www.noovomoi.ca/content/dam/style-de-vie/migrated/images/2015/10/11/animaux-epoustouflants-tigre.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4QdONPVVq1dn2ep1NUM5IE8Ab465DfJ632sgJW4onS78ndtM10PW5AlTbhCdW9iGFfgE&usqp=CAU',
+  'https://images.pexels.com/photos/572861/pexels-photo-572861.jpeg?cs=srgb&dl=pexels-richard-verbeek-572861.jpg&fm=jpg'
+];
+var num = 0
+
+function lightsequence(increment) {
+  num = (num + increment + trafficlights.length) %trafficlights.length
+  document.getElementById('my-image').src = trafficlights[num];
+}
+    
+    </script>
+    
+</body>
+</html>

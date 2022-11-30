@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>styles</title>
+    <meta charset="utf-8" />
+    <style id="mycolors">
+      .textcolor {
+        color: white;
+      }
+      .backgroundcolor {
+        background-color: black;
+      }
+      .bordercolor {
+        border-color: 1px blue dotted;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="parag1">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+    <button onclick="changer_style()">Changer Style</button>
+
+    <div id="container">
+      <input type="text" id="parag1" />
+      <button onclick="direBonjour()" id="cliquer">cliquer</button>
+    </div>
+
+    <p>
+      <a href="#"
+        >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat.</a
+      >
+    </p>
+
+    <script src="exoHtmltoJS.js"></script>
+  </body>
+</html>
+
+<!-- Ecrire la fonction changer_style qui permet de styler le paragraphe au clic du bouton par : -->
+<!-- une couleur blanche.
+un background noir.
+une bordure noire pointillée de 1px.
+un retrait de 5px.
+Définir les propriétés précédentes dans une classe "active" et modifier la fonction changer_style de telle façon qu'elle ajoute la classe "active" au paragraphe.
+*/ -->
+
+<!-- fonction changer_style
+var paragraphes = document.getElementsByTagName("p");
+for (var elt of paragraphes)
+console.log(elt.innerHTML); -->

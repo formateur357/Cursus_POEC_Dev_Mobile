@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Actions utilisateur et JavaScript</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="idemm.css" />
+    <script>
+      var mesphotos = ["chat2.jpeg", "chien.jpeg", "sanglier.jpeg", "lapin.jpeg"];
+      var image_en_cours = 0;
+      function suivante() {
+        image_en_cours = image_en_cours + 1;
+        if (image_en_cours == mesphotos.length) {
+          image_en_cours = 0;
+        }
+        document.getElementById("ecran").src =
+          "ressources/" + mesphotos[image_en_cours];
+      }
+      function precedente() {
+        image_en_cours = image_en_cours - 1;
+        if (image_en_cours < 0) {
+          image_en_cours = mesphotos.length - 1;
+        }
+        document.getElementById("ecran").src =
+          "ressources/" + mesphotos[image_en_cours];
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Actions utilisateur et JavaScript</h1>
+
+    <h2>Diaporama manuel</h2>
+
+    <div class="illustration">
+      <img id="ecran" src="ressources/chat2.jpeg" alt="un chat" height="200" />
+    </div>
+
+    <button onclick="precedente();">image précédente</button>
+    <button onclick="suivante();">image suivante</button>
+  </body>
+</html>

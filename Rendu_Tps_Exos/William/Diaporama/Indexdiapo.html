@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Javascript</title>
+</head>
+<body>
+    <H3>Placer images dans tableau javascript</H3>
+
+    <div class="container">
+        <img src="photographe.jpg" alt="Image" style="width: 200px; height: 200px ;"/>
+        <img src="tournesol.jpg" alt="Image" style="width: 200px; height: 200px ;"/>
+        <img src="elephant.jpg" alt="Image" style="width: 200px; height: 200px ;"/>
+        <img src="arbre.jpg" alt="Image" style="width: 200px; height: 200px ;"/>
+        <br>
+       
+        
+    </div>
+
+    <div class="container">
+        <img id="screen" src="image 1.jpg" 
+        alt="Image" style="width: 200px; height: 200px" 
+        onmouseover="document.getElementById('screen').src='image2.jpg'" 
+        onmouseout="document.getElementById('screen').setAttribute('src','image 1.jpg');">
+        <button onclick="alert('change!');">précédente</button>
+        <button onclick="alert('change!');">suivante</button>
+        </div>
+    <script>
+//  type="text/javascript">{
+//    let array =  ["photographe.jpg",'tournesol.jpg','elephant.jpg','arbre.jpg'];
+//     for (let i = 0 ;i<array.length; i++ )
+//     {
+//     <img id="image" src="array[i]"/> 
+//     // }
+</script>
+</body>
+</html>

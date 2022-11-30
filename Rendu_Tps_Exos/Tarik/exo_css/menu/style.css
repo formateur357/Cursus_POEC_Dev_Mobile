@@ -1,0 +1,30 @@
+#menu {
+  list-style-type: none;
+  display: inline-block;
+}
+
+#menu .sousmenu {
+  list-style-type: none;
+  display: none;
+}
+
+#menu li:hover > ul {
+  display: list-item;
+}
+
+#menu2 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+#menu2 .sousmenu {
+  list-style-type: none;
+  display: none;
+}
+
+#menu2 li:hover > ul {
+  display: list-item;
+}

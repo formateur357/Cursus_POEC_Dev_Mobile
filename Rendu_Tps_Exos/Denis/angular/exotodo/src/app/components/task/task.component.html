@@ -1,0 +1,10 @@
+<li [class]="getItemVariant()">
+  <button (click)="toggleComplete()" mat-raised-button color="bleu">
+    {{ getName() }}
+  </button>
+  <input placeholder="Donnez le nom de la tache ici" [(ngModel)]="task.title" />
+  <br />
+  {{ task.id }} La tâche {{ task.title }} est {{ task.description }}
+  <span [class]="getBadgeVariant()">{{ getName() }}</span>
+  
+</li>

@@ -1,0 +1,12 @@
+p{
+    text-decoration: underline;
+
+
+}
+p:hover{
+    font-weight: bold;
+    text-decoration: none;
+
+
+
+}

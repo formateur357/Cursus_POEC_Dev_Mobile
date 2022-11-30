@@ -1,0 +1,21 @@
+/*elements surlignés*/
+/*on commence par surligner tous les éléments <p> du container*/
+.container:hover p {
+    text-decoration: underline;
+    }
+
+/*element en gras au survol et sans surlignage*/
+
+    .container p:hover{
+    text-decoration: none;
+    font-weight: bold;
+    }
+    
+/*element en italic */
+/*le signe "~" permet de sélectionner tous les éléments <p> après l'élément survolés*/
+    .container p:hover ~ p {
+    text-decoration: none;
+    font-style: italic;
+    }
+
+

@@ -1,0 +1,21 @@
+<style id="mycolors" alt="#000033">
+.textcolor {
+  color : white;
+}
+.backgroundcolor {
+  background-color : black;
+}
+.bordercolor {
+  border-color: 1px black dotted;
+}
+</style>
+
+
+<div id = container>
+<input type=text id = nom >
+<button onclick ="direBonjour()" id=cliquer>
+cliquer </button>
+</div>
+<script src="fichier.js"></script>
+</body>
+</html>

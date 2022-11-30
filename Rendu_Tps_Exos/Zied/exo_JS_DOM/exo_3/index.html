@@ -1,0 +1,29 @@
+<!-- Diaporama
+Placer des noms d'images dans un tableau JavaScript.
+Programmer l'affichage une par une de ces images dirigés par deux boutons, un précédent, un suivant. -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Diaporama</h1>
+    <p>Faire défiler les images en cliquant sur les boutons </p>
+    
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="pic1.jpg" style="width:20%">
+  <img class="mySlides" src="pic2.jpg" style="width:20%">
+  <img class="mySlides" src="pic3.jpg" style="width:20%">
+  <img class="mySlides" src="pic4.jpg" style="width:20%">
+</div>
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">changer image</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">changer image</button>
+
+</body>
+</html>

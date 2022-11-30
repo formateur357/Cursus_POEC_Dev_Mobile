@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="taquin.css" />
+    <title>Jeu taquin/puzzle</title>
+  </head>
+  <body onload="shuffle();">
+    <p id="compteur">Aucun coup joué</p>
+    <!--<p id="numeroaleatoire">0</p>-->
+    <div id="puzzle">
+      <button id="block00" class="piece" onclick="bouge(0,0);">1</button>
+      <button id="block01" class="piece" onclick="bouge(0,1);">2</button>
+      <button id="block02" class="piece" onclick="bouge(0,2);">3</button>
+      <hr />
+      <button id="block10" class="piece" onclick="bouge(1,0);">4</button>
+      <button id="block11" class="piece" onclick="bouge(1,1);">5</button>
+      <button id="block12" class="piece" onclick="bouge(1,2);">6</button>
+      <hr />
+      <button id="block20" class="piece" onclick="bouge(2,0);">7</button>
+      <button id="block21" class="piece" onclick="bouge(2,1);">8</button>
+      <button id="block22" class="empty" onclick="bouge(2,2);">&nbsp;</button>
+      <div id="bravo" class="classebravo">t'es nul</div>
+    </div>
+    <button onclick="shuffle();">New Game</button>
+    <button onclick="testbravo(false)">test fin du jeu</button>
+    <button onclick="testbravo(true)">test true</button>
+
+    <!--<div id="row1" style="display: table-row;">
+      <div id="cell11" class="tile1" onClick="clickTile(1,1);"></div>
+      <div id="cell12" class="tile2" onClick="clickTile(1,2);"></div>
+      <div id="cell13" class="tile3" onClick="clickTile(1,3);"></div>
+   </div>
+   <div id="row2" style="display: table-row;">
+      <div id="cell21" class="tile4" onClick="clickTile(2,1);"></div>
+      <div id="cell22" class="tile5" onClick="clickTile(2,2);"></div>
+      <div id="cell23" class="tile6" onClick="clickTile(2,3);"></div>
+   </div>
+   <div id="row3" style="display: table-row;">
+      <div id="cell31" class="tile7" onClick="clickTile(3,1);"></div>
+      <div id="cell32" class="tile8" onClick="clickTile(3,2);"></div>
+      <div id="cell33" class="tile9" onClick="clickTile(3,3);"></div>
+   </div>
+</div>--->
+
+    <!--<script>
+      /*let row = 5;
+      let col = 8;
+      let uk = 6;
+      let po = 2;*/
+
+      //bouge1(row, col, uk, po);
+    </script>-->
+    <script src="taquin.js"></script>
+  </body>
+</html>
+
+<!--Premières étapes :
+
+Créer l'apparence du jeu : trois cases par trois cases, chaque case étant un bouton HTML.
+Associer des styles CSS à ces boutons.
+Écrire le code JavaScript qui, lorsque l'on clique sur un bouton, l'échange avec la case vide.
+
+Étapes suivantes :
+
+N'autoriser que les déplacements valides.
+Compter et afficher le nombre de déplacements effectués.
+
+Travail restant :
+
+Mélanger aléatoirement les cases au début du jeu.
+Détecter la fin de partie.
+Adapter le jeu à une version avec les morceaux d'une photo, plutôt qu'avec des boutons. -->

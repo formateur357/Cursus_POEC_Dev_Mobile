@@ -1,0 +1,76 @@
+button {
+  background-color: rgb(209, 209, 209);
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+}
+
+.container {
+  width: 840px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 251px);
+  grid-template-rows: repeat(3, 251px);
+}
+
+#empty {
+  width: 250px;
+  height: 250px;
+  order: 9;
+}
+
+#btn1 {
+  order: 1;
+  background-image: url(./chat_taquin.png);
+  background-position: 0% 0%;
+}
+
+#btn2 {
+  order: 2;
+  background-image: url(./chat_taquin.png);
+  background-position: 50% 0%;
+}
+
+#btn3 {
+  order: 3;
+  background-image: url(./chat_taquin.png);
+  background-position: 100% 0%;
+}
+
+#btn4 {
+  order: 4;
+  background-image: url(./chat_taquin.png);
+  background-position: 0% 50%;
+}
+
+#btn5 {
+  order: 5;
+  background-image: url(./chat_taquin.png);
+  background-position: 50% 50%;
+}
+
+#btn6 {
+  order: 6;
+  background-image: url(./chat_taquin.png);
+  background-position: 100% 50%;
+}
+
+#btn7 {
+  order: 7;
+  background-image: url(./chat_taquin.png);
+  background-position: 0% 100%;
+}
+
+#btn8 {
+  order: 8;
+  background-image: url(./chat_taquin.png);
+  background-position: 50% 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#gameFinish {
+  color: red;
+}

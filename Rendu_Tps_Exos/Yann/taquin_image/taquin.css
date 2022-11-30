@@ -1,0 +1,30 @@
+/*container principal*/
+#jeu{
+    display: block;
+    margin:auto;
+    width : 450px ;
+    padding : 1em;
+    border:2px solid rgb(244, 188, 114) ;
+    border-radius: 2em;
+    background-color: rgb(244, 188, 114);
+  
+    }
+
+
+/*canvas*/
+  #taquin{
+    display: block;
+    margin:auto;
+    background-color:Thistle ;
+    cursor: pointer;
+  }
+
+  /*conteneur avec bouton radio et images*/
+  form{
+    display: block;
+    margin:1em auto;
+    text-align:center;
+  }
+
+  /*format des 2 images dans le bas de l'écran*/
+  

@@ -1,0 +1,37 @@
+div#puzzle {
+  background-color: white;
+  color: white;
+  margin: 0 auto 0 auto;
+  padding: 100px;
+  
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  font-size: 200%;
+  color: white;
+  /* background-color: grey;
+  background-image: url("image_taquin1.jpg");
+  background-size: 300px 300px;
+  background-position: 300px 300px;
+  */
+    
+}
+
+.empty {
+  width: 100px;
+  height: 100px;
+  font-size: 200%;
+  color: grey;
+  background-color: white;
+}
+
+hr {
+  clear: both;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+

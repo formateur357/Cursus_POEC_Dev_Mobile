@@ -1,0 +1,22 @@
+BODY { 
+    background: #AAAAAA;
+    }
+    
+    .tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 {
+      display: table-cell;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgb(116, 25, 25);
+      background: url(" https://static.vecteezy.com/ti/vecteur-libre/p1/1183306-fond-d-illusion-d-optique-gratuit-vectoriel.jpg"); 
+      cursor: pointer;
+    }
+    
+    .tile1 {background-position: left top;}
+    .tile2 {background-position: center top;}
+    .tile3 {background-position: right top;}
+    .tile4 {background-position: left center;}
+    .tile5 {background-position: center center;}
+    .tile6 {background-position: right center;}
+    .tile7 {background-position: left bottom;}
+    .tile8 {background-position: center bottom;}
+    .tile9 {background: rgb(184, 49, 49); cursor: default;}

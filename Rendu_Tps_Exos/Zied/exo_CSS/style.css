@@ -6,3 +6,12 @@
 li::before {content: "•"; color: blue;
     display: inline-block; width: 1em;
     margin-left: -1em}
+
+    /*tu met une balise <div> avec un class rouge
+
+<div class="rouge">ton mot en rouge</div>
+
+et en css :
+.rouge
+{
+color : red;

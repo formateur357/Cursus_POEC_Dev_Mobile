@@ -1,0 +1,15 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.diaporama {
+    display: flex;
+    justify-content: center;
+}
+
+.bouttons {
+display: flex;
+justify-content: center; 
+margin-top: 20px;  
+}

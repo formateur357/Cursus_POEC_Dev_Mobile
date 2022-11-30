@@ -1,0 +1,42 @@
+<html>
+  <head> </head>
+
+  <body>
+    <h2> NOOOOOO</h2>
+    <img src="IMG-1848.JPG" style="height: 200px" style="width: 200px" /> <br />
+    <button onclick=>cliquez ici!</button><br />
+    <button onclick="gfg_Run()">niut</button>
+    <button onclick= "gfg_Ru()">jour</button>
+    <br />
+    <img
+      title="NOOOOOOOOO"
+      src="https://thumbs.dreamstime.com/b/%C3%A9cureuil-de-brown-mangeant-une-arachide-12961270.jpg"
+      onmouseover="this.src='https://static.nationalgeographic.fr/files/styles/image_3200/public/comedy-wildlife-awards-squirel-stop.adapt_.1190.1.jpg?w=1900&h=1417'"
+      onmouseout="this.src='https://thumbs.dreamstime.com/b/%C3%A9cureuil-de-brown-mangeant-une-arachide-12961270.jpg'"
+      style="height: 200px"
+    />
+
+    <script>
+      var el_up = document.getElementById("GFG_UP");
+      var el_down = document.getElementById("GFG_DOWN");
+      var str = "Click on button to change the background color";
+
+      el_up.innerHTML = str;
+
+      function changeColor(color) {
+        document.body.style.background = color;
+      }
+
+      function gfg_Run() {
+        changeColor("black");
+        el_down.innerHTML = "Background Color changed";
+      }
+
+      function gfg_Ru() {
+        changeColor("white");
+        el_down.innerHTML = "Background Color changed";
+    }
+
+    </script>
+  </body>
+</html>

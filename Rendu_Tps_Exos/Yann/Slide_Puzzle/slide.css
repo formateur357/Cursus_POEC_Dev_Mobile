@@ -1,0 +1,154 @@
+
+.text{
+    float:inline-start;
+}
+
+
+div.jeu{
+    margin: 0 auto 0 auto;
+    width: 400px;
+    height:400px;
+}
+
+button.case, button.emptyCase{
+    width: 100px!important;
+    height: 100px!important;
+    float: left;
+      /* margin: 1px 2px 1px 2px;   */
+   
+}
+
+button.emptyCase{
+    background-color: none;
+    border: none;
+    
+}
+
+button.case{
+    /* background-color: blue; */
+    border: none;
+    color:transparent;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+hr{
+    clear: both;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#random{
+    margin-left: 50px;
+    font-size: 2em;
+    background-color: red;
+    border: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#victoire{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    background-color: greenyellow;
+}
+
+   #case11, #case12, #case13, #case14,
+#case21, #case22, #case23, #case24,
+#case31, #case32, #case33, #case34,
+#case41, #case42, #case43{
+   background-image: url(./dubai-g6868ac222_1280.jpg);
+   background-size: 400%; 
+  
+   background-repeat: no-repeat;  
+}
+#case44{
+    background-image:"";
+}
+  
+#case11{
+    background-position-x: 5%;
+    background-position-y: 5%;
+  
+}
+#case12{
+    background-position-x: 30%;
+    background-position-y: 5%;
+    
+}
+#case13{
+    background-position-x: 80%;
+    background-position-y: 5%;
+    
+}
+#case14{
+    background-position-x:100%;
+    background-position-y: 5%;
+    
+}
+#case21{
+    background-position-x: 05%;
+    background-position-y: 35%;
+    
+}
+#case22{
+    background-position-x: 30%;
+    background-position-y: 35%;
+    
+}
+#case23{
+    background-position-x:80%;
+    background-position-y: 35%;
+    
+}
+#case24{
+    background-position-x: 100%;
+    background-position-y: 35%;
+    
+}
+#case31{
+    background-position-x: 5%;
+    background-position-y: 65%;
+    
+    
+}
+#case32{
+    background-position-x: 30%;
+    background-position-y: 65%;
+    
+}
+#case33{
+    background-position-x: 80%;
+    background-position-y: 65%;
+    
+}
+#case34{
+    background-position-x: 100%;
+    background-position-y: 65%;
+    
+}
+#case41{
+    background-position-x: 5%;
+    background-position-y: 100%;
+    
+}
+#case42{
+    background-position-x: 35%;
+    background-position-y: 100%;
+    
+}
+#case43{
+    background-position-x: 65%;
+    background-position-y: 100%;
+    
+}   
+  #case44{
+    background-position-x: 100%;
+    background-position-y: 100%;
+} 

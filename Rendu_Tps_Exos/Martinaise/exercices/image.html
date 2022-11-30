@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./image.css" />
+    <title>Document</title>
+  </head>
+  <body onload="chargement()" onkeypress="appuyertoucheclavier()">
+    <div>
+      <img
+        id="changeimage" onmouseover="passersouris()" onmouseleave="enleversouris()" src="img/mer.webp"alt="mer"
+      />
+    </div>
+
+    <button onclick="image()">cliquez ici</button>
+    <button onclick="boutton()">cliquez moi</button>
+
+    <button onclick="chargementcouleurdocument()" id="change">
+      changer fond d'écran
+    </button>
+
+    <button onclick="reveniranormal()">
+      revenir à la normale Sur des images
+    </button>
+
+    <script src="./image.js"></script>
+  </body>
+</html>
+
+<!-- À un document HTML, ajouter des alertes :
+    exo1
+
+au chargement de la page,(onload)
+quand on passe sur une image,(hover)
+quand on clique sur un bouton,(onclick)
+quand on appuie sur une touche.(onkeypress)
+Ajouter un bouton qui, quand on clique dessus, fait appel à document.write() 
+pour produire un affichage. Que se passe-t-il ?(document.write)
+
+Avec des boutons :
+
+changer la couleur de fond du document quand on clique sur un bouton,(document.body.style.background)
+changer aussi l'apparence du bouton,()
+ajouter un bouton qui permette de revenir à la normale.
+Sur des images :
+
+changer une image par une autre quand la souris passe dessus,( on change le src)
+remettre l'image d'origine quand la souris quitte l'image.
+
+
+
+-->

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>styles</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="niveau();">
+
+    <div class="container">
+
+        <div class="board">
+
+        </div>
+        <div class="droite">
+            <div class="imageJeux"></div>
+            <div>
+                <div>
+                    <button onclick="niveau(facile)">facile</button>
+                    <button onclick="niveau(intermedaire)">Intermediaire</button>
+                    <button onclick="niveau(expert)">Expert</button>
+                    <button onclick="newImage()">Changer image</button>
+                </div>
+                <div>
+                    <p id="timer"></p>
+                    <p>Nombre de déplacement : <strong></strong></p>
+                    <p id="fini"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="timer.js"></script>
+    <script src="script.js"></script>
+</body>
