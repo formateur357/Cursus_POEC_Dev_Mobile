@@ -1,5 +1,5 @@
 :root {
-  --bgcolor: #c0c3cd;
+  --bgcolor: #3d63df;
   --blue: #0b83c4;
   --black: #3d3f42;
   --white: #f4f7ff;
@@ -56,7 +56,7 @@ body {
   box-shadow: 5px 21px 20px 20px #3d3f4238;
 }
 .left-section {
-  background: #fcf1db;
+  background: #13bba5;
   width: 250px;
   height: 1000px;
   float: left;
@@ -103,7 +103,7 @@ body {
 }
 .s-box {
   padding: 20px;
-  background: #faf1dd;
+  background: #11de8c;
 }
 .s-box p {
   float: left;
