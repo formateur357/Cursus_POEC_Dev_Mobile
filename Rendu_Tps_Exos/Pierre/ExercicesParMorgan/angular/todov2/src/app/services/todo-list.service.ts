@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../classes/task.model';
 import { Input } from '@angular/core';
+import { ResolveEnd } from '@angular/router';
 ////
 let initialList: Task[] = [];
 
@@ -19,10 +20,12 @@ export class TodoListService {
 
   constructor() {
     this.taskList = [];
-    this.promise = new Promise<Task[]>(function (resolve, reject) {
-      // Corps de la callback de promise
-      console.log('promise::lambda function ', initialList.length);
-      resolve(initialList);
+    this.promise = new Promise<Task[]>((resolve) => {
+      console.log('promise::lambda A function ', initialList.length);
+      setInterval(() => {
+        console.log('promise::lambda B ');
+        resolve([]);
+      }, 2500);
     });
     //
     if (this.testpierre) {

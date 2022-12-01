@@ -80,7 +80,8 @@ Il y a {{ childCount }} taches non terminées<br />
 </ul>
 
 <hr />
-<div>
+
+<div *ngIf="tls.taskList.length < 2 && tls.taskList[2] != undefined">
   les valeurs pour la deuxieme tache sont :<br />
   le titre: {{ tls.taskList[2].title }} <br />
   le booleen complete: {{ tls.taskList[2].completed }} <br />
