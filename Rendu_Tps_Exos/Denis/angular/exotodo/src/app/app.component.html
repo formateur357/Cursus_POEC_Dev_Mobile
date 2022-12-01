@@ -3,7 +3,7 @@
 il a {{ count }} taches non terminées
 <p>Pourcentage de tâches terminées : {{ percent | number: "1.0-2" }}%</p>
 <ul>
-  <app-task *ngFor="let task of tasks; " [task]="task"  (completeChanged)="changeCounter($event)"></app-task>
+  <app-task *ngFor="let task of tls.tasks; " [task]="task"  (completeChanged)="changeCounter($event)"></app-task>
   
 </ul>
 
