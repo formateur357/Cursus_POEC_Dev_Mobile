@@ -1,6 +1,4 @@
-import { Component, Input } from '@angular/core';
-// import { MatButtonModule } from '@angular/material/button';
-import { User } from './classes/user.model';
+import { Component } from '@angular/core';
 import { Task } from './classes/task.model';
 import { TodoListService } from './services/todo-list.service';
 

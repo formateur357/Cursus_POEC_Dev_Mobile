@@ -25,7 +25,7 @@ Il y a {{ childCount }} taches non terminées<br />
 <p *ngIf="tls.dataLoaded; else donneesNonDisponibles"></p>
 <p *ngIf="listeTachesCommencees().length >= 0; else leTableauEstVide">
   la longueur du tableau des taches en cours est
-  {{ listeTachesCommencees().length }} ce qui différent de zéro<br />
+  {{ listeTachesCommencees().length }} ce qui est différent de zéro<br />
   le pourcentage est {{ pourcentage }}% et la valeur proche est
   {{ pourcent() | number : "1.0-2" }} %
 </p>

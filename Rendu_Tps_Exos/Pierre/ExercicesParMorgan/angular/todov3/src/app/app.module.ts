@@ -11,6 +11,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
+import { RoutingModule } from './routing/routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { TodolistComponent } from './components/todolist/todolist.component';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
+    RoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
