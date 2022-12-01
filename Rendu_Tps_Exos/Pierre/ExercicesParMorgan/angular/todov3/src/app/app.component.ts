@@ -22,8 +22,6 @@ export class AppComponent {
 
   public childCount: number = 1;
 
-  public user: User;
-
   public pourcentage: number = 0; // Pour tests, à supprimer éventuellement
 
   constructor(
@@ -37,7 +35,6 @@ export class AppComponent {
     this.complete2 = false;
     this.complete3 = false;
     //
-    this.user = new User('Elon', 'Musk', 'elon.musk@tesla.com');
   }
 
   changeCounter(childComplete: boolean): void {

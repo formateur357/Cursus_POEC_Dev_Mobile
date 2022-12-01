@@ -1,4 +1,4 @@
 <button *ngIf="!auth.isAuth; else noAuthBlock" (click)="onButtonClick()">
   Login
 </button>
-<ng-template #noAuthBlock>Vous n'etes pas connecté</ng-template>
+<ng-template #noAuthBlock>Vous etes connecté</ng-template>
