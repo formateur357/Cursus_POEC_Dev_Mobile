@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Task } from 'src/app/classes/task.model';
+import { TodoListService } from 'src/app/services/todo-list.service';
 
 @Component({
   selector: 'app-task',
@@ -9,13 +10,18 @@ import { Task } from 'src/app/classes/task.model';
 })
 export class TaskComponent {
   @Input() public complete: boolean;
-  @Input() public name: string | undefined;
   @Output() public completeChanged = new EventEmitter<boolean>();
   @Input() public task: Task | undefined;
 
-  constructor() {
+  public _name: string = '';
+  public _description: string = '';
+
+  @Input() public indexTask: number = -1; // Inconnu
+
+  constructor(
+    public /* public augmenter la visibilité de l'injection du service */ tls: TodoListService
+  ) {
     this.complete = false;
-    //this.task = new Task(0);
   }
 
   isComplete(): boolean {
@@ -47,16 +53,24 @@ export class TaskComponent {
     return resultat;
   }
 
+  /*
+  Inverser la valeur du boolean completed
+  */
   toggleComplete(): void {
     if (this.task == undefined) {
       this.complete = !this.complete;
-      this.completeChanged.emit(this.complete);
     } else {
-      this.task.completed = !this.task.completed;
-      this.completeChanged.emit(this.task.completed);
+      this.tls.toggleComplete(this.indexTask);
+      // this.task.toggleComplete(); // avant on n'avait pas de service et on appellait directement toggleComplete() sur l'instance task
     }
+    let c = this.isComplete();
+    //// Maintenant on va émettre le boolean 'complete' vers le parent par principe "bubbling" grace au décorateur @Output
+    this.completeChanged.emit(c);
   }
 
+  /**
+   * Changer le texte qu'on mettra plus tard dans le gros bouton rouge
+   */
   getButtonText(): string {
     let resultat: string;
     let c = this.isComplete();
@@ -64,6 +78,9 @@ export class TaskComponent {
     return resultat;
   }
 
+  /*
+   * Bloc des setters et getters
+   */
   get date(): any {
     if (this.task == undefined) {
       return null;
@@ -77,6 +94,40 @@ export class TaskComponent {
       ////
     } else {
       this.task.date = date;
+    }
+  }
+
+  @Input()
+  get name(): string {
+    if (this.task == undefined) {
+      return this._name;
+    } else {
+      return this.task.title;
+    }
+  }
+
+  set name(namesetter: string) {
+    if (this.task == undefined) {
+      this._name = namesetter;
+    } else {
+      this.task.title = namesetter;
+    }
+  }
+
+  @Input()
+  get description(): string {
+    if (this.task == undefined) {
+      return this._description;
+    } else {
+      return this.task.description;
+    }
+  }
+
+  set description(namesetter: string) {
+    if (this.task == undefined) {
+      this._description = namesetter;
+    } else {
+      this.task.description = namesetter;
     }
   }
 }

@@ -2,9 +2,14 @@
   <button (click)="toggleComplete()" mat-raised-button color="warn">
     {{ getButtonText() }}
   </button>
-  Date de début : {{ date | date: "d MMM y" }}
+  Date de début : {{ date | date : "d MMM y" }}
   <input placeholder="Donnez le nom de la tache ici" [(ngModel)]="name" />
+  Description :
+  <input
+    placeholder="Donnez la description de la tache ici"
+    [(ngModel)]="description"
+  />
   <br />
-  La tâche {{ name }} est
-  <span [class]="getBadgeVariant()">{{ getComplete() }}</span>
+  La tache d'index numéro {{ indexTask }} à l'id {{ task?.id }} est
+  <span [class]="getBadgeVariant()"> {{ getComplete() }}</span>
 </li>

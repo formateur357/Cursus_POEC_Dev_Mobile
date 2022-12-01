@@ -1,16 +1,30 @@
 export class Task {
+  private static instanceCounter: number = 10;
+
   public _id: number;
   public _title: string;
   public _completed: boolean;
   public _description: string;
   public _datecreated: Date;
+
   //
-  constructor(id: number) {
-    this._id = id;
-    this._title = 'titre ' + id;
+  constructor() {
+    this._id = Task.instanceCounter++; // Création automatique de l'id par rapport a la variable statique
+    this._title = 'titre ' + this._id;
     this._completed = false;
-    this._description = 'description ' + id;
+    this._description = 'description ' + this._id;
     this._datecreated = new Date(); // new Date('10/10/2022 09:00');
+  }
+
+  /*
+   * Bloc des setters et getters
+   */
+  static get counter() {
+    return Task.instanceCounter;
+  }
+
+  get id() {
+    return this._id;
   }
 
   get date() {
@@ -43,5 +57,12 @@ export class Task {
 
   set description(description: string) {
     this._description = description;
+  }
+
+  /*
+  Inverser la valeur du boolean completed
+  */
+  toggleComplete(): void {
+    this.completed = !this.completed;
   }
 }
