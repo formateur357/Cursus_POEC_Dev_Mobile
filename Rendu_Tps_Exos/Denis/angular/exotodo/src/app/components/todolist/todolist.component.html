@@ -1,0 +1,49 @@
+
+<button mat-button color="warn">Botoncito</button>
+il a {{ count }} taches non terminées
+<p>Pourcentage de tâches terminées : {{ percent | number: "1.0-2" }}%</p>
+<ul>
+  <app-task *ngFor="let task of tls.tasks; " [task]="task"  (completeChanged)="changeCounter($event)"></app-task>
+</ul>
+
+<button type="submit" ng-click='submitForm( "publisher" )' data-target="#publisherVerification">Viens par ici hummm</button>
+
+
+<div id="publisherVerification" ng-if="submitted.publisher ===true">
+   <div ng-if="flags.publisher===true">
+     <p>’Il n’y a pas de tâches
+      pour le moment.</p>
+   </div>
+   <div ng-if="flags.publisher===false">
+      <p>Utilisateur déjà enregistré. Veuillez utiliser la connexion.</p>
+    </div>
+   </div> 
+
+   <div class='card'>
+    
+    <div class="card-body">
+      Chaîne d'entrée: <input [(ngModel)]="pourcentage" />{{ pourcentage }}
+   
+      <div [ngSwitch]="true">
+        <div *ngSwitchCase="pourcentage == 0">Toutes les taches sont terminées"</div>
+        <div *ngSwitchCase="pourcentage >= 1 && pourcentage <=50">moins que 50</div>
+        <div *ngSwitchCase="pourcentage >= 51 && pourcentage < 100">plus que 51</div>
+        <div *ngSwitchCase="pourcentage ==100">egal a 100</div>
+      
+        <div *ngSwitchDefault>Ceci est par défaut</div>
+      </div>
+    </div>
+  </div>
+  
+    
+
+
+
+
+
+
+
+
+
+
+

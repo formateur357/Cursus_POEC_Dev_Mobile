@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { TaskComponent } from './components/task/task.component';
-import { MyButtonComponent } from './components/my-button/my-button.component';
 import { FormsModule } from '@angular/forms';
+import { TodolistComponent } from './components/todolist/todolist.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, MyButtonComponent],
+  declarations: [AppComponent, TaskComponent, TodolistComponent, LogoutComponent, LoginComponent,NavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
