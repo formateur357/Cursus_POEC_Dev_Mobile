@@ -4,12 +4,14 @@ import { Input } from '@angular/core';
 
 ////
 let initialList: Task[] = [];
-const WAIT = 2000;
+
 //
 @Injectable({
   providedIn: 'root',
 })
 export class TodoListService {
+  public static WAIT = 2000;
+
   @Input() public mode: number = 1; // Mode de génération automatique des taches
 
   @Input() public dataLoaded: boolean = false;
@@ -30,7 +32,7 @@ export class TodoListService {
       setInterval(() => {
         console.log('promise::lambda B ');
         resolve([]);
-      }, WAIT);
+      }, TodoListService.WAIT);
     });
     //
     if (this.testpierre) {

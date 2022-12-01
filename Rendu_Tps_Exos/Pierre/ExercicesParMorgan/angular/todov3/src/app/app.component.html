@@ -1,3 +1,5 @@
+<app-nav></app-nav>
+
 <p *ngIf="false; else pier">condition VRAIE</p>
 <ng-template #pier>condition FALSE</ng-template>
 
@@ -34,7 +36,9 @@ Il y a {{ childCount }} taches non terminées<br />
   terminées</ng-template
 >
 <ng-template #donneesNonDisponibles>
-  patientez {{ WAIT }} secondes SVP, données en cours de chargement</ng-template
+  patientez
+  <!-- {{ tls.WAIT }} -->
+  secondes SVP, données en cours de chargement</ng-template
 >
 
 <!--
