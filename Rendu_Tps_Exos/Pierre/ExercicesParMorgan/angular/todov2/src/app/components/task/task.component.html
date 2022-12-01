@@ -1,0 +1,25 @@
+<li [class]="getItemVariant()">
+  <button (click)="toggleComplete()" mat-raised-button color="warn">
+    {{ getButtonText() }}
+  </button>
+  Date de début : {{ date | date : "d MMM y à h:mm:ss" }}
+  <input placeholder="Donnez le nom de la tache ici" [(ngModel)]="name" />
+  Description :
+  <input
+    placeholder="Donnez la description de la tache ici"
+    [(ngModel)]="description"
+  />
+  &nbsp;
+  <button
+    *ngIf="indexTask < 0"
+    (click)="addThisTolist()"
+    mat-raised-button
+    color="primary"
+  >
+    Ajouter cette tâche dans la liste
+  </button>
+  <br />
+  La tache d'index numéro {{ indexTask }} à l'id {{ task?.id }} est
+  <span [class]="getBadgeVariant()"> {{ getComplete() }}</span> et sa
+  description est "{{ description }}" et son titre est "{{ name }}"
+</li>
