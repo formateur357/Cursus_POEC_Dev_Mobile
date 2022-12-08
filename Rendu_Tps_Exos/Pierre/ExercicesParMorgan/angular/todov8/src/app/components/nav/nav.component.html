@@ -1,0 +1,20 @@
+<ul>
+  <li routerLink="">Accueil</li>
+  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <a routerLink="login">Connexion (login)</a>
+  </li>
+  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <a routerLink="todolist">Afficher la TodoList</a>
+  </li>
+
+  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <a routerLink="taskform">Ajouter une tache (formulaire)</a>
+  </li>
+</ul>
+<app-logout></app-logout>
+<!--
+  <hr />
+  <app-task-form></app-task-form>
+-->
+<hr />
+<app-user-form></app-user-form>

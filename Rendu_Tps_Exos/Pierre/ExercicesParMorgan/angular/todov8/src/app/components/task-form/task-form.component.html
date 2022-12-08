@@ -1,0 +1,55 @@
+<form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+  <label for="title">Titre :&nbsp;</label>
+  <input
+    type="text"
+    name="title"
+    placeholder="Donnez le titre"
+    ngModel
+    required
+    minlength="3"
+  /><br />
+  <label for="description">Description :&nbsp;</label>
+  <input
+    type="text"
+    name="description"
+    placeholder="Donnez la description"
+    ngModel
+    required
+    minlength="3"
+  /><br />
+  <label for="select_complete">Etat de la tâche à créer:&nbsp;</label>
+  <select name="select_complete" ngModel required>
+    <option name="empty" value="">Sélectionner dans cette liste</option>
+    <option name="false" value="false" selected>En cours</option>
+    <option name="true" value="true">Terminée</option>
+  </select>
+  <br />
+  <br />
+  Que faire après le clic sur valider ?<br />
+  <input
+    type="radio"
+    id="reset_form"
+    name="form_action"
+    value="resetForm"
+    ngModel
+  />
+  <label for="reset_form"> Effacer puis saisir une nouvelle tache </label>
+  <input
+    type="radio"
+    id="input_new_task"
+    name="form_action"
+    value="inputNewTask"
+    ngModel
+  />
+  <label for="input_new_task"> Saisir une nouvelle tache </label>
+  <input
+    type="radio"
+    id="show_task_list"
+    name="form_action"
+    value="showTaskList"
+    ngModel
+  />
+  <label for="show_task_list"> Afficher la liste de toutes les taches </label>
+  <br />
+  <button type="submit" [disabled]="!taskForm.valid">Valider</button>
+</form>

@@ -1,0 +1,8 @@
+<form [formGroup]="userForm">
+  <label for="firstName"></label>
+  <input type="text" [formControl]="firstName" /><br />
+  <div *nfIf="firstName.dirty">erreur temporaire</div>
+  <label for="lastName"></label>
+  <input type="text" [formControl]="lastName" /><br />
+  <button type="submit">Valider</button>
+</form>

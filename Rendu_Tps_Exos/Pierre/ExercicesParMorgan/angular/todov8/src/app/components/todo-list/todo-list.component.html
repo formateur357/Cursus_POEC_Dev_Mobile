@@ -1,0 +1,105 @@
+<!-- <p>Promise : {{ todo.prom | async }}</p> -->
+<p *ngIf="false; else pier">condition VRAIE</p>
+<ng-template #pier>condition FALSE</ng-template>
+
+Il y a {{ childCount }} taches non terminées<br />
+<ul>
+  <app-task
+    [name]="name1"
+    [complete]="complete1"
+    (completeChanged)="changeCounter($event)"
+  ></app-task>
+  <app-task
+    [name]="name2"
+    [complete]="complete2"
+    (completeChanged)="changeCounter($event)"
+  ></app-task>
+  <app-task
+    [name]="name3"
+    [complete]="complete3"
+    (completeChanged)="changeCounter($event)"
+  ></app-task>
+</ul>
+
+<p *ngIf="tls.dataLoaded; else donneesNonDisponibles"></p>
+<p *ngIf="listeTachesCommencees().length >= 0; else leTableauEstVide">
+  la longueur du tableau des taches en cours est
+  {{ listeTachesCommencees().length }} ce qui est différent de zéro<br />
+  le pourcentage est {{ pourcentage }}% et la valeur proche est
+  {{ pourcent() | number : "1.0-2" }} %
+</p>
+<ng-template #leTableauEstVide>
+  le tableau des taches en cours est vide car toutes les taches sont
+  terminées</ng-template
+>
+<ng-template #donneesNonDisponibles>
+  patientez
+  <!-- {{ tls.WAIT }} -->
+  secondes SVP, données en cours de chargement</ng-template
+>
+
+<!--
+
+-->
+
+<div [ngSwitch]="true">
+  <!--
+  <p *ngSwitchCase="0">aucune tache à faire</p>
+
+  <p *ngSwitchCase="1">une seule tache à faire</p>
+-->
+  <p *ngSwitchCase="pourcentage == 0">Toutes les taches sont terminées</p>
+  <p *ngSwitchCase="pourcentage > 0 && pourcentage < 10">entre 10% et 20%</p>
+  <p *ngSwitchCase="pourcentage >= 10 && pourcentage < 20">entre 10% et 20%</p>
+  <p *ngSwitchCase="pourcentage >= 20 && pourcentage < 30">entre 20% et 30%</p>
+  <p *ngSwitchCase="pourcentage >= 30 && pourcentage < 40">entre 30% et 40%</p>
+  <p *ngSwitchCase="pourcentage >= 40 && pourcentage < 50">entre 40% et 50%</p>
+  <p *ngSwitchCase="pourcentage >= 50 && pourcentage < 60">entre 50% et 60%</p>
+  <p *ngSwitchCase="pourcentage >= 60 && pourcentage < 70">entre 60% et 70%</p>
+  <p *ngSwitchCase="pourcentage >= 70 && pourcentage < 80">entre 70% et 80%</p>
+  <p *ngSwitchCase="pourcentage >= 80 && pourcentage < 90">entre 80% et 90%</p>
+  <p *ngSwitchCase="pourcentage == 100">Il faut faire toutes les taches</p>
+  <p *ngSwitchDefault>
+    Il y a plein de taches commencées c'est à dire :
+    {{ listeTachesCommencees().length }} exactement soit {{ pourcent() }}% ou
+    {{ pourcentage }}%
+  </p>
+</div>
+<!--
+
+-->
+<ul>
+  <app-task
+    *ngFor="
+      let task of tls.tasks;
+      let index_Task_ngfor = index;
+      trackBy: tasktrackByFunction
+    "
+    [indexTask]="index_Task_ngfor"
+    (completeChanged)="changeCounter($event)"
+    [task]="task"
+  ></app-task>
+</ul>
+
+<hr />
+
+<div *ngIf="tls.tasks.length < 2 && tls.tasks[2] != undefined">
+  les valeurs pour la deuxieme tache sont :<br />
+  le titre: {{ tls.tasks[2].title }} <br />
+  le booleen complete: {{ tls.tasks[2].completed }} <br />
+  la description: {{ tls.tasks[2].description }}
+</div>
+<hr />
+<!--
+
+  <input
+  placeholder="Donnez le mode d'initialisation automatique"
+  [(ngModel)]="mode2"
+  />{{ mode2 }}<br />
+-->
+<ul>
+  <li *ngFor="let task of tls.tasks; trackBy: tasktrackByFunction">
+    {{ task.title }} {{ task.description }} {{ task.completed }}
+  </li>
+</ul>
+<hr />

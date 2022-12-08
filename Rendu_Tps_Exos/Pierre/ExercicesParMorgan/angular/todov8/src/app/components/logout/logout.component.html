@@ -1,0 +1,10 @@
+<!--
+<button *ngIf="auth.isAuth; else elseBlock" color="warn" (click)="auth.logout()">Logout</button>
+
+-->
+<div *ngIf="auth.isAuth; else noAuthBlock">
+  <button (click)="onButtonClick()">Logout</button>
+  {{ auth.user.firstName }} {{ auth.user.lastName }} ton email est :
+  {{ auth.user.email }}<br />
+</div>
+<ng-template #noAuthBlock>Vous n'etes pas connecté</ng-template>
