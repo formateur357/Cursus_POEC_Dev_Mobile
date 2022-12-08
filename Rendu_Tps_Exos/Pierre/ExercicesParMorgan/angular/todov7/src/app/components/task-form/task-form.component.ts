@@ -27,6 +27,17 @@ export class TaskFormComponent implements OnInit {
     // Renseigner les différentes propriétés à partir des données du formulaire
     task.title = taskForm.value.title;
     task.description = taskForm.value.description;
+    switch (taskForm.value.select_complete) {
+      case 'false':
+        task.completed = false;
+        break;
+      case 'true':
+        task.completed = true;
+        break;
+      default:
+        task.completed = false;
+        break;
+    }
     // Demander au service d'ajouter la tache dans la liste des tâches
     this.tls.addTaskAndNotify(task);
     // Réinitialiser le formulaire
